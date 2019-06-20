@@ -1,0 +1,219 @@
+---
+
+# Create jupyterhub group for jupyterhub service users:
+- name: 'jupyterhub configure jupyterhub group'
+  group:
+    name: "{{ jupyterhub_group }}"
+    state: 'present'
+  tags:
+    - 'jupyterhub_configure_jupyterhub_group'
+
+# Create primary group for jupyterhub user:
+- name: 'jupyterhub configure jupyterhub user primary group'
+  group:
+    name: "{{ jupyterhub_install.user.group | default(jupyterhub_install.user.name) }}"
+    state: 'present'
+  when: jupyterhub_install.spawner.name | default(jupyterhub_spawner) == 'sudo' 
+  tags:
+    - 'jupyterhub_configure_jupyterhub_user_primary_group'
+
+# Create jupyterhub config directory:
+- name: 'jupyterhub configure config directory'
+  file:
+    path: "{{ jupyterhub_config_dir }}"
+    state: 'directory'
+    group: "{{ jupyterhub_group }}"
+    mode: '0750'
+  tags:
+    - 'jupyterhub_configure_config_directory'
+
+# Include idle will cull script:
+- name: 'jupyterhub configure cull idle script'
+  copy:
+    src: 'cull_idle_servers.py'
+    dest: "{{ jupyterhub_config_dir }}/cull_idle_servers.py"
+    group: "{{ jupyterhub_group }}"
+  tags:
+    - 'jupyterhub_configure_cull_idle_script'
+
+# Create jupyterhub user:
+- name: 'jupyterhub configure user'
+  user:
+    name: "{{ jupyterhub_install.user.name }}"
+    comment: "{{ jupyterhub_install.user.comment | default('Jupyterhub System User') }}"
+    group: "{{ jupyterhub_install.user.group | default(jupyterhub_install.user.name) }}"
+    groups:
+      - 'shadow'
+      - "{{ jupyterhub_install.user.group | default(jupyterhub_group) }}"
+    append: true
+    home: "{{ jupyterhub_install.user.home }}"
+    shell: "{{ jupyterhub_install.user.shell | default('/usr/sbin/nologin') }}" 
+    state: "{{ jupyterhub_install.user.state | default('present') }}"
+    system: "{{ jupyterhub_install.user.system | default(true) }}"
+  when: jupyterhub_install.spawner.name | default(jupyterhub_spawner) == 'sudo' 
+  tags:
+    - 'jupyterhub_configure_user'
+
+# Create jupyterhub working directory:
+- name: 'jupyterhub configure working directory'
+  file:
+    path: "{{ jupyterhub_install.working_dir | default(['/var/lib/jupyterhub_', jupyterhub_install.name] | join('')) }}"
+    state: 'directory'
+    mode: '0750'
+    group: 'root'
+  when: jupyterhub_install.spawner.name | default(jupyterhub_spawner) == 'systemd' 
+  tags:
+    - 'jupyterhub_configure_working_directory'
+
+# Set mode of jupyterhub user home directory:
+- name: 'jupyterhub configure user home'
+  file:
+    path: "{{ jupyterhub_install.user.home }}"
+    state: 'directory'
+    mode: '0750'
+  when: jupyterhub_install.spawner.name | default(jupyterhub_spawner) == 'sudo' 
+  tags:
+    - 'jupyterhub_configure_user_home'
+
+# Create group for jupyterhub users:
+- name: 'jupyterhub configure users group'
+  group:
+    name: "{{ jupyterhub_install.users.group | default(['jupyterhub_users_', jupyterhub_install.name] | join('')) }}"
+    state: 'present'
+  tags:
+    - 'jupyterhub_configure_users_group'
+
+# Create group for jupyterhub admins:
+- name: 'jupyterhub configure admins group'
+  group:
+    name: "{{ jupyterhub_install.admins.group | default(['jupyterhub_admins_', jupyterhub_install.name] | join('')) }}"
+    state: 'present'
+  tags:
+    - 'jupyterhub_configure_admins_group'
+
+# Add jupyterhub users to users group:
+- name: 'jupyterhub configure users'
+  user:
+    name: "{{ item }}"
+    groups:
+      - "{{ jupyterhub_install.users.group | default(['jupyterhub_users_', jupyterhub_install.name] | join('')) }}"
+    append: true
+  loop: "{{ jupyterhub_install.users.users }}"
+  when: jupyterhub_install.users.users is defined
+  tags:
+    - 'jupyterhub_configure_users'
+
+# Add jupyterhub admins to admins group:
+- name: 'jupyterhub configure admins'
+  user:
+    name: "{{ item }}"
+    groups:
+      - "{{ jupyterhub_install.admins.group | default(['jupyterhub_admins_', jupyterhub_install.name] | join('')) }}"
+    append: true
+  loop: "{{ jupyterhub_install.users.admins }}"
+  when: jupyterhub_install.users.admins is defined
+  tags:
+    - 'jupyterhub_configure_admins'
+
+# Create any requested data directories:
+- name: 'jupyterhub configure data directories'
+  file:
+    path: "{{ item.path }}"
+    state: 'directory'
+    owner: "{{ item.owner | default('root') }}"
+    group: "{{ item.group | default(['jupyterhub_users_', jupyterhub_install.name] | join('')) }}"
+    mode: "{{ item.mode | default('2750') }}"
+  loop: "{{ jupyterhub_install.data_dirs }}"
+  when: jupyterhub_install.data_dirs is defined
+  tags:
+    - 'jupyterhub_configure_data_directories'
+
+# Set write access ACL for admins:
+- name: 'jupyterhub configure data directories admin acl'
+  acl: 
+    path: "{{ item.path }}"
+    entity: "{{ jupyterhub_install.admins.group | default(['jupyterhub_admins_', jupyterhub_install.name] | join('')) }}"
+    etype: 'group'
+    permissions: 'rwX'
+    state: 'present'
+  loop: "{{ jupyterhub_install.data_dirs }}"
+  when: jupyterhub_install.data_dirs is defined and
+        jupyterhub_data_admin_rw
+  tags:
+    - 'jupyterhub_configure_data_directories_admin_acl'
+
+# Add default admin ACL:
+- name: 'jupyterhub configure data directories admin acl'
+  acl:
+    path: "{{ item.path }}"
+    entity: "{{ jupyterhub_install.admins.group | default(['jupyterhub_admins_', jupyterhub_install.name] | join('')) }}"
+    etype: 'group'
+    permissions: 'rwX'
+    state: 'present'
+    default: true
+  loop: "{{ jupyterhub_install.data_dirs }}"
+  when: jupyterhub_install.data_dirs is defined and
+        jupyterhub_data_admin_rw
+  tags:
+    - 'jupyterhub_configure_data_directories_admin_acl'
+
+# Create sudoers file:
+- name: 'jupyterhub configure sudoers file'
+  template:
+    src: 'sudoers.j2'
+    dest: "/etc/sudoers.d/99_jupyterhub_{{ jupyterhub_install.name }}"
+    mode: '0400'
+  when: jupyterhub_install.spawner.name | default(jupyterhub_spawner) == 'sudo' 
+  tags:
+    - 'jupyterhub_configure_sudoers_file'
+
+# Update azure oauth file:
+- name: 'jupyterhub configure find azuread.py'
+  find:
+    path: "{{ jupyterhub_install.python_dir }}"
+    pattern: 'azuread.py'
+    file_type: 'file'
+    recurse: true
+  when: jupyterhub_install.auth.name | default(jupyterhub_auth) == 'azure'
+  register: jupyterhub_azuread_py
+  tags:
+    - 'jupyterhub_configure_find_azuread_py'
+- name: 'jupyterhub configure azuread.py'
+  template:
+    src: 'azuread.j2'
+    dest: "{{ item.path }}"
+  loop: "{{ jupyterhub_azuread_py.files }}"
+  when: jupyterhub_install.auth.name | default(jupyterhub_auth) == 'azure'
+  tags:
+     'jupyterhub_configure_azuread_py'
+
+# Create jupyterhub configuration file:
+- name: 'jupyterhub configure config file'
+  template:
+    src: 'jupyterhub_config.j2'
+    dest: "{{ jupyterhub_config_dir }}/jupyterhub_{{ jupyterhub_install.name }}_config.py"
+    mode: '0640'
+    group: "{{ jupyterhub_install.user.group | default(jupyterhub_install.user.name)
+               if (jupyterhub_install.spawner.name | default(jupyterhub_spawner) == 'sudo')
+               else jupyterhub_group }}"
+  tags:
+    - 'jupyterhub_configure_config_file'
+
+# Configure jupyterhub service file:
+- name: 'jupyterhub configure service file'
+  template:
+    src: 'jupyterhub_service.j2'
+    dest: "/etc/systemd/system/jupyterhub_{{ jupyterhub_install.name }}.service"
+  notify:
+    - 'jupyterhub systmctl daemon reload'
+  tags:
+    - 'jupyterhub_configure_service_file'
+
+# Configure jupyterhub service:
+- name: 'jupyterhub configure service'
+  service:
+    name: "jupyterhub_{{ jupyterhub_install.name }}"
+    state: "{{ jupyterhub_install.service.state | default('started') }}"
+    enabled: "{{ jupyterhub_install.service.enabled | default(true) }}"
+  tags:
+    - 'jupyterhub_configure_service'

@@ -1,0 +1,32 @@
+---
+
+# Packages defaults:
+resources_package_state: 'present'
+
+# File defaults:
+resources_file_state: 'directory'
+resources_file_owner: 'root'
+resources_file_group: 'root'
+resources_file_mode:  '0755'
+
+# Copy defaults:
+resources_copy_owner: 'root'
+resources_copy_group: 'root'
+resources_copy_mode:  '0644'
+
+# Symlink defaults:
+resources_symlink_state: 'link'
+resources_symlink_owner: 'root'
+resources_symlink_group: 'root'
+
+# Groups defaults:
+resources_group_state: 'present'
+
+# Users defaults:
+resources_user_shell: '/usr/sbin/nologin'
+resources_user_comment: ''
+resources_user_groups: []
+resources_user_state: 'present'
+
+# Authorized keys default:
+resources_authorized_key_state: 'present'

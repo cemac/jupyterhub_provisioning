@@ -1,0 +1,54 @@
+import sys
+{% if jupyterhub_install.auth.name | default(jupyterhub_auth) == 'azure' %}
+import os
+from oauthenticator.azuread import LocalAzureAdOAuthenticator
+c.JupyterHub.authenticator_class = LocalAzureAdOAuthenticator
+c.AzureAdOAuthenticator.tenant_id = os.environ.get('AAD_TENANT_ID')
+c.AzureAdOAuthenticator.oauth_callback_url = '{{ jupyterhub_install.auth.callback_url }}'
+c.AzureAdOAuthenticator.client_id = '{{ jupyterhub_install.auth.client_id }}'
+c.AzureAdOAuthenticator.client_secret = '{{ jupyterhub_install.auth.client_secret }}'
+c.LocalAuthenticator.auto_login = True
+{% else %}
+c.PAMAuthenticator.service = 'login'
+c.PAMAuthenticator.open_sessions = False
+{% endif %}
+
+c.Application.log_level = '{{ jupyterhub_install.log_level | default(jupyterhub_log_level)  }}'
+c.JupyterHub.cleanup_proxy = True
+c.JupyterHub.cleanup_servers = True
+
+c.ConfigurableHTTPProxy.api_url = 'http://127.0.0.1:{{ jupyterhub_install.api_port }}'
+c.JupyterHub.base_url = '/{{ jupyterhub_install.name }}/'
+c.JupyterHub.hub_bind_url = 'http://127.0.0.1:{{ jupyterhub_install.bind_port }}'
+c.JupyterHub.ip = '127.0.0.1'
+c.JupyterHub.port = {{ jupyterhub_install.port }}
+c.Spawner.ip = '127.0.0.1'
+
+{% if jupyterhub_install.spawner.name | default(jupyterhub_spawner) == 'systemd' %}
+c.JupyterHub.spawner_class = 'systemdspawner.SystemdSpawner'
+c.SystemdSpawner.mem_limit = '{{ jupyterhub_install.spawner.mem_limit | default(jupyterhub_mem_limit) }}'
+c.SystemdSpawner.cpu_limit = {{ jupyterhub_install.spawner.cpu_limit | default(jupyterhub_cpu_limit) }}
+c.SystemdSpawner.default_shell = '{{ jupyterhub_install.spawner.default_shell | default(jupyterhub_default_shell) }}'
+c.SystemdSpawner.unit_name_template = 'jupyter_{{ jupyterhub_install.name }}-{USERNAME}-singleuser'
+c.SystemdSpawner.isolate_tmp = {{ jupyterhub_install.spawner.isolate_tmp | default(jupyterhub_isolate_tmp) }}
+c.SystemdSpawner.isolate_devices = {{ jupyterhub_install.spawner.isolate_devices | default(jupyterhub_isolate_devices) }}
+c.SystemdSpawner.disable_user_sudo = {{ jupyterhub_install.spawner.disable_user_sudo | default(jupyterhub_disable_sudo) }}
+c.SystemdSpawner.readonly_paths = {{ jupyterhub_install.spawner.readonly_paths | default(jupyterhub_readonly_paths) }}
+c.SystemdSpawner.readwrite_paths = {{ jupyterhub_install.spawner.readwrite_paths | default(jupyterhub_readwrite_paths) }}
+{% else %}
+c.JupyterHub.spawner_class = 'sudospawner.SudoSpawner'
+c.SudoSpawner.sudospawner_path = '{{ jupyterhub_install.python_dir }}/bin/sudospawner'
+{% endif %}
+
+{% if jupyterhub_install.cull_idle | default(jupyterhub_cull_idle) == true %}
+c.JupyterHub.services = [
+    {
+        'name': 'cull-idle',
+        'admin': True,
+        'command': [sys.executable, '{{ jupyterhub_config_dir }}/cull_idle_servers.py', '--timeout={{ jupyterhub_install.cull_timeout | default(jupyterhub_cull_timeout)}}'],
+    }
+]
+{% endif %}
+
+c.LocalAuthenticator.group_whitelist = set(['{{ jupyterhub_install.users.group | default(['jupyterhub_users_', jupyterhub_install.name] | join('')) }}'])
+c.LocalAuthenticator.admin_users = set({{ jupyterhub_install.users.admins }})

@@ -1,0 +1,20 @@
+---
+
+# configure:
+- name: 'jupyterhub configure'
+  include_tasks:
+    file: 'configure.yml'
+    apply:
+      tags:
+        - 'configure'
+        - 'jupyterhub'
+        - 'jupyterhub_configure'
+  loop: "{{ jupyterhub_installs }}"
+  loop_control:
+    loop_var: 'jupyterhub_install'
+  when: jupyterhub_installs is defined
+  tags:
+    - 'always'
+    - 'configure'
+    - 'jupyterhub'
+    - 'jupyterhub_configure'

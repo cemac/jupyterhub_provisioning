@@ -1,0 +1,9 @@
+---
+
+# configure:
+- import_tasks: 'configure.yml'
+  tags:
+    - 'configure'
+    - 'configure_resources'
+    - 'resources'
+    - 'resources_configure'

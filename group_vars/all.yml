@@ -1,0 +1,126 @@
+---
+
+#- Certbot
+
+# Certbot configuration:
+certbot_auto_renew: true
+certbot_auto_renew_user: 'root'
+certbot_auto_renew_hour: '04'
+certbot_auto_renew_minute: '57'
+certbot_auto_renew_options: '--quiet --no-self-upgrade'
+certbot_create_if_missing: true
+certbot_create_method: 'standalone'
+certbot_create_standalone_stop_services: []
+
+#- Resources
+
+# Packages:
+resources_packages_default:
+  - name: 'ssl-cert'
+
+# Files:
+resources_files_default:
+  # Make sure Apache config dirs exist:
+  - path: '/etc/apache2'
+  - path: '/etc/apache2/certs'
+    mode: '0750'
+    group: 'www-data'
+  - path: '/etc/apache2/conf-available'
+  # Remove Apache default files:
+  - path: '/etc/apache2/sites-available/000-default.conf'
+    state: 'absent'
+  - path: '/etc/apache2/sites-available/default-ssl.conf'
+    state: 'absent'
+  - path: '/var/www/html/index.html'
+    state: 'absent'
+
+# Files to be copied:
+resources_copies_default:
+  # Default .bashrc:
+  - src: 'files/etc/skel/.bashrc'
+    dest: '/etc/skel/.bashrc'
+  # Apache SSL Certificates:
+  - src: '/etc/ssl/certs/ssl-cert-snakeoil.pem'
+    remote_src: true
+    dest: '/etc/apache2/certs/localhost.crt'
+    group: 'www-data'
+    mode: '0640'
+  - src: '/etc/ssl/private/ssl-cert-snakeoil.key'
+    remote_src: true
+    dest: '/etc/apache2/certs/localhost.key'
+    group: 'www-data'
+    mode: '0640'
+  # Apache security configuration:
+  - src: 'files/etc/apache2/conf-available/security.conf'
+    dest: '/etc/apache2/conf-available/security.conf'
+    group: 'www-data'
+    mode: '0640'
+  # Default adduser settings (change directory mode):
+  - src: 'files/etc/adduser.conf'
+    dest: '/etc/adduser.conf'
+  # Adjust useradd behaviour (change directory mode):
+  - src: 'files/usr/local/bin/useradd'
+    dest: '/usr/local/bin/useradd'
+    mode: '0700'
+
+# Default user comment:
+resources_user_comment: 'Jupyterhub User'
+
+#- UFW Firewall
+
+# Firewall configuration:
+ufw_state: 'enabled'
+ufw_reset: false
+ufw_rules:
+  - port: '22'
+    rule: 'allow'
+    comment: 'Allow SSH'
+  - port: '80'
+    rule: 'allow'
+    comment: 'Allow HTTP'
+  - port: '443'
+    rule: 'allow'
+    comment: 'Allow HTTPS'
+  - from_ip: '127.0.0.1/8'
+    comment: 'Allow localhost'
+ufw_logging: 'medium'
+
+#- Apache configuration
+
+# Enabled modules:
+apache_mods_enabled:
+  - 'headers.load'
+  - 'proxy_http.load'
+  - 'proxy.load'
+  - 'proxy_wstunnel.load'
+  - 'rewrite.load'
+  - 'ssl.load'
+# Default options
+apache_allow_override: 'None'
+apache_options: '-Indexes -FollowSymLinks'
+# Create vhosts:
+apache_create_vhosts: true
+# Remove default vhost:
+apache_remove_default_vhost: true
+# Global vhost options:
+apache_global_vhost_settings: |
+  DirectoryIndex  index.html index.htm
+# SSL configuration:
+apache_ssl_protocol: 'All -SSLv2 -SSLv3 -TLSv1'
+apache_ssl_cipher_suite: 'HIGH:MEDIUM:!aNULL:!MD5:!SEED:!IDEA:!ADH:!EXPORT:!SSLv2:!RC4'
+# Virtual hosts:
+apache_vhosts:
+  - servername: 'localhost'
+    documentroot: '/var/www/html'
+    extra_parameters: |
+      RewriteEngine on
+        RewriteRule ^.* - [R=404]
+# SSL virtual hosts:
+apache_vhosts_ssl:
+  - servername: 'localhost'
+    documentroot: '/var/www/html'
+    certificate_file: '/etc/apache2/certs/localhost.crt'
+    certificate_key_file: '/etc/apache2/certs/localhost.key'
+    extra_parameters: |
+      RewriteEngine on
+        RewriteRule ^.* - [R=404]

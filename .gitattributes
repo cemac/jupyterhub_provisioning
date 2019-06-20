@@ -1,0 +1,2 @@
+host_vars/jupyter99.yml filter=git-crypt diff=git-crypt
+inventory/hosts.yml filter=git-crypt diff=git-crypt

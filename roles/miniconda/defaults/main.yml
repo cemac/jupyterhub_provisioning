@@ -1,0 +1,19 @@
+---
+
+# Installer:
+miniconda_mirror: 'https://repo.continuum.io/miniconda'
+miniconda_python_ver: '3'
+miniconda_installer: "Miniconda{{ miniconda_python_ver }}-latest-Linux-x86_64.sh"
+
+# Temp directory to download installer:
+miniconda_temp_dir: '/tmp'
+
+# Miniconda installs:
+miniconda_installs: []
+
+# Executables to wrap, if wrapping requested:
+miniconda_wrap_executables:
+  - 'python'
+
+# Make all lib files and directories world readable by default:
+miniconda_lib_make_readable: false

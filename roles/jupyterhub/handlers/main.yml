@@ -1,0 +1,5 @@
+---
+
+# Reload systemd daemons when adjusting service files:
+- name:    'jupyterhub systmctl daemon reload'
+  command: 'systemctl daemon-reload'

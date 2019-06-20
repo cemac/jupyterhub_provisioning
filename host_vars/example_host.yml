@@ -1,0 +1,190 @@
+---
+
+# Certbot
+certbot_certs:
+   - email: 'name@example.com'
+     domains:
+       - 'jupyterhub.example.com'
+
+# Files:
+resources_files_host:
+  # Create conda parent directories:
+  - path: '/opt/jupyterhub1234'
+  - path: '/opt/jupyterhub4567'
+
+# Copies:
+resources_copies_host:
+  # SSL certificates:
+  - src: '/etc/letsencrypt/live/jupyterhub.example.com/cert.pem'
+    remote_src: true
+    dest: '/etc/apache2/certs/host.crt'
+    group: 'www-data'
+    mode: '0640'
+  - src: '/etc/letsencrypt/live/jupyterhub.example.com/chain.pem'
+    remote_src: true
+    dest: '/etc/apache2/certs/chain.crt'
+    group: 'www-data'
+    mode: '0640'
+  - src: '/etc/letsencrypt/live/jupyterhub.example.com/privkey.pem'
+    remote_src: true
+    dest: '/etc/apache2/certs/host.key'
+    group: 'www-data'
+    mode: '0640'
+
+# Symlinks:
+resources_symlinks_host:
+  - src:  '/data/jupyterhub4567'
+    path: '/datadrive'
+
+# Users:
+resources_users_host:
+  - name: 'user00'
+    shell: '/bin/bash'
+  - name: 'user01'
+  - name: 'user02'
+  - name: 'user03'
+  - name: 'user04'
+  - name: 'user05'
+  - name: 'user06'
+
+# SSH authorized_keys:
+resources_authorized_keys_default:
+  - user: 'user00'
+    comment: 'user00@example'
+    key: 'ssh-rsa AAAtoijfoijdoijdoijdoijgowpokqwpqhak ...'
+
+# Miniconda installations:
+miniconda_installs:
+  # jupyterhub1234:
+  - path: '/opt/jupyterhub1234/conda'
+    user: 'root'
+    user_home: '/root'
+    updates: true
+    channels:
+      - 'conda-forge'
+    packages:
+      - 'jupyterhub'
+      - 'notebook'
+      - 'sudospawner'
+    wrap: true
+    wrapper_dir: '/opt/jupyterhub1234/bin'
+    wrap_executables:
+      - 'python'
+      - 'jupyterhub'
+  # jupyterhub4567:
+  - path: '/opt/jupyterhub4567/conda'
+    user: 'root'
+    user_home: '/root'
+    updates: true
+    channels:
+      - 'conda-forge'
+    packages:
+      - 'cartopy'
+      - 'jupyterhub'
+      - 'matplotlib'
+      - 'netCDF4'
+      - 'notebook'
+      - 'numpy'
+      - 'oauthenticator'
+      - 'pyjwt'
+      - 'scipy'
+    pip_packages:
+      - 'jupyterhub-systemdspawner'
+    wrap: true
+    wrapper_dir: '/opt/jupyterhub4567/bin'
+    wrap_executables:
+      - 'python'
+      - 'jupyterhub'
+
+# Domain from which to expect users when using Azure auth:
+jupyterhub_users_domain: 'example.com'
+# Make data directories writable by admins:
+jupyterhub_data_admin_rw: true
+# Jupyterhub installations:
+jupyterhub_installs:
+  # jupyterhub1234:
+  - name: 'jupyterhub1234'
+    python_dir: '/opt/jupyterhub1234'
+    spawner:
+      name: 'sudo'
+    user:
+      name: 'jupyterhub_jupyterhub1234'
+      home: '/var/lib/jupyterhub_jupyterhub1234'
+    api_port: '2021'
+    bind_port: '2011'
+    port: '2000' 
+    users:
+      users:
+        - 'user00'
+        - 'user01'
+        - 'user02'
+        - 'user03'
+      admins:
+        - 'user00'
+    data_dirs:
+      - path: '/data/jupyterhub1234'
+  # jupyterhub4567:
+  - name: 'jupyterhub4567'
+    python_dir: '/opt/jupyterhub4567'
+    spawner:
+      name: 'systemd'
+    user:
+      name: 'jupyterhub_jupyterhub4567'
+      home: '/var/lib/jupyterhub_jupyterhub4567'
+    auth:
+      name: 'azure'
+      tenant_id: 'common'
+      callback_url: 'https://jupyterhub.example.com/jupyterhub4567/hub/oauth_callback'
+      client_id: 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee'
+      client_secret: 'xxx'
+    api_port: '2051'
+    bind_port: '2041'
+    port: '2030' 
+    users:
+      users:
+        - 'user00'
+        - 'user04'
+        - 'user05'
+        - 'user06'
+      admins:
+        - 'user00'
+    data_dirs:
+      - path: '/data/jupyterhub4567'
+
+# Apache Virtual Hosts:
+apache_vhosts:
+  - servername: 'jupyterhub.example.com'
+    documentroot: '/var/www/html'
+    extra_parameters: |
+      #- rewrite everything to https:
+        RewriteEngine On
+        RewriteCond %{HTTPS} !on
+        RewriteRule (.*) https://%{SERVER_NAME}%{REQUEST_URI} [L,R=301]
+# SSL virtual hosts:
+apache_vhosts_ssl:
+  - servername: 'jupyterhub.example.com'
+    documentroot: '/var/www/html'
+    certificate_file: '/etc/apache2/certs/host.crt'
+    certificate_chain_file: '/etc/apache2/certs/chain.crt'
+    certificate_key_file: '/etc/apache2/certs/host.key'
+    extra_parameters: |
+      #- rewrites:
+        RewriteEngine On
+        RewriteRule /jupyterhub1234$ /jupyterhub1234/ [L,R=301]
+        RewriteRule /jupyterhub4567$ /jupyterhub4567/ [L,R=301]
+        #- handle websocket connection upgrades:
+        RewriteCond %{HTTP:Connection} Upgrade [NC]
+        RewriteCond %{HTTP:Upgrade} websocket [NC]
+        RewriteRule /jupyterhub1234/(.*) ws://localhost:2000/jupyterhub1234/$1 [P,L]
+        #
+        RewriteCond %{HTTP:Connection} Upgrade [NC]
+        RewriteCond %{HTTP:Upgrade} websocket [NC]
+        RewriteRule /jupyterhub4567/(.*) ws://localhost:2030/jupyterhub4567/$1 [P,L]
+        #- preserve host for proxied requests:
+        ProxyPreserveHost On
+        #- proxy jupyterhub:
+        ProxyPass /jupyterhub1234/ http://localhost:2000/jupyterhub1234/
+        ProxyPassReverse /jupyterhub1234/ http://localhost:2020/jupyterhub1234/
+        #
+        ProxyPass /jupyterhub4567/ http://localhost:2030/jupyterhub4567/
+        ProxyPassReverse /jupyterhub4567/ http://localhost:2050/jupyterhub4567/

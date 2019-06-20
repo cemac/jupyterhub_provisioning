@@ -1,0 +1,283 @@
+---
+
+# Configure default packages:
+- name: 'resources configure packages default'
+  package:
+    name: "{{ item.name }}"
+    state: "{{ item.state | default(resources_package_state) }}"
+  loop: "{{ resources_packages_default }}"
+  when: resources_packages_default is defined
+  tags:
+    - 'resources_configure_packages'
+    - 'resources_configure_packages_default'
+
+# Configure group packages:
+- name: 'resources configure packages group'
+  package:
+    name: "{{ item.name }}"
+    state: "{{ item.state | default(resources_package_state) }}"
+  loop: "{{ resources_packages_group }}"
+  when: resources_packages_group is defined
+  tags:
+    - 'resources_configure_packages'
+    - 'resources_configure_packages_group'
+
+# Configure host packages:
+- name: 'resources configure packages host'
+  package:
+    name: "{{ item.name }}"
+    state: "{{ item.state | default(resources_package_state) }}"
+  loop: "{{ resources_packages_host }}"
+  when: resources_packages_host is defined
+  tags:
+    - 'resources_configure_packages'
+    - 'resources_configure_packages_host'
+
+# Configure default files:
+- name: 'resources configure files default'
+  file:
+    path: "{{ item.path }}"
+    state: "{{ item.state | default(resources_file_state) }}"
+    owner: "{{ item.owner | default(resources_file_owner) }}"
+    group: "{{ item.group | default(resources_file_group) }}"
+    mode: "{{ item.mode | default(resources_file_mode) }}"
+  loop: "{{ resources_files_default }}"
+  when: resources_files_default is defined
+  tags:
+    - 'resources_configure_files'
+    - 'resources_configure_files_default'
+
+# Configure group specific files:
+- name: 'resources configure files group'
+  file:
+    path: "{{ item.path }}"
+    state: "{{ item.state | default(resources_file_state) }}"
+    owner: "{{ item.owner | default(resources_file_owner) }}"
+    group: "{{ item.group | default(resources_file_group) }}"
+    mode: "{{ item.mode | default(resources_file_mode) }}"
+  loop: "{{ resources_files_group }}"
+  when: resources_files_group is defined
+  tags:
+    - 'resources_configure_files'
+    - 'resources_configure_files_group'
+
+# Configure host specific files:
+- name: 'resources configure files host'
+  file:
+    path: "{{ item.path }}"
+    state: "{{ item.state | default(resources_file_state) }}"
+    owner: "{{ item.owner | default(resources_file_owner) }}"
+    group: "{{ item.group | default(resources_file_group) }}"
+    mode: "{{ item.mode | default(resources_file_mode) }}"
+  loop: "{{ resources_files_host }}"
+  when: resources_files_host is defined
+  tags:
+    - 'resources_configure_files'
+    - 'resources_configure_files_host'
+
+# Configure default copies:
+- name: 'resources configure copies default'
+  copy:
+    src: "{{ item.src }}"
+    remote_src: "{{ item.remote_src | default(false) }}"
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner | default(resources_copy_owner) }}"
+    group: "{{ item.group | default(resources_copy_group) }}"
+    mode: "{{ item.mode | default(resources_copy_mode) }}"
+  loop: "{{ resources_copies_default }}"
+  when: resources_copies_default is defined 
+  tags:
+    - 'resources_configure_copies'
+    - 'resources_configure_copies_default'
+
+# Configure group specific copies:
+- name: 'resources configure copies group'
+  copy:
+    src: "{{ item.src }}"
+    remote_src: "{{ item.remote_src | default(false) }}"
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner | default(resources_copy_owner) }}"
+    group: "{{ item.group | default(resources_copy_group) }}"
+    mode: "{{ item.mode | default(resources_copy_mode) }}"
+  loop: "{{ resources_copies_group }}"
+  when: resources_copies_group is defined 
+  tags:
+    - 'resources_configure_copies'
+    - 'resources_configure_copies_group'
+
+# Configure host specific copies:
+- name: 'resources configure copies host'
+  copy:
+    src: "{{ item.src }}"
+    remote_src: "{{ item.remote_src | default(false) }}"
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner | default(resources_copy_owner) }}"
+    group: "{{ item.group | default(resources_copy_group) }}"
+    mode: "{{ item.mode | default(resources_copy_mode) }}"
+  loop: "{{ resources_copies_host }}"
+  when: resources_copies_host is defined 
+  tags:
+    - 'resources_configure_copies'
+    - 'resources_configure_copies_host'
+
+# Configure default symlinks:
+- name: 'resources configure symlinks default'
+  file:
+    path: "{{ item.path }}"
+    src: "{{ item.src }}"
+    state: "{{ item.state | default(resources_symlink_state) }}"
+    owner: "{{ item.owner | default(resources_symlink_owner) }}"
+    group: "{{ item.group | default(resources_symlink_group) }}"
+    force: true
+  loop: "{{ resources_symlinks_default }}"
+  when: resources_symlinks_default is defined
+  tags:
+    - 'resources_configure_symlinks'
+    - 'resources_configure_symlinks_default'
+
+# Configure group specific symlinks:
+- name: 'resources configure symlinks group'
+  file:
+    path: "{{ item.path }}"
+    src: "{{ item.src }}"
+    state: "{{ item.state | default(resources_symlink_state) }}"
+    owner: "{{ item.owner | default(resources_symlink_owner) }}"
+    group: "{{ item.group | default(resources_symlink_group) }}"
+    force: true
+  loop: "{{ resources_symlinks_group }}"
+  when: resources_symlinks_group is defined
+  tags:
+    - 'resources_configure_symlinks'
+    - 'resources_configure_symlinks_group'
+
+# Configure host specific symlinks:
+- name: 'resources configure symlinks host'
+  file:
+    path: "{{ item.path }}"
+    src: "{{ item.src }}"
+    state: "{{ item.state | default(resources_symlink_state) }}"
+    owner: "{{ item.owner | default(resources_symlink_owner) }}"
+    group: "{{ item.group | default(resources_symlink_group) }}"
+    force: true
+  loop: "{{ resources_symlinks_host }}"
+  when: resources_symlinks_host is defined
+  tags:
+    - 'resources_configure_symlinks'
+    - 'resources_configure_symlinks_host'
+
+# Configure default groups:
+- name: 'resources configure groups default'
+  group:
+    name: "{{ item.name }}"
+    state: "{{ item.state | default(resources_group_state) }}"
+  loop: "{{ resources_groups_default }}"
+  when: resources_groups_default is defined
+  tags:
+    - 'resources_configure_groups'
+    - 'resources_configure_groups_default'
+
+# Configure group groups:
+- name: 'resources configure groups group'
+  group:
+    name: "{{ item.name }}"
+    state: "{{ item.state | default(resources_group_state) }}"
+  loop: "{{ resources_groups_group }}"
+  when: resources_groups_group is defined
+  tags:
+    - 'resources_configure_groups'
+    - 'resources_configure_groups_group'
+
+# Configure host groups:
+- name: 'resources configure groups host'
+  group:
+    name: "{{ item.name }}"
+    state: "{{ item.state | default(resources_group_state) }}"
+  loop: "{{ resources_groups_host }}"
+  when: resources_groups_host is defined
+  tags:
+    - 'resources_configure_groups'
+    - 'resources_configure_groups_host'
+
+# Configure default users:
+- name: 'resources configure users default'
+  user:
+    name: "{{ item.name }}"
+    comment: "{{ item.comment | default(resources_user_comment) }}"
+    groups: "{{ item.groups | default(resources_user_groups) }}"
+    append: "{{ item.append | default(true) }}"
+    shell: "{{ item.shell | default(resources_user_shell) }}"
+    state: "{{ item.state | default(resources_user_state) }}"
+  loop: "{{ resources_users_default }}"
+  when: resources_users_default is defined
+  tags:
+    - 'resources_configure_users'
+    - 'resources_configure_users_default'
+
+# Configure group users:
+- name: 'resources configure users group'
+  user:
+    name: "{{ item.name }}"
+    comment: "{{ item.comment | default(resources_user_comment) }}"
+    groups: "{{ item.groups | default(resources_user_groups) }}"
+    append: "{{ item.append | default(true) }}"
+    shell: "{{ item.shell | default(resources_user_shell) }}"
+    state: "{{ item.state | default(resources_user_state) }}"
+  loop: "{{ resources_users_group }}"
+  when: resources_users_group is defined
+  tags:
+    - 'resources_configure_users'
+    - 'resources_configure_users_group'
+
+# Configure host users:
+- name: 'resources configure users host'
+  user:
+    name: "{{ item.name }}"
+    comment: "{{ item.comment | default(resources_user_comment) }}"
+    groups: "{{ item.groups | default(resources_user_groups) }}"
+    append: "{{ item.append | default(true) }}"
+    shell: "{{ item.shell | default(resources_user_shell) }}"
+    state: "{{ item.state | default(resources_user_state) }}"
+  loop: "{{ resources_users_host }}"
+  when: resources_users_host is defined
+  tags:
+    - 'resources_configure_users'
+    - 'resources_configure_users_host'
+
+# Configure default authorized keys:
+- name: 'resources configure authorized keys default'
+  authorized_key:
+    user: "{{ item.user }}"
+    state: "{{ item.state | default(resources_authorized_key_state) }}"
+    comment: "{{ item.comment | default('') }}"
+    key: "{{ item.key }}"
+  loop: "{{ resources_authorized_keys_default }}"
+  when: resources_authorized_keys_default is defined
+  tags:
+    - 'resources_configure_authorized_keys'
+    - 'resources_configure_authorized_keys_default'
+
+# Configure group authorized keys:
+- name: 'resources configure authorized keys group'
+  authorized_key:
+    user: "{{ item.user }}"
+    state: "{{ item.state | default(resources_authorized_key_state) }}"
+    comment: "{{ item.comment | default('') }}"
+    key: "{{ item.key }}"
+  loop: "{{ resources_authorized_keys_group }}"
+  when: resources_authorized_keys_group is defined
+  tags:
+    - 'resources_configure_authorized_keys'
+    - 'resources_configure_authorized_keys_group'
+
+# Configure host authorized keys:
+- name: 'resources configure authorized keys host'
+  authorized_key:
+    user: "{{ item.user }}"
+    state: "{{ item.state | default(resources_authorized_key_state) }}"
+    comment: "{{ item.comment | default('') }}"
+    key: "{{ item.key }}"
+  loop: "{{ resources_authorized_keys_host }}"
+  when: resources_authorized_keys_host is defined
+  tags:
+    - 'resources_configure_authorized_keys'
+    - 'resources_configure_authorized_keys_host'

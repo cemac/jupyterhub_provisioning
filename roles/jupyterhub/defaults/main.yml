@@ -1,0 +1,30 @@
+---
+
+# Main jupyterhub group name:
+jupyterhub_group: 'jupyterhub'
+# Main jupyterhub config dir:
+jupyterhub_config_dir: '/etc/jupyterhub'
+# Default spawner to use ('sudo' or 'systemd'):
+jupyterhub_spawner: 'sudo'
+# Systemd spawner defaults:
+jupyterhub_mem_limit: '4G'
+jupyterhub_cpu_limit: '1.0'
+jupyterhub_default_shell: '/bin/bash'
+jupyterhub_isolate_tmp: 'True'
+jupyterhub_isolate_devices: 'True'
+jupyterhub_disable_sudo: 'True'
+jupyterhub_readonly_paths:
+  - '/'
+jupyterhub_readwrite_paths:
+  - '/home/{USERNAME}'
+# Add default write access to data directories for admins:
+jupyterhub_data_admin_rw: false
+# Default auth to use ('local' or 'azure'):
+jupyterhub_auth: 'local'
+# Domain from which to expect users when using Azure auth:
+jupyterhub_users_domain: 'outlook.com'
+# Default log level:
+jupyterhub_log_level: 'DEBUG'
+# Cull idle by default:
+jupyterhub_cull_idle: true
+jupyterhub_cull_timeout: '3600'

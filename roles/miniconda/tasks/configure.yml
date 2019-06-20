@@ -1,0 +1,78 @@
+---
+
+# Add packages:
+- name: 'miniconda configure packages'
+  become_user: "{{ miniconda_install.user }}"
+  command: "{{ miniconda_install.path }}/bin/conda install -y {{ miniconda_install.packages | join(' ') }}"
+  when: miniconda_install.packages is defined
+  tags:
+    - 'miniconda_configure_packages'
+
+# Add pip packages:
+- name: 'miniconda configure pip packages'
+  become_user: "{{ miniconda_install.user }}"
+  pip:
+    name: "{{ miniconda_install.pip_packages }}"
+    executable: "{{ miniconda_install.path }}/bin/pip"
+  when: miniconda_install.pip_packages is defined
+  tags:
+    - 'miniconda_configure_pip_packages'
+
+# Update miniconda:
+- name: 'miniconda configure update'
+  become_user: "{{ miniconda_install.user }}"
+  command: "{{ miniconda_install.path }}/bin/conda update -y --all"
+  when: miniconda_install.updates is defined and
+        miniconda_install.updates
+  tags:
+    - 'miniconda_configure_update'
+
+# Wrap miniconda:
+- name: 'miniconda configure wrapper directory'
+  file:
+    path: "{{ miniconda_install.wrapper_dir }}"
+    state: 'directory'
+    owner: "{{ miniconda_install.user }}"
+  when: miniconda_install.wrap is defined and
+        miniconda_install.wrap
+  tags:
+    - 'miniconda_wrap'
+    - 'miniconda_configure_wrapper_directory'
+- name: 'miniconda configure wrapper'
+  template:
+    src: 'wrapper.j2'
+    dest: "{{ miniconda_install.wrapper_dir }}/__wrapper"
+    owner: "{{ miniconda_install.user }}"
+    mode: '0755'
+  when: miniconda_install.wrap is defined and
+        miniconda_install.wrap
+  tags:
+    - 'miniconda_wrap'
+    - 'miniconda_configure_wrapper'
+- name: 'miniconda configure wrap executables'
+  file:
+    path: "{{ miniconda_install.wrapper_dir }}/{{ item }}"
+    src: "{{ miniconda_install.wrapper_dir }}/__wrapper"
+    state: 'link'
+  loop: "{{ miniconda_install.wrap_executables | default(miniconda_wrap_executables) }}"
+  when: miniconda_install.wrap is defined and
+        miniconda_install.wrap
+  tags:
+    - 'miniconda_wrap'
+    - 'miniconda_configure_wrap_executables'
+
+# Make libs readable ... :
+- name: 'miniconda configure lib dir permissions'
+  become_user: "{{ miniconda_install.user }}"
+  command: "find {{ miniconda_install.path }}/lib -type d -exec chmod a+rx '{}' \\;"
+  when: miniconda_lib_make_readable is defined and
+        miniconda_lib_make_readable
+  tags:
+    - 'miniconda_configure_lib_dir_permissions'
+- name: 'miniconda configure lib file permissions'
+  become_user: "{{ miniconda_install.user }}"
+  command: "find {{ miniconda_install.path }}/lib -type f -exec chmod a+r '{}' \\;"
+  when: miniconda_lib_make_readable is defined and
+        miniconda_lib_make_readable
+  tags:
+    - 'miniconda_configure_lib_file_permissions'

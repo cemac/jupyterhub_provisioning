@@ -1,0 +1,10 @@
+---
+
+- hosts: 'all'
+  roles:
+    - 'certbot'
+    - 'resources'
+    - 'ufw'
+    - 'miniconda'
+    - 'jupyterhub'
+    - 'apache'

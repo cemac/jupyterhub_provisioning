@@ -1,0 +1,9 @@
+[submodule "roles/apache"]
+	path = roles/apache
+	url = https://github.com/geerlingguy/ansible-role-apache/
+[submodule "roles/certbot"]
+	path = roles/certbot
+	url = https://github.com/geerlingguy/ansible-role-certbot/
+[submodule "roles/ufw"]
+	path = roles/ufw
+	url = https://github.com/weareinteractive/ansible-ufw/

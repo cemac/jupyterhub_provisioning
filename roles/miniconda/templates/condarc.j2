@@ -1,0 +1,4 @@
+channels:
+{% for miniconda_channel in miniconda_install.channels: %}
+  - {{ miniconda_channel }}
+{% endfor %}

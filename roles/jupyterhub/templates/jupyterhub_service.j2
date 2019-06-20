@@ -1,0 +1,26 @@
+[Unit]
+Description=Jupyterhub Service
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+{% if jupyterhub_install.spawner.name | default(jupyterhub_spawner) == 'systemd' %}
+User=root
+{% else %}
+User={{ jupyterhub_install.user.name }}
+{% endif %}
+{% if jupyterhub_install.spawner.name | default(jupyterhub_spawner) == 'systemd' %}
+WorkingDirectory={{ jupyterhub_install.working_dir | default(['/var/lib/jupyterhub_', jupyterhub_install.name] | join('')) }}
+{% else %}
+WorkingDirectory={{ jupyterhub_install.user.home }}
+{% endif %}
+{% if jupyterhub_install.auth.name | default(jupyterhub_auth) == 'azure' %}
+Environment="AAD_TENANT_ID={{ jupyterhub_install.auth.tenant_id }}"
+{% endif %}
+ExecStart={{ jupyterhub_install.python_dir }}/bin/jupyterhub -f {{ jupyterhub_config_dir }}/jupyterhub_{{ jupyterhub_install.name }}_config.py
+KillMode=control-group
+StandardOutput=syslog
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
