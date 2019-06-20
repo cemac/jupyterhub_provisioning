@@ -50,6 +50,9 @@ resources_copies_default:
     dest: '/etc/apache2/certs/localhost.key'
     group: 'www-data'
     mode: '0640'
+  # Privacy Notice:
+  - src: 'files/var/www/html/privacy.html'
+    dest: '/var/www/html/privacy.html'
   # Apache security configuration:
   - src: 'files/etc/apache2/conf-available/security.conf'
     dest: '/etc/apache2/conf-available/security.conf'
