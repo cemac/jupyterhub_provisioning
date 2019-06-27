@@ -60,19 +60,3 @@
   tags:
     - 'miniconda_wrap'
     - 'miniconda_configure_wrap_executables'
-
-# Make libs readable ... :
-- name: 'miniconda configure lib dir permissions'
-  become_user: "{{ miniconda_install.user }}"
-  command: "find {{ miniconda_install.path }}/lib -type d -exec chmod a+rx '{}' \\;"
-  when: miniconda_lib_make_readable is defined and
-        miniconda_lib_make_readable
-  tags:
-    - 'miniconda_configure_lib_dir_permissions'
-- name: 'miniconda configure lib file permissions'
-  become_user: "{{ miniconda_install.user }}"
-  command: "find {{ miniconda_install.path }}/lib -type f -exec chmod a+r '{}' \\;"
-  when: miniconda_lib_make_readable is defined and
-        miniconda_lib_make_readable
-  tags:
-    - 'miniconda_configure_lib_file_permissions'
