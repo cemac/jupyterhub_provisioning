@@ -27,6 +27,18 @@
   tags:
     - 'miniconda_configure_update'
 
+# Update pip packages:
+- name: 'miniconda configure update pip'
+  become_user: "{{ miniconda_install.user }}"
+  pip:
+    name: "{{ miniconda_install.pip_packages }}"
+    executable: "{{ miniconda_install.path }}/bin/pip"
+    extra_args: '-U' 
+  when: miniconda_install.pip_packages is defined and
+        miniconda_install.updates
+  tags:
+    - 'miniconda_configure_pip_packages'
+
 # Wrap miniconda:
 - name: 'miniconda configure wrapper directory'
   file:
