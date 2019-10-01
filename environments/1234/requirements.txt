@@ -1,7 +1,7 @@
 # This file may be used to create an environment using:
 # $ conda create --name <env> --file <this file>
 # platform: linux-64
-alembic=1.2.0=py_0
+alembic=1.2.1=py_0
 asn1crypto=0.24.0=py37_1003
 async_generator=1.10=py_0
 attrs=19.1.0=py_0
@@ -25,7 +25,7 @@ curl=7.65.3=hf8cf82a_0
 cycler=0.10.0=py_1
 dbus=1.13.6=he372182_0
 decorator=4.4.0=py_0
-defusedxml=0.5.0=py_1
+defusedxml=0.6.0=py_0
 entrypoints=0.3=py37_1000
 expat=2.2.5=he1b5a44_1003
 fontconfig=2.13.1=h86ecdb6_1001
@@ -46,7 +46,7 @@ jedi=0.15.1=py37_0
 jinja2=2.10.1=py_0
 jpeg=9c=h14c3975_1001
 jsonschema=3.0.2=py37_0
-jupyter_client=5.3.3=py_0
+jupyter_client=5.3.3=py37_1
 jupyter_core=4.4.0=py_0
 jupyterhub=1.0.0=py37_0
 jupyterhub-systemdspawner=0.13=pypi_0
@@ -137,7 +137,7 @@ tk=8.6.9=hed695b0_1003
 tornado=6.0.3=py37h516909a_0
 tqdm=4.36.1=py_0
 traitlets=4.3.2=py37_1000
-urllib3=1.25.5=py37_0
+urllib3=1.25.6=py37_0
 wcwidth=0.1.7=py_1
 webencodings=0.5.1=py_1
 wheel=0.33.6=py37_0
