@@ -73,10 +73,12 @@ libpng=1.6.37=hed695b0_0
 libsodium=1.0.17=h516909a_0
 libssh2=1.8.2=h22169c7_2
 libstdcxx-ng=9.1.0=hdf63c60_0
+libtiff=4.0.10=hfc65ed5_1004
 libuuid=2.32.1=h14c3975_1000
 libxcb=1.13=h14c3975_1002
 libxkbcommon=0.8.4=h516909a_0
 libxml2=2.9.9=hee79883_5
+lz4-c=1.8.3=he1b5a44_1001
 mako=1.1.0=py_0
 markupsafe=1.1.1=py37h14c3975_0
 matplotlib=3.1.1=py37_1
@@ -95,6 +97,7 @@ nss=3.46=he751ad9_0
 numpy=1.17.2=py37h95a1406_0
 oauthenticator=0.9.0=py_0
 oauthlib=3.0.1=py_0
+olefile=0.46=py_0
 openssl=1.1.1c=h516909a_0
 pamela=1.0.0=py_0
 pandas=0.25.1=py37hb3f55d8_0
@@ -104,6 +107,7 @@ parso=0.5.1=py_0
 pcre=8.43=he1b5a44_0
 pexpect=4.7.0=py37_0
 pickleshare=0.7.5=py37_1000
+pillow=6.2.0=py37h6b7be26_0
 pip=19.2.3=py37_0
 proj4=5.2.0=he1b5a44_1006
 prometheus_client=0.7.1=py_0
@@ -158,3 +162,4 @@ yaml=0.1.7=had09818_2
 zeromq=4.3.2=he1b5a44_2
 zipp=0.6.0=py_0
 zlib=1.2.11=h7b6447c_3
+zstd=1.4.3=h3b9ef0a_0
