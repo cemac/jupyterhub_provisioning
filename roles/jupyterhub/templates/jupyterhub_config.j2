@@ -23,6 +23,13 @@ c.JupyterHub.hub_bind_url = 'http://127.0.0.1:{{ jupyterhub_install.bind_port }}
 c.JupyterHub.ip = '127.0.0.1'
 c.JupyterHub.port = {{ jupyterhub_install.port }}
 c.Spawner.ip = '127.0.0.1'
+{% if jupyterhub_install.environment_vars is defined %}
+c.Spawner.environment = {
+{%   for environment_var in jupyterhub_install.environment_vars %}
+    '{{ environment_var.name }}': '{{ environment_var.value }}',
+{%   endfor %}
+}
+{% endif %}
 
 {% if jupyterhub_install.spawner.name | default(jupyterhub_spawner) == 'systemd' %}
 c.JupyterHub.spawner_class = 'systemdspawner.SystemdSpawner'
