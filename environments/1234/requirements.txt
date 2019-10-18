@@ -26,7 +26,7 @@ dbus=1.13.6=he372182_0
 decorator=4.4.0=py_0
 defusedxml=0.6.0=py_0
 entrypoints=0.3=py37_1000
-expat=2.2.5=he1b5a44_1003
+expat=2.2.5=he1b5a44_1004
 fontconfig=2.13.1=h86ecdb6_1001
 freetype=2.10.0=he983fc9_1
 geos=3.7.2=he1b5a44_2
@@ -103,7 +103,7 @@ pcre=8.43=he1b5a44_0
 pexpect=4.7.0=py37_0
 pickleshare=0.7.5=py37_1000
 pillow=6.2.0=py37h6b7be26_0
-pip=19.3=py37_0
+pip=19.3.1=py37_0
 proj4=6.1.1=hc80f0dc_1
 prometheus_client=0.7.1=py_0
 prompt_toolkit=2.0.10=py_0
