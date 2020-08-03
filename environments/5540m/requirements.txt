@@ -83,11 +83,11 @@ ncurses=6.1=hf484d3e_1002
 netcdf4=1.4.2=py37h2b0cf2a_1000
 nodejs=11.14.0=he1b5a44_1
 notebook=6.0.1=py37_0
-numpy=1.19.0=py37h8960a57_0
+numpy=1.19.1=py37h8960a57_0
 oauthenticator=0.11.0=py_0
 oauthlib=3.0.1=py_0
 openblas=0.3.3=ha44fe06_1
-openssl=1.1.1g=h516909a_0
+openssl=1.1.1g=h516909a_1
 pamela=1.0.0=py_0
 pandoc=2.7.3=0
 pandocfilters=1.4.2=py_1
@@ -120,7 +120,7 @@ qt=5.9.7=h0c104cb_3
 readline=8.0=hf8c457e_0
 requests=2.22.0=py37_1
 ruamel_yaml=0.15.71=py37h14c3975_1000
-scipy=1.5.1=py37ha3d9a3c_0
+scipy=1.5.2=py37hb14ef9d_0
 send2trash=1.5.0=py_0
 setuptools=41.0.1=py37_0
 sip=4.19.8=py37hf484d3e_1000
