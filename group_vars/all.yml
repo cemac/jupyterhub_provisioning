@@ -67,7 +67,7 @@ resources_copies_default:
     mode: '0700'
 
 # Default user comment:
-resources_user_comment: 'Jupyterhub User'
+resources_user_comment: 'JupyterHub User'
 
 #- UFW Firewall
 
