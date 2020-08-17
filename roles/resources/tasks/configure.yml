@@ -202,6 +202,7 @@
 - name: 'resources configure users default'
   user:
     name: "{{ item.name }}"
+    home: "{{ item.home | default(resources_user_basedir ~ '/' ~ item.name) }}"
     comment: "{{ item.comment | default(resources_user_comment) }}"
     groups: "{{ item.groups | default(resources_user_groups) }}"
     append: "{{ item.append | default(true) }}"
@@ -217,6 +218,7 @@
 - name: 'resources configure users group'
   user:
     name: "{{ item.name }}"
+    home: "{{ item.home | default(resources_user_basedir ~ '/' ~ item.name) }}"
     comment: "{{ item.comment | default(resources_user_comment) }}"
     groups: "{{ item.groups | default(resources_user_groups) }}"
     append: "{{ item.append | default(true) }}"
@@ -232,6 +234,7 @@
 - name: 'resources configure users host'
   user:
     name: "{{ item.name }}"
+    home: "{{ item.home | default(resources_user_basedir ~ '/' ~ item.name) }}"
     comment: "{{ item.comment | default(resources_user_comment) }}"
     groups: "{{ item.groups | default(resources_user_groups) }}"
     append: "{{ item.append | default(true) }}"

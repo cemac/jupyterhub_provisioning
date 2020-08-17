@@ -24,6 +24,7 @@ resources_group_state: 'present'
 
 # Users defaults:
 resources_user_shell: '/usr/sbin/nologin'
+resources_user_basedir: '/home'
 resources_user_comment: ''
 resources_user_groups: []
 resources_user_state: 'present'
