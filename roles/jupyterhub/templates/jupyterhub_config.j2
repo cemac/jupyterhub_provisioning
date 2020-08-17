@@ -7,7 +7,11 @@ c.AzureAdOAuthenticator.tenant_id = os.environ.get('AAD_TENANT_ID')
 c.AzureAdOAuthenticator.oauth_callback_url = '{{ jupyterhub_install.auth.callback_url }}'
 c.AzureAdOAuthenticator.client_id = '{{ jupyterhub_install.auth.client_id }}'
 c.AzureAdOAuthenticator.client_secret = '{{ jupyterhub_install.auth.client_secret }}'
+{% if jupyterhub_install.auth.post_logout_redirect_uri is defined %}
+c.AzureAdOAuthenticator.post_logout_redirect_uri = '{{ jupyterhub_install.auth.post_logout_redirect_uri }}'
+{% endif %}
 c.LocalAuthenticator.auto_login = True
+
 {% else %}
 c.PAMAuthenticator.service = 'login'
 c.PAMAuthenticator.open_sessions = False
