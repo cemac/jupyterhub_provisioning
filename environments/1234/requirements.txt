@@ -199,7 +199,7 @@ xorg-xextproto=7.3.0=h14c3975_1002
 xorg-xproto=7.0.31=h14c3975_1007
 xz=5.2.5=h516909a_1
 yaml=0.2.5=h516909a_0
-zeromq=4.3.3=he1b5a44_1
+zeromq=4.3.3=he1b5a44_2
 zipp=3.3.0=py_0
 zlib=1.2.11=h516909a_1009
 zstd=1.4.5=h6597ccf_2
