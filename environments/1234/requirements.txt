@@ -25,7 +25,7 @@ cffi=1.14.3=py38h5bae8af_0
 cfitsio=3.470=hce51eda_6
 cftime=1.2.1=py38h8790de6_0
 chardet=3.0.4=py38h32f6830_1007
-conda=4.8.5=py38h32f6830_1
+conda=4.8.5=py38h924ce5b_2
 conda-package-handling=1.7.0=py38h1e0a361_5
 configurable-http-proxy=4.2.1=node13_he01fd0c_0
 cryptography=3.1.1=py38h766eaa4_0
@@ -152,7 +152,7 @@ pyproj=2.6.1.post1=py38h8e47818_1
 pyrsistent=0.17.3=py38h1e0a361_0
 pyshp=2.1.2=pyh9f0ad1d_0
 pysocks=1.7.1=py38h32f6830_1
-python=3.8.5=h1103e12_9_cpython
+python=3.8.6=h852b56e_0_cpython
 python-dateutil=2.8.1=py_0
 python-editor=1.0.4=py_0
 python-json-logger=0.1.11=py_0
@@ -171,14 +171,14 @@ setuptools=49.6.0=py38h32f6830_1
 shapely=1.7.1=py38hc7361b7_0
 six=1.15.0=pyh9f0ad1d_0
 sqlalchemy=1.3.19=py38h1e0a361_0
-sqlite=3.33.0=h4cf870e_0
+sqlite=3.33.0=h4cf870e_1
 tbb=2020.2=hc9558a2_0
 terminado=0.9.1=py38h32f6830_0
 testpath=0.4.4=py_0
 tiledb=2.0.8=h3effe38_1
-tk=8.6.10=hed695b0_0
+tk=8.6.10=hed695b0_1
 tornado=6.0.4=py38h1e0a361_1
-tqdm=4.50.0=pyh9f0ad1d_0
+tqdm=4.50.1=pyh9f0ad1d_0
 traitlets=5.0.4=py_1
 tzcode=2020a=h516909a_0
 urllib3=1.25.10=py_0

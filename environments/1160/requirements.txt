@@ -18,7 +18,7 @@ certifi=2020.6.20=py38h32f6830_0
 certipy=0.1.3=py_0
 cffi=1.14.0=py38he30daa8_1
 chardet=3.0.4=py38_1003
-conda=4.8.5=py38h32f6830_1
+conda=4.8.5=py38h924ce5b_2
 conda-package-handling=1.6.1=py38h7b6447c_0
 configurable-http-proxy=4.2.1=node13_he01fd0c_0
 cryptography=2.9.2=py38h1ba5d50_0

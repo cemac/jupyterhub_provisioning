@@ -25,7 +25,7 @@ cftime=1.2.1=py38h8790de6_0
 chardet=3.0.4=py38_1003
 click=7.1.2=pyh9f0ad1d_0
 cloudpickle=1.5.0=py_0
-conda=4.8.5=py38h32f6830_1
+conda=4.8.5=py38h924ce5b_2
 conda-package-handling=1.6.1=py38h7b6447c_0
 configurable-http-proxy=4.2.1=node13_he01fd0c_0
 cryptography=2.9.2=py38h1ba5d50_0
