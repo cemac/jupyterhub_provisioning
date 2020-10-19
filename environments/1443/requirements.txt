@@ -24,7 +24,7 @@ cffi=1.14.1=py38h5bae8af_0
 cfitsio=3.470=hce51eda_6
 cftime=1.2.1=py38h8790de6_0
 chardet=3.0.4=py38_1003
-conda=4.8.5=py38h924ce5b_2
+conda=4.9.0=py38h924ce5b_0
 conda-package-handling=1.6.1=py38h7b6447c_0
 configurable-http-proxy=4.2.1=node13_he01fd0c_0
 cryptography=2.9.2=py38h1ba5d50_0
@@ -107,8 +107,8 @@ nbformat=5.0.7=py_0
 ncurses=6.2=he6710b0_1
 netcdf4=1.5.4=nompi_py38hec8b9af_103
 nodejs=13.13.0=hf5d1a2b_0
-notebook=6.1.4=py38h32f6830_0
-numpy=1.19.2=py38hbc27379_1
+notebook=6.1.4=py38h32f6830_1
+numpy=1.19.2=py38hf89b668_1
 oauthenticator=0.11.0=py_0
 oauthlib=3.0.1=py_0
 olefile=0.46=py_0
@@ -124,7 +124,7 @@ parso=0.7.1=pyh9f0ad1d_0
 pcre=8.44=he1b5a44_0
 pexpect=4.8.0=py38h32f6830_1
 pickleshare=0.7.5=py38h32f6830_1001
-pillow=7.2.0=py38h9776b28_2
+pillow=8.0.0=py38h9776b28_0
 pip=20.0.2=py38_3
 pixman=0.38.0=h516909a_1003
 poppler=0.87.0=h4190859_1
