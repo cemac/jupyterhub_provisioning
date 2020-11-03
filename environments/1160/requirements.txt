@@ -21,7 +21,7 @@ chardet=3.0.4=py38_1003
 conda=4.9.0=py38h924ce5b_1
 conda-package-handling=1.6.1=py38h7b6447c_0
 configurable-http-proxy=4.2.1=node13_he01fd0c_0
-cryptography=2.9.2=py38h1ba5d50_0
+cryptography=3.2.1=py38h7699a38_0
 cycler=0.10.0=py_2
 decorator=4.4.2=py_0
 defusedxml=0.6.0=py_0
