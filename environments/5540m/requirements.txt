@@ -28,7 +28,7 @@ cycler=0.10.0=py_2
 decorator=4.4.2=py_0
 defusedxml=0.6.0=py_0
 entrypoints=0.3=py38h32f6830_1001
-fair=1.5.1=pypi_0
+fair=1.6.1=pypi_0
 freetype=2.10.2=he06d7ca_0
 hdf4=4.2.13=hf30be14_1003
 hdf5=1.10.6=nompi_h3c11f04_101
@@ -84,13 +84,14 @@ ncurses=6.2=he6710b0_1
 netcdf4=1.5.4=nompi_py38hec8b9af_103
 nodejs=13.13.0=hf5d1a2b_0
 notebook=6.1.4=py38h32f6830_1
-numpy=1.19.2=py38hf89b668_1
+numpy=1.19.4=py38hf0fd68c_0
 oauthenticator=0.12.0=py_0
 oauthlib=3.0.1=py_0
 olefile=0.46=py_0
 openssl=1.1.1h=h516909a_0
 packaging=20.4=pyh9f0ad1d_0
 pamela=1.0.0=py_0
+pandas=1.1.4=py38h0ef3d22_0
 pandoc=2.10.1=h516909a_0
 pandocfilters=1.4.2=py_1
 parso=0.7.1=pyh9f0ad1d_0
@@ -115,6 +116,7 @@ python-dateutil=2.8.1=py_0
 python-editor=1.0.4=py_0
 python-json-logger=0.1.11=py_0
 python_abi=3.8=1_cp38
+pytz=2020.4=pyhd8ed1ab_0
 pyzmq=19.0.2=py38ha71036d_0
 readline=8.0=h7b6447c_0
 requests=2.23.0=py38_0
