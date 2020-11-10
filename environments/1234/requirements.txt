@@ -114,7 +114,7 @@ nodejs=12.19.0=h628520e_0
 notebook=6.1.4=py38h32f6830_1
 nspr=4.29=he1b5a44_1
 nss=3.58=h27285de_1
-numpy=1.19.4=py38hf0fd68c_0
+numpy=1.19.4=py38hf0fd68c_1
 oauthenticator=0.12.0=py_0
 oauthlib=3.0.1=py_0
 olefile=0.46=pyh9f0ad1d_1

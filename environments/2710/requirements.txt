@@ -100,7 +100,7 @@ ncurses=6.2=he6710b0_1
 netcdf4=1.5.4=nompi_py38hec8b9af_103
 nodejs=13.13.0=hf5d1a2b_0
 notebook=6.1.4=py38h32f6830_1
-numpy=1.19.4=py38hf0fd68c_0
+numpy=1.19.4=py38hf0fd68c_1
 oauthenticator=0.12.0=py_0
 oauthlib=3.0.1=py_0
 olefile=0.46=py_0
