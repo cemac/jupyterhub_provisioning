@@ -79,7 +79,7 @@ ncurses=6.2=he6710b0_1
 nodejs=13.13.0=hf5d1a2b_0
 notebook=6.1.5=py38h578d9bd_0
 numpy=1.19.4=py38hf0fd68c_1
-oauthenticator=0.12.0=py_0
+oauthenticator=0.12.2=pyhd8ed1ab_0
 oauthlib=3.0.1=py_0
 okada-wrapper=18.12.7.3=pypi_0
 olefile=0.46=py_0

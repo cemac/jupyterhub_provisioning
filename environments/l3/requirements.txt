@@ -66,7 +66,7 @@ importlib_resources=3.0.0=py38h32f6830_1
 ipykernel=5.3.4=py38h23f93f0_0
 ipython=7.17.0=py38h1cdfbd6_0
 ipython_genutils=0.2.0=py_1
-iris=2.4.0=py38_0
+iris=2.4.0=py38h578d9bd_1
 jedi=0.17.2=py38h32f6830_0
 jinja2=2.11.2=pyh9f0ad1d_0
 jpeg=9d=h516909a_0
@@ -128,7 +128,7 @@ netcdf4=1.5.4=nompi_py38hec8b9af_103
 nodejs=13.13.0=hf5d1a2b_0
 notebook=6.1.5=py38h578d9bd_0
 numpy=1.19.4=py38hf0fd68c_1
-oauthenticator=0.12.0=py_0
+oauthenticator=0.12.2=pyhd8ed1ab_0
 oauthlib=3.0.1=py_0
 olefile=0.46=py_0
 openjpeg=2.3.1=h981e76c_3
@@ -175,6 +175,7 @@ python=3.8.5=h4d41432_2_cpython
 python-dateutil=2.8.1=py_0
 python-editor=1.0.4=py_0
 python-json-logger=0.1.11=py_0
+python-xxhash=2.0.0=py38h1e0a361_1
 python_abi=3.8=1_cp38
 pytz=2020.1=pyh9f0ad1d_0
 pyyaml=5.3.1=py38h1e0a361_0
@@ -222,6 +223,7 @@ xorg-libxrender=0.9.10=h516909a_1002
 xorg-renderproto=0.11.1=h14c3975_1002
 xorg-xextproto=7.3.0=h14c3975_1002
 xorg-xproto=7.0.31=h14c3975_1007
+xxhash=0.8.0=h516909a_1
 xz=5.2.5=h516909a_1
 yaml=0.2.5=h516909a_0
 zeromq=4.3.2=he1b5a44_3
