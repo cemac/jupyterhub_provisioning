@@ -28,6 +28,8 @@ resources_user_basedir: '/home'
 resources_user_comment: ''
 resources_user_groups: []
 resources_user_state: 'present'
+resources_user_link_home: false
+resources_user_link_dir: '/home' 
 
 # Authorized keys default:
 resources_authorized_key_state: 'present'

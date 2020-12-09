@@ -246,6 +246,66 @@
     - 'resources_configure_users'
     - 'resources_configure_users_host'
 
+# Create links to home directories for default users:
+- name: 'resources configure users link home default'
+  file:
+    path: "{{ item.link | default(resources_user_link_dir ~ '/' ~ item.name) }}"
+    src: "{{ item.home | default(resources_user_basedir ~ '/' ~ item.name) }}"
+    state: "{{ item.link_state | default('link') }}"
+    force: "{{ item.link_force | default(false) }}"
+  loop: "{{ resources_users_default }}"
+  when: ((resources_users_default is defined) and
+         (resources_user_link_home == true) and
+         (item.link_home is not defined)) or
+        ((resources_users_default is defined) and
+         (item.link_home is defined) and
+         (item.link_home == true))
+  tags:
+    - 'resources_configure_users'
+    - 'resources_configure_users_default'
+    - 'resources_configure_users_link_home'
+    - 'resources_configure_users_link_home_default'
+
+# Create links to home directories for group users:
+- name: 'resources configure users link home group'
+  file:
+    path: "{{ item.link | default(resources_user_link_dir ~ '/' ~ item.name) }}"
+    src: "{{ item.home | default(resources_user_basedir ~ '/' ~ item.name) }}"
+    state: "{{ item.link_state | default('link') }}"
+    force: "{{ item.link_force | default(false) }}"
+  loop: "{{ resources_users_group }}"
+  when: ((resources_users_group is defined) and
+         (resources_user_link_home == true) and
+         (item.link_home is not defined)) or
+        ((resources_users_group is defined) and
+         (item.link_home is defined) and
+         (item.link_home == true))
+  tags:
+    - 'resources_configure_users'
+    - 'resources_configure_users_group'
+    - 'resources_configure_users_link_home'
+    - 'resources_configure_users_link_home_group'
+
+# Create links to home directories for host users:
+- name: 'resources configure users link home host'
+  file:
+    path: "{{ item.link | default(resources_user_link_dir ~ '/' ~ item.name) }}"
+    src: "{{ item.home | default(resources_user_basedir ~ '/' ~ item.name) }}"
+    state: "{{ item.link_state | default('link') }}"
+    force: "{{ item.link_force | default(false) }}"
+  loop: "{{ resources_users_host }}"
+  when: ((resources_users_host is defined) and
+         (resources_user_link_home == true) and
+         (item.link_home is not defined)) or
+        ((resources_users_host is defined) and
+         (item.link_home is defined) and
+         (item.link_home == true))
+  tags:
+    - 'resources_configure_users'
+    - 'resources_configure_users_host'
+    - 'resources_configure_users_link_home'
+    - 'resources_configure_users_link_home_host'
+
 # Configure default authorized keys:
 - name: 'resources configure authorized keys default'
   authorized_key:
