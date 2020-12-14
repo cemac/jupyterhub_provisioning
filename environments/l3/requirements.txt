@@ -132,7 +132,7 @@ oauthenticator=0.12.3=pyhd8ed1ab_0
 oauthlib=3.0.1=py_0
 olefile=0.46=py_0
 openjpeg=2.3.1=h981e76c_3
-openssl=1.1.1h=h516909a_0
+openssl=1.1.1i=h7f98852_0
 owslib=0.20.0=py_0
 packaging=20.4=pyh9f0ad1d_0
 pamela=1.0.0=py_0
