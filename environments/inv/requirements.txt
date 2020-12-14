@@ -64,7 +64,7 @@ jupyter_core=4.6.3=py37hc8dfbb8_1
 jupyter_telemetry=0.0.5=py_0
 jupyterhub=1.1.0=py37hc8dfbb8_4
 jupyterhub-base=1.1.0=py37hc8dfbb8_4
-jupyterhub-systemdspawner=0.14=pypi_0
+jupyterhub-systemdspawner=0.15.0=pypi_0
 keras=2.4.3=py_0
 keras-applications=1.0.8=py_1
 keras-preprocessing=1.1.0=py_0

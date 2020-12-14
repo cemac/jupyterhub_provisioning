@@ -48,7 +48,7 @@ jupyter_core=4.6.3=py38h32f6830_1
 jupyter_telemetry=0.0.5=py_0
 jupyterhub=1.1.0=py38h32f6830_4
 jupyterhub-base=1.1.0=py38h32f6830_4
-jupyterhub-systemdspawner=0.14=pypi_0
+jupyterhub-systemdspawner=0.15.0=pypi_0
 kiwisolver=1.2.0=py38hbf85e49_0
 krb5=1.17.1=h2fd8d38_0
 lcms2=2.11=hbd6801e_0
