@@ -1,2 +1,3 @@
+files/root/submit_return_coursework/submit_return_coursework_2710.sh filter=git-crypt diff=git-crypt
 host_vars/jupyter99.yml filter=git-crypt diff=git-crypt
 inventory/hosts.yml filter=git-crypt diff=git-crypt
