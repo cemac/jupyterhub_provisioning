@@ -31,5 +31,8 @@ resources_user_state: 'present'
 resources_user_link_home: false
 resources_user_link_dir: '/home' 
 
-# Authorized keys default:
+# Authorized keys defaults:
 resources_authorized_key_state: 'present'
+
+# Cron jobs defaults:
+resources_cron_job_state: 'present'

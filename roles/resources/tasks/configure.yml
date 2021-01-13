@@ -344,3 +344,57 @@
   tags:
     - 'resources_configure_authorized_keys'
     - 'resources_configure_authorized_keys_host'
+
+# Configure default cron job:
+- name: 'resources configure cron jobs default'
+  cron:
+    name: "{{ item.name }}"
+    user: "{{ item.user }}"
+    state: "{{ item.state | default(resources_cron_job_state) }}"
+    job: "{{ item.job }}"
+    minute: "{{ item.minute }}"
+    hour: "{{ item.hour }}"
+    day: "{{ item.day }}"
+    month: "{{ item.month }}"
+    weekday: "{{ item.weekday }}"
+  loop: "{{ resources_cron_jobs_default }}"
+  when: resources_cron_jobs_default is defined
+  tags:
+    - 'resources_configure_cron_jobs'
+    - 'resources_configure_cron_jobs_default'
+
+# Configure group cron job:
+- name: 'resources configure cron jobs group'
+  cron:
+    name: "{{ item.name }}"
+    user: "{{ item.user }}"
+    state: "{{ item.state | default(resources_cron_job_state) }}"
+    job: "{{ item.job }}"
+    minute: "{{ item.minute }}"
+    hour: "{{ item.hour }}"
+    day: "{{ item.day }}"
+    month: "{{ item.month }}"
+    weekday: "{{ item.weekday }}"
+  loop: "{{ resources_cron_jobs_group }}"
+  when: resources_cron_jobs_group is defined
+  tags:
+    - 'resources_configure_cron_jobs'
+    - 'resources_configure_cron_jobs_group'
+
+# Configure host cron job:
+- name: 'resources configure cron jobs host'
+  cron:
+    name: "{{ item.name }}"
+    user: "{{ item.user }}"
+    state: "{{ item.state | default(resources_cron_job_state) }}"
+    job: "{{ item.job }}"
+    minute: "{{ item.minute }}"
+    hour: "{{ item.hour }}"
+    day: "{{ item.day }}"
+    month: "{{ item.month }}"
+    weekday: "{{ item.weekday }}"
+  loop: "{{ resources_cron_jobs_host }}"
+  when: resources_cron_jobs_host is defined
+  tags:
+    - 'resources_configure_cron_jobs'
+    - 'resources_configure_cron_jobs_host'
