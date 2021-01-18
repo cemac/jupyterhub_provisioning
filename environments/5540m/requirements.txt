@@ -106,7 +106,7 @@ pycosat=0.6.3=py38h7b6447c_1
 pycparser=2.20=py_0
 pycurl=7.43.0.5=py38h4400d41_2
 pygments=2.6.1=py_0
-pyjwt=2.0.0=pyhd8ed1ab_0
+pyjwt=2.0.1=pyhd8ed1ab_0
 pyopenssl=19.1.0=py38_0
 pyparsing=2.4.7=pyh9f0ad1d_0
 pyrsistent=0.16.0=py38h1e0a361_0
