@@ -85,7 +85,7 @@
     group: "{{ item.group | default(resources_copy_group) }}"
     mode: "{{ item.mode | default(resources_copy_mode) }}"
   loop: "{{ resources_copies_default }}"
-  when: resources_copies_default is defined 
+  when: resources_copies_default is defined
   tags:
     - 'resources_configure_copies'
     - 'resources_configure_copies_default'
@@ -100,7 +100,7 @@
     group: "{{ item.group | default(resources_copy_group) }}"
     mode: "{{ item.mode | default(resources_copy_mode) }}"
   loop: "{{ resources_copies_group }}"
-  when: resources_copies_group is defined 
+  when: resources_copies_group is defined
   tags:
     - 'resources_configure_copies'
     - 'resources_configure_copies_group'
@@ -115,10 +115,55 @@
     group: "{{ item.group | default(resources_copy_group) }}"
     mode: "{{ item.mode | default(resources_copy_mode) }}"
   loop: "{{ resources_copies_host }}"
-  when: resources_copies_host is defined 
+  when: resources_copies_host is defined
   tags:
     - 'resources_configure_copies'
     - 'resources_configure_copies_host'
+
+# Configure default acls:
+- name: 'resources configure acls default'
+  acl:
+    path: "{{ item.path }}"
+    entity: "{{ item.entity }}"
+    etype: "{{ item.etype }}"
+    permissions: "{{ item.permission }}"
+    state: "{{ item.state | default(resources_acl_state) }}"
+    default: "{{ item.default | default(resources_acl_default) }}"
+  loop: "{{ resources_acls_default }}"
+  when: resources_acls_default is defined
+  tags:
+    - 'resources_configure_acls'
+    - 'resources_configure_acls_default'
+
+# Configure group acls:
+- name: 'resources configure acls group'
+  acl:
+    path: "{{ item.path }}"
+    entity: "{{ item.entity }}"
+    etype: "{{ item.etype }}"
+    permissions: "{{ item.permission }}"
+    state: "{{ item.state | default(resources_acl_state) }}"
+    default: "{{ item.default | default(resources_acl_default) }}"
+  loop: "{{ resources_acls_group }}"
+  when: resources_acls_group is defined
+  tags:
+    - 'resources_configure_acls'
+    - 'resources_configure_acls_group'
+
+# Configure host acls:
+- name: 'resources configure acls host'
+  acl:
+    path: "{{ item.path }}"
+    entity: "{{ item.entity }}"
+    etype: "{{ item.etype }}"
+    permissions: "{{ item.permission }}"
+    state: "{{ item.state | default(resources_acl_state) }}"
+    default: "{{ item.default | default(resources_acl_default) }}"
+  loop: "{{ resources_acls_host }}"
+  when: resources_acls_host is defined
+  tags:
+    - 'resources_configure_acls'
+    - 'resources_configure_acls_host'
 
 # Configure default symlinks:
 - name: 'resources configure symlinks default'
