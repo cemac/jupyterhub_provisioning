@@ -151,7 +151,7 @@ ruamel.yaml=0.16.6=py38h1e0a361_1
 ruamel.yaml.clib=0.2.0=py38h1e0a361_1
 ruamel_yaml=0.15.87=py38h7b6447c_0
 scipy=1.5.2=py38h8c5af15_0
-seaborn=0.11.1=ha770c72_0
+seaborn=0.11.1=hd8ed1ab_1
 seaborn-base=0.11.1=pyhd8ed1ab_0
 send2trash=1.5.0=py_0
 setuptools=46.4.0=py38_0

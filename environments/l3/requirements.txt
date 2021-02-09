@@ -66,7 +66,7 @@ importlib_resources=3.0.0=py38h32f6830_1
 ipykernel=5.3.4=py38h23f93f0_0
 ipython=7.17.0=py38h1cdfbd6_0
 ipython_genutils=0.2.0=py_1
-iris=2.4.0=py38h578d9bd_1
+iris=3.0.1=py38h578d9bd_0
 jedi=0.17.2=py38h32f6830_0
 jinja2=2.11.2=pyh9f0ad1d_0
 jpeg=9d=h516909a_0
@@ -124,10 +124,10 @@ msgpack-python=1.0.0=py38hbf85e49_1
 nbconvert=5.6.1=py38h32f6830_1
 nbformat=5.0.7=py_0
 ncurses=6.2=he1b5a44_1
-netcdf4=1.5.5.1=nompi_py38h1cdf482_100
+netcdf4=1.5.5.1=nompi_py38h1cdf482_101
 nodejs=13.13.0=hf5d1a2b_0
 notebook=6.1.6=py38h578d9bd_0
-numpy=1.19.5=py38h18fd61f_1
+numpy=1.20.0=py38h18fd61f_0
 oauthenticator=0.12.3=pyhd8ed1ab_0
 oauthlib=3.0.1=py_0
 olefile=0.46=py_0
@@ -136,7 +136,7 @@ openssl=1.1.1i=h7f98852_0
 owslib=0.20.0=py_0
 packaging=20.4=pyh9f0ad1d_0
 pamela=1.0.0=py_0
-pandas=1.2.0=py38h51da96c_1
+pandas=1.2.1=py38h51da96c_0
 pandoc=2.10.1=h516909a_0
 pandocfilters=1.4.2=py_1
 parso=0.7.1=pyh9f0ad1d_0
