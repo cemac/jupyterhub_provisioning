@@ -104,7 +104,7 @@ matplotlib-base=3.3.4=py38h0efea84_0
 mistune=0.8.4=py38h497a2fe_1003
 mysql-common=8.0.22=ha770c72_1
 mysql-libs=8.0.22=h1fd7589_1
-nbclient=0.5.1=py_0
+nbclient=0.5.2=pyhd8ed1ab_0
 nbconvert=6.0.7=py38h578d9bd_3
 nbformat=5.1.2=pyhd8ed1ab_1
 ncurses=6.2=h58526e2_4
@@ -172,7 +172,7 @@ terminado=0.9.2=py38h578d9bd_0
 testpath=0.4.4=py_0
 tk=8.6.10=h21135ba_1
 tornado=6.1=py38h497a2fe_1
-tqdm=4.56.0=pyhd8ed1ab_0
+tqdm=4.56.1=pyhd8ed1ab_0
 traitlets=5.0.5=py_0
 urllib3=1.26.3=pyhd8ed1ab_0
 wcwidth=0.2.5=pyh9f0ad1d_2
