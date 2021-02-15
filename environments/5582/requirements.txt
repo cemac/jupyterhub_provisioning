@@ -83,8 +83,8 @@ ncurses=6.2=he6710b0_1
 nest-asyncio=1.4.3=pyhd8ed1ab_0
 nodejs=15.3.0=h25f6087_0
 notebook=6.2.0=py38h578d9bd_0
-numpy=1.19.4=py38hf0fd68c_1
-oauthenticator=0.12.3=pyhd8ed1ab_0
+numpy=1.20.1=py38h18fd61f_0
+oauthenticator=0.13.0=pyhd8ed1ab_0
 oauthlib=3.0.1=py_0
 olefile=0.46=pyh9f0ad1d_1
 openssl=1.1.1i=h7f98852_0
@@ -142,6 +142,7 @@ urllib3=1.25.11=py_0
 wcwidth=0.2.5=pyh9f0ad1d_2
 webencodings=0.5.1=py_1
 wheel=0.35.1=pyhd3eb1b0_0
+xlrd=2.0.1=pyhd8ed1ab_3
 xz=5.2.5=h7b6447c_0
 yaml=0.2.5=h7b6447c_0
 zeromq=4.3.3=h58526e2_3
