@@ -27,6 +27,7 @@ cycler=0.10.0=py_2
 decorator=4.4.2=py_0
 defusedxml=0.6.0=py_0
 entrypoints=0.3=pyhd8ed1ab_1003
+et_xmlfile=1.0.1=py_1001
 freetype=2.10.4=h7ca028e_0
 icu=68.1=h58526e2_0
 idna=2.10=py_0
@@ -35,6 +36,7 @@ importlib_metadata=3.3.0=hd8ed1ab_2
 ipykernel=5.4.2=py38h81c977d_0
 ipython=7.19.0=py38h81c977d_0
 ipython_genutils=0.2.0=py_1
+jdcal=1.4.1=py_0
 jedi=0.17.2=py38h578d9bd_1
 jinja2=2.11.2=pyh9f0ad1d_0
 jpeg=9d=h36c2ea0_0
@@ -87,6 +89,7 @@ numpy=1.20.1=py38h18fd61f_0
 oauthenticator=0.13.0=pyhd8ed1ab_0
 oauthlib=3.0.1=py_0
 olefile=0.46=pyh9f0ad1d_1
+openpyxl=3.0.6=pyhd8ed1ab_0
 openssl=1.1.1i=h7f98852_0
 packaging=20.8=pyhd3deb0d_0
 pamela=1.0.0=py_0
