@@ -1,7 +1,8 @@
 # This file may be used to create an environment using:
 # $ conda create --name <env> --file <this file>
 # platform: linux-64
-_libgcc_mutex=0.1=main
+_libgcc_mutex=0.1=conda_forge
+_openmp_mutex=4.5=1_gnu
 alembic=1.4.2=pyh9f0ad1d_0
 argon2-cffi=20.1.0=py38h1e0a361_1
 async_generator=1.10=py_0
@@ -27,7 +28,7 @@ chardet=3.0.4=py38_1003
 conda=4.9.2=py38h578d9bd_0
 conda-package-handling=1.6.1=py38h7b6447c_0
 configurable-http-proxy=4.2.1=node13_he01fd0c_0
-cryptography=3.2.1=py38h7699a38_0
+cryptography=3.4.4=py38h3e25421_0
 curl=7.71.1=he644dc0_4
 cycler=0.10.0=py_2
 decorator=4.4.2=py_0
@@ -75,9 +76,10 @@ libdap4=3.20.6=h1d1bd15_1
 libedit=3.1.20181209=hc058e9b_0
 libev=4.33=h516909a_0
 libffi=3.2.1=he1b5a44_1007
-libgcc-ng=9.1.0=hdf63c60_0
+libgcc-ng=9.3.0=h2828fa1_18
 libgdal=3.0.4=he6a97d6_10
 libgfortran-ng=7.5.0=hdf63c60_15
+libgomp=9.3.0=h2828fa1_18
 libiconv=1.16=h516909a_0
 libkml=1.3.0=hb574062_1011
 liblapack=3.8.0=17_openblas
@@ -113,7 +115,7 @@ oauthenticator=0.12.3=pyhd8ed1ab_0
 oauthlib=3.0.1=py_0
 olefile=0.46=py_0
 openjpeg=2.3.1=h981e76c_3
-openssl=1.1.1h=h516909a_0
+openssl=1.1.1i=h7f98852_0
 owslib=0.19.2=py_0
 packaging=20.4=pyh9f0ad1d_0
 pamela=1.0.0=py_0

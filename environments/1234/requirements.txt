@@ -25,7 +25,7 @@ chardet=4.0.0=py38h578d9bd_1
 conda=4.9.2=py38h578d9bd_0
 conda-package-handling=1.7.2=py38h8df0ef7_0
 configurable-http-proxy=4.2.1=node12_hbce0df8_0
-cryptography=3.3.1=py38h2b97feb_1
+cryptography=3.4.4=py38h3e25421_0
 curl=7.71.1=he644dc0_8
 cycler=0.10.0=py_2
 dbus=1.13.6=hfdff14a_1
