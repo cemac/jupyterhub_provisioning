@@ -110,7 +110,7 @@ nbformat=5.1.2=pyhd8ed1ab_1
 ncurses=6.2=h58526e2_4
 nest-asyncio=1.4.3=pyhd8ed1ab_0
 netcdf4=1.5.6=nompi_py38h1cdf482_100
-nodejs=15.10.0=h92b4a50_0
+nodejs=15.10.0=h92b4a50_1
 notebook=6.2.0=py38h578d9bd_0
 nspr=4.29=h9c3ff4c_1
 nss=3.62=hb5efdd6_0
@@ -154,7 +154,7 @@ python-dateutil=2.8.1=py_0
 python-editor=1.0.4=py_0
 python-json-logger=2.0.1=pyh9f0ad1d_0
 python_abi=3.8=1_cp38
-pyzmq=22.0.3=py38h3d7ac18_0
+pyzmq=22.0.3=py38h2035c66_1
 qt=5.12.9=hda022c4_4
 readline=8.0=he28a2e2_2
 requests=2.25.1=pyhd3deb0d_0
