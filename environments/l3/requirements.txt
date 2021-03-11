@@ -133,7 +133,7 @@ openssl=1.1.1j=h7f98852_0
 owslib=0.20.0=py_0
 packaging=20.4=pyh9f0ad1d_0
 pamela=1.0.0=py_0
-pandas=1.2.2=py38h51da96c_0
+pandas=1.2.3=py38h51da96c_0
 pandoc=2.10.1=h516909a_0
 pandocfilters=1.4.2=py_1
 parso=0.7.1=pyh9f0ad1d_0
