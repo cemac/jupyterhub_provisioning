@@ -27,7 +27,7 @@ cycler=0.10.0=py_2
 decorator=4.4.2=py_0
 defusedxml=0.6.0=py_0
 entrypoints=0.3=py38h32f6830_1001
-freetype=2.10.2=he06d7ca_0
+freetype=2.10.4=h0708190_1
 geos=3.8.1=he1b5a44_0
 icu=64.2=he1b5a44_1
 idna=2.9=py_1
@@ -94,7 +94,7 @@ pandocfilters=1.4.2=py_1
 parso=0.7.1=pyh9f0ad1d_0
 pexpect=4.8.0=py38h32f6830_1
 pickleshare=0.7.5=py38h32f6830_1001
-pillow=7.2.0=py38h9776b28_1
+pillow=8.1.2=py38he98fc37_0
 pip=20.0.2=py38_3
 proj=7.0.0=h966b41f_4
 prometheus_client=0.8.0=pyh9f0ad1d_0
