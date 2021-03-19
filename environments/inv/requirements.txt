@@ -38,7 +38,7 @@ cython=0.29.17=py37h3340039_0
 decorator=4.4.2=py_0
 defusedxml=0.6.0=py_0
 entrypoints=0.3=py37hc8dfbb8_1001
-freetype=2.10.2=he06d7ca_0
+freetype=2.10.4=h0708190_1
 gast=0.4.0=pyh9f0ad1d_0
 google-auth=1.20.1=py_0
 google-auth-oauthlib=0.4.1=py_2
@@ -117,7 +117,7 @@ pandocfilters=1.4.2=py_1
 parso=0.7.1=pyh9f0ad1d_0
 pexpect=4.8.0=py37hc8dfbb8_1
 pickleshare=0.7.5=py37hc8dfbb8_1001
-pillow=7.2.0=py37h718be6c_1
+pillow=8.1.2=py37he98fc37_0
 pip=20.2.2=py_0
 prometheus_client=0.8.0=pyh9f0ad1d_0
 prompt-toolkit=3.0.6=py_0

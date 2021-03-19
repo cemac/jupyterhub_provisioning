@@ -47,7 +47,7 @@ distributed=2.23.0=py38h32f6830_0
 entrypoints=0.3=py38h32f6830_1001
 expat=2.2.9=he1b5a44_2
 fontconfig=2.13.1=h86ecdb6_1001
-freetype=2.10.2=he06d7ca_0
+freetype=2.10.4=h0708190_1
 freexl=1.0.5=h516909a_1002
 fsspec=0.8.0=py_0
 geos=3.8.1=he1b5a44_0
@@ -141,7 +141,7 @@ partd=1.1.0=py_0
 pcre=8.44=he1b5a44_0
 pexpect=4.8.0=py38h32f6830_1
 pickleshare=0.7.5=py38h32f6830_1001
-pillow=7.2.0=py38h9776b28_1
+pillow=8.1.2=py38he98fc37_0
 pint=0.16.1=py_0
 pip=20.2.2=py_0
 pixman=0.38.0=h516909a_1003
