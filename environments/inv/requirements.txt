@@ -54,7 +54,7 @@ ipykernel=5.3.4=py37h43977f1_0
 ipython=7.17.0=py37hc6149b9_0
 ipython_genutils=0.2.0=py_1
 jedi=0.17.2=py37hc8dfbb8_0
-jinja2=2.11.2=pyh9f0ad1d_0
+jinja2=2.11.3=pyh44b312d_0
 joblib=0.17.0=py_0
 jpeg=9d=h516909a_0
 jsonschema=3.2.0=py37hc8dfbb8_1

@@ -38,7 +38,7 @@ ipython=7.19.0=py38h81c977d_0
 ipython_genutils=0.2.0=py_1
 jdcal=1.4.1=py_0
 jedi=0.17.2=py38h578d9bd_1
-jinja2=2.11.2=pyh9f0ad1d_0
+jinja2=2.11.3=pyh44b312d_0
 jpeg=9d=h36c2ea0_0
 jsonschema=3.2.0=py_2
 jupyter_client=6.1.7=py_0

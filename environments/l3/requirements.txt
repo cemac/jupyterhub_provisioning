@@ -67,7 +67,7 @@ ipython=7.17.0=py38h1cdfbd6_0
 ipython_genutils=0.2.0=py_1
 iris=3.0.1=py38h578d9bd_1
 jedi=0.17.2=py38h32f6830_0
-jinja2=2.11.2=pyh9f0ad1d_0
+jinja2=2.11.3=pyh44b312d_0
 jpeg=9d=h516909a_0
 json-c=0.13.1=hbfbb72e_1002
 jsonschema=3.2.0=py38h32f6830_1
