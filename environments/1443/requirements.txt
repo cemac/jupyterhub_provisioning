@@ -67,7 +67,7 @@ jupyterhub-systemdspawner=0.15.0=pypi_0
 kealib=1.4.13=h33137a7_1
 kiwisolver=1.2.0=py38hbf85e49_0
 krb5=1.17.1=h2fd8d38_0
-lcms2=2.11=hbd6801e_0
+lcms2=2.12=hddcbb42_0
 ld_impl_linux-64=2.34=hc38a660_9
 libblas=3.8.0=17_openblas
 libcblas=3.8.0=17_openblas
@@ -92,7 +92,7 @@ libsodium=1.0.18=h516909a_0
 libspatialite=4.3.0a=h2482549_1038
 libssh2=1.9.0=hab1572f_5
 libstdcxx-ng=9.1.0=hdf63c60_0
-libtiff=4.1.0=hc7e4089_6
+libtiff=4.2.0=h85742a9_0
 libuuid=2.32.1=h14c3975_1000
 libuv=1.34.0=h516909a_0
 libwebp-base=1.1.0=h516909a_3
@@ -126,7 +126,7 @@ parso=0.7.1=pyh9f0ad1d_0
 pcre=8.44=he1b5a44_0
 pexpect=4.8.0=py38h32f6830_1
 pickleshare=0.7.5=py38h32f6830_1001
-pillow=7.2.0=py38h9776b28_2
+pillow=8.1.2=py38ha0e1e83_0
 pip=20.0.2=py38_3
 pixman=0.38.0=h516909a_1003
 poppler=0.87.0=h4190859_1
