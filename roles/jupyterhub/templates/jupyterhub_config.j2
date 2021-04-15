@@ -4,6 +4,7 @@ import os
 from oauthenticator.azuread import LocalAzureAdOAuthenticator
 c.JupyterHub.authenticator_class = LocalAzureAdOAuthenticator
 c.AzureAdOAuthenticator.tenant_id = os.environ.get('AAD_TENANT_ID')
+c.AzureAdOAuthenticator.scope = ['openid', 'profile']
 c.AzureAdOAuthenticator.oauth_callback_url = '{{ jupyterhub_install.auth.callback_url }}'
 c.AzureAdOAuthenticator.client_id = '{{ jupyterhub_install.auth.client_id }}'
 c.AzureAdOAuthenticator.client_secret = '{{ jupyterhub_install.auth.client_secret }}'
