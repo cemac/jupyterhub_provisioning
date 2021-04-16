@@ -167,7 +167,7 @@ send2trash=1.5.0=py_0
 setuptools=49.6.0=py38h578d9bd_3
 shapely=1.7.1=py38h4fc1155_4
 six=1.15.0=pyh9f0ad1d_0
-sqlalchemy=1.4.7=py38h497a2fe_0
+sqlalchemy=1.4.8=py38h497a2fe_0
 sqlite=3.35.4=h74cdb3f_0
 terminado=0.9.4=py38h578d9bd_0
 testpath=0.4.4=py_0
