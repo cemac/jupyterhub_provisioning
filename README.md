@@ -198,7 +198,7 @@ The role can create the configuration and systemd service files for the JupyterH
       client_secret: 'xxx'
     api_port: '2051'
     bind_port: '2041'
-    port: '2030' 
+    port: '2030'
     users:
       users:
         - 'user00'
