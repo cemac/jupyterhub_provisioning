@@ -146,7 +146,7 @@ pyzmq=19.0.2=py37hac76be4_0
 readline=8.0=he28a2e2_2
 requests=2.24.0=pyh9f0ad1d_0
 requests-oauthlib=1.3.0=py_0
-rsa=4.6=py_0
+rsa=4.7.2=pyh44b312d_0
 ruamel.yaml=0.16.6=py37h8f50634_1
 ruamel.yaml.clib=0.2.0=py37h8f50634_1
 ruamel_yaml=0.15.80=py37h8f50634_1001
