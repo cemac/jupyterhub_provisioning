@@ -84,8 +84,8 @@ nbformat=5.0.8=py_0
 ncurses=6.2=he6710b0_1
 nest-asyncio=1.4.3=pyhd8ed1ab_0
 nodejs=15.3.0=h25f6087_0
-notebook=6.3.0=pyha770c72_1
-numpy=1.20.2=py38h9894fe3_0
+notebook=6.4.0=pyha770c72_0
+numpy=1.20.3=py38h9894fe3_0
 oauthenticator=14.0.0=pyhd8ed1ab_0
 oauthlib=3.0.1=py_0
 olefile=0.46=pyh9f0ad1d_1
@@ -109,7 +109,7 @@ pycosat=0.6.3=py38h7b6447c_1
 pycparser=2.20=py_2
 pycurl=7.43.0.6=py38hd8bd627_0
 pygments=2.8.1=pyhd8ed1ab_0
-pyjwt=2.0.1=pyhd8ed1ab_1
+pyjwt=2.1.0=pyhd8ed1ab_0
 pyopenssl=19.1.0=pyhd3eb1b0_1
 pyparsing=2.4.7=pyh9f0ad1d_0
 pyrsistent=0.17.3=py38h25fe258_1

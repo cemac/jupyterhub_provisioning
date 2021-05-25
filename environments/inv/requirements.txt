@@ -64,7 +64,7 @@ jupyter_telemetry=0.0.5=py_0
 jupyterhub=1.1.0=py37hc8dfbb8_4
 jupyterhub-base=1.1.0=py37hc8dfbb8_4
 jupyterhub-systemdspawner=0.15.0=pypi_0
-keras=2.4.3=py_0
+keras=2.4.3=pyhd8ed1ab_0
 keras-applications=1.0.8=py_1
 keras-preprocessing=1.1.2=pyhd8ed1ab_0
 kiwisolver=1.2.0=py37h99015e2_0
@@ -104,7 +104,7 @@ nbformat=5.0.7=py_0
 ncurses=6.2=he1b5a44_1
 nodejs=13.13.0=hf5d1a2b_0
 notebook=6.1.6=py37h89c1867_0
-numpy=1.20.2=py37h038b26d_0
+numpy=1.20.3=py37h038b26d_0
 oauthenticator=14.0.0=pyhd8ed1ab_0
 oauthlib=3.0.1=py_0
 olefile=0.46=py_0
@@ -130,7 +130,7 @@ pycparser=2.20=pyh9f0ad1d_2
 pycurl=7.43.0.5=py37hce7685b_2
 pygments=2.8.1=pyhd8ed1ab_0
 pygpu=0.7.6=py37h03ebfcd_1001
-pyjwt=2.0.1=pyhd8ed1ab_1
+pyjwt=2.1.0=pyhd8ed1ab_0
 pyopenssl=19.1.0=py_1
 pyparsing=2.4.7=pyh9f0ad1d_0
 pyrsistent=0.16.0=py37h8f50634_0
