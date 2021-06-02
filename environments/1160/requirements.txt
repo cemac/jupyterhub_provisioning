@@ -12,10 +12,11 @@ backports=1.0=py_2
 backports.functools_lru_cache=1.6.1=py_0
 bleach=3.3.0=pyh44b312d_0
 blinker=1.4=py_1
+brotlipy=0.7.0=py38h497a2fe_1001
 c-ares=1.16.1=h516909a_0
-ca-certificates=2020.12.5=ha878542_0
+ca-certificates=2021.5.30=ha878542_0
 cartopy=0.17.0=py38h9cf8511_1015
-certifi=2020.12.5=py38h578d9bd_1
+certifi=2021.5.30=py38h578d9bd_0
 certipy=0.1.3=py_0
 cffi=1.14.0=py38he30daa8_1
 chardet=3.0.4=py38_1003
@@ -120,7 +121,7 @@ python_abi=3.8=1_cp38
 pytz=2020.1=pyh9f0ad1d_0
 pyzmq=19.0.2=py38ha71036d_0
 readline=8.0=h7b6447c_0
-requests=2.23.0=py38_0
+requests=2.25.1=pyhd3deb0d_0
 ruamel.yaml=0.16.6=py38h1e0a361_1
 ruamel.yaml.clib=0.2.0=py38h1e0a361_1
 ruamel_yaml=0.15.87=py38h7b6447c_0
@@ -137,7 +138,7 @@ tk=8.6.10=hed695b0_0
 tornado=6.0.4=py38h1e0a361_1
 tqdm=4.46.0=py_0
 traitlets=4.3.3=py38h32f6830_1
-urllib3=1.25.8=py38_0
+urllib3=1.26.5=pyhd8ed1ab_0
 wcwidth=0.2.5=pyh9f0ad1d_1
 webencodings=0.5.1=py_1
 wheel=0.34.2=py38_0
