@@ -110,7 +110,6 @@ resources_copies_default:
 
 At the host level, this role may be used to create users:
 
-
 ```
 resources_users_host:
   - name: 'user00'
