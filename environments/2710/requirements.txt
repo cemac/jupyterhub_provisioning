@@ -119,7 +119,7 @@ partd=1.1.0=py_0
 patsy=0.5.1=py_0
 pexpect=4.8.0=py38h32f6830_1
 pickleshare=0.7.5=py38h32f6830_1001
-pillow=8.1.2=py38he98fc37_0
+pillow=8.2.0=py38he98fc37_0
 pip=20.0.2=py38_3
 proj=7.0.0=h966b41f_4
 prometheus_client=0.8.0=pyh9f0ad1d_0

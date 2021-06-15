@@ -122,7 +122,7 @@ pandocfilters=1.4.2=py_1
 parso=0.7.1=pyh9f0ad1d_0
 pexpect=4.8.0=py37hc8dfbb8_1
 pickleshare=0.7.5=py37hc8dfbb8_1001
-pillow=8.1.2=py37he98fc37_0
+pillow=8.2.0=py37he98fc37_0
 pip=20.2.2=py_0
 prometheus_client=0.8.0=pyh9f0ad1d_0
 prompt-toolkit=3.0.6=py_0
