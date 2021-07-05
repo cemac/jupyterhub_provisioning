@@ -27,7 +27,7 @@ cftime==1.2.1
 chardet==3.0.4
 click==7.1.2
 cloudpickle==1.5.0
-conda==4.10.1
+conda==4.10.3
 conda-package-handling==1.7.0
 configurable-http-proxy==4.2.1
 cryptography==3.4.4
@@ -60,7 +60,7 @@ importlib_resources==3.0.0
 ipykernel==5.3.4
 ipython==7.17.0
 ipython_genutils==0.2.0
-iris==3.0.1
+iris==3.0.2
 jedi==0.17.2
 jinja2==2.11.3
 jpeg==9d
@@ -119,7 +119,7 @@ ncurses==6.2
 netcdf4==1.5.6
 nodejs==13.13.0
 notebook==6.1.6
-numpy==1.20.3
+numpy==1.21.0
 oauthenticator==14.0.0
 oauthlib==3.0.1
 olefile==0.46
@@ -128,7 +128,7 @@ openssl==1.1.1k
 owslib==0.20.0
 packaging==20.4
 pamela==1.0.0
-pandas==1.2.4
+pandas==1.3.0
 pandoc==2.10.1
 pandocfilters==1.4.2
 parso==0.7.1
