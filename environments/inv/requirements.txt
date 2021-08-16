@@ -104,7 +104,7 @@ ncurses==6.2
 nodejs==12.19.0
 notebook==6.1.6
 numpy==1.21.0
-oauthenticator==14.0.0
+oauthenticator==14.1.0
 oauthlib==3.0.1
 olefile==0.46
 openssl==1.1.1k
