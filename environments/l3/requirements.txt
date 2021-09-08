@@ -136,7 +136,7 @@ partd==1.1.0
 pcre==8.44
 pexpect==4.8.0
 pickleshare==0.7.5
-pillow==8.2.0
+pillow==8.3.2
 pint==0.16.1
 pip==20.2.2
 pixman==0.38.0
