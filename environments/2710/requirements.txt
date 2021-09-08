@@ -80,7 +80,7 @@ libopenblas==0.3.10
 libpng==1.6.37
 libsodium==1.0.18
 libssh2==1.9.0
-libstdcxx-ng==9.1.0
+libstdcxx-ng==11.1.0
 libtiff==4.1.0
 libuv==1.34.0
 libwebp-base==1.1.0
@@ -153,11 +153,11 @@ seaborn==0.11.1
 seaborn-base==0.11.1
 send2trash==1.5.0
 setuptools==46.4.0
-shapely==1.7.0
+shapely==1.7.1
 six==1.14.0
 sortedcontainers==2.2.2
 sqlalchemy==1.3.18
-sqlite==3.31.1
+sqlite==3.35.5
 statsmodels==0.12.2
 tblib==1.6.0
 terminado==0.8.3
