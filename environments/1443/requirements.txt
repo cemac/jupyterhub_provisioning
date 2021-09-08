@@ -125,7 +125,7 @@ parso==0.7.1
 pcre==8.44
 pexpect==4.8.0
 pickleshare==0.7.5
-pillow==8.2.0
+pillow==8.3.2
 pip==20.0.2
 pixman==0.38.0
 poppler==0.89.0
