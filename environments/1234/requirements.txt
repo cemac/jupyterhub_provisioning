@@ -126,7 +126,7 @@ oauthenticator==14.1.0
 oauthlib==3.1.1
 olefile==0.46
 openjpeg==2.4.0
-openssl==1.1.1k
+openssl==1.1.1l
 packaging==21.0
 pamela==1.0.0
 pandoc==2.14.1
@@ -135,7 +135,7 @@ parso==0.8.2
 pcre==8.45
 pexpect==4.8.0
 pickleshare==0.7.5
-pillow==8.3.1
+pillow==8.3.2
 pip==21.2.4
 proj==7.2.0
 prometheus_client==0.11.0
@@ -178,7 +178,7 @@ sqlalchemy==1.4.22
 sqlite==3.36.0
 terminado==0.10.1
 testpath==0.5.0
-tk==8.6.10
+tk==8.6.11
 tornado==6.1
 tqdm==4.62.1
 traitlets==5.0.5
