@@ -79,7 +79,7 @@ nbformat==5.0.7
 ncurses==6.2
 nodejs==13.13.0
 notebook==6.4.3
-numpy==1.21.0
+numpy==1.21.2
 oauthenticator==14.1.0
 oauthlib==3.0.1
 okada-wrapper==18.12.7.3
