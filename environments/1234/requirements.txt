@@ -59,7 +59,7 @@ idna==3.1
 importlib-metadata==4.8.1
 importlib_resources==5.2.2
 ipykernel==6.4.1
-ipython==7.27.0
+ipython==7.28.0
 ipython_genutils==0.2.0
 iris==3.1.0
 jbig==2.1
@@ -67,7 +67,7 @@ jedi==0.18.0
 jinja2==3.0.1
 jpeg==9d
 jsonschema==3.2.0
-jupyter_client==7.0.3
+jupyter_client==7.0.4
 jupyter_core==4.8.1
 jupyter_telemetry==0.1.0
 jupyterhub==1.4.2
