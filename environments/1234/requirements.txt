@@ -48,7 +48,7 @@ geos==3.9.1
 gettext==0.19.8.1
 glib==2.68.4
 glib-tools==2.68.4
-greenlet==1.1.1
+greenlet==1.1.2
 gst-plugins-base==1.18.5
 gstreamer==1.18.5
 hdf4==4.2.15
@@ -67,7 +67,7 @@ jedi==0.18.0
 jinja2==3.0.1
 jpeg==9d
 jsonschema==3.2.0
-jupyter_client==7.0.4
+jupyter_client==7.0.5
 jupyter_core==4.8.1
 jupyter_telemetry==0.1.0
 jupyterhub==1.4.2
