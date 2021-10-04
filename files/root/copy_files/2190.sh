@@ -1,24 +1,31 @@
 #!/bin/bash
 
-# Get inverse users:
-INVERSE_USERS=$(getent group jupyterhub_users_soee2190 | \
-                awk -F ':' '{print $NF}' | \
-                tr ',' '\n' | \
-                egrep -v '^(chmcsy|earhbu|earmgr|eartdj)$')
+# Source directories:
+SOURCE_DIRS='/storage/earth_data/soee2190/TimeSeriesPracticals'
 
-# Source directory:
-SOURCE_DIR='/storage/earth_data/soee2190/TimeSeriesPracticals'
+# Get course users:
+COURSE_GROUP='jupyterhub_users_soee2190'
+COURSE_USERS=$(getent group ${COURSE_GROUP} | \
+                 awk -F ':' '{print $NF}' | \
+                 tr ',' '\n' | \
+                 egrep -v '^(chmcsy|earhbu|earmgr|eartdj)$')
 
-# Loop through users:
-for INVERSE_USER in ${INVERSE_USERS}
+# Loop through source directories:
+for SOURCE_DIR in ${SOURCE_DIRS}
 do
-  # Create TimeSeriesPracticals directory, if it does not exist:
-  if [ ! -e "/home/${INVERSE_USER}/TimeSeriesPracticals" ] ; then
-    mkdir -p /home/${INVERSE_USER}/TimeSeriesPracticals
-    chown ${INVERSE_USER}:${INVERSE_USER} /home/${INVERSE_USER}/TimeSeriesPracticals
-  fi
-  # Copy TimeSeriesPracticals files which do not exist:
-  rsync -a --ignore-existing \
-    ${SOURCE_DIR}/ /home/${INVERSE_USER}/TimeSeriesPracticals/
-  chown -R ${INVERSE_USER}:${INVERSE_USER} /home/${INVERSE_USER}/TimeSeriesPracticals
+  # Get directory name:
+  DIR_NAME=$(basename ${SOURCE_DIR})
+  # Loop through users:
+  for COURSE_USER in ${COURSE_USERS}
+  do
+    # Create directory, if it does not exist:
+    if [ ! -e "/home/${COURSE_USER}/${DIR_NAME}" ] ; then
+      mkdir -p /home/${COURSE_USER}/${DIR_NAME}
+      chown ${COURSE_USER}:${COURSE_USER} /home/${COURSE_USER}/${DIR_NAME}
+    fi
+    # Copy files which do not exist:
+    rsync -a --ignore-existing \
+      ${SOURCE_DIR}/ /home/${COURSE_USER}/${DIR_NAME}/
+    chown -R ${COURSE_USER}:${COURSE_USER} /home/${COURSE_USER}/${DIR_NAME}
+  done
 done

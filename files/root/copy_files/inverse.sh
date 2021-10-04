@@ -1,38 +1,33 @@
 #!/bin/bash
 
-# Get inverse users:
-INVERSE_USERS=$(getent group jupyterhub_users_inverse | \
-                awk -F ':' '{print $NF}' | \
-                tr ',' '\n' | \
-                egrep -v '^(chmcsy|earhbu|earmgr|eartdj)$')
+# Source directories:
+SOURCE_DIRS='/storage/earth_data/inverse/Example_scripts
+             /storage/earth_data/inverse/Practicals
+             /storage/earth_data/inverse/Model_answers'
 
-# Practicals source directory:
-PRACTICALS_DIR='/storage/earth_data/inverse/Practicals'
+# Get course users:
+COURSE_GROUP='jupyterhub_users_inverse'
+COURSE_USERS=$(getent group ${COURSE_GROUP} | \
+                 awk -F ':' '{print $NF}' | \
+                 tr ',' '\n' | \
+                 egrep -v '^(chmcsy|earhbu|earmgr|eartdj)$')
 
-# Loop through users:
-for INVERSE_USER in ${INVERSE_USERS}
+# Loop through source directories:
+for SOURCE_DIR in ${SOURCE_DIRS}
 do
-  # Copy Example_scripts, if it does not exist:
-  if [ ! -e "/home/${INVERSE_USER}/Example_scripts" ] ; then
-    cp -r \
-      /storage/earth_data/inverse/Example_scripts \
-      /home/${INVERSE_USER}/
-    chown -R ${INVERSE_USER}:${INVERSE_USER} \
-      /home/${INVERSE_USER}/Example_scripts
-  fi
-  # Create Practicals directory, if it does not exist:
-  if [ ! -e "/home/${INVERSE_USER}/Practicals" ] ; then
-    mkdir -p /home/${INVERSE_USER}/Practicals
-    chown ${INVERSE_USER}:${INVERSE_USER} /home/${INVERSE_USER}/Practicals
-  fi
-  # Copy Practicals files which do not exist:
-  for PRACTICALS_FILE in $(find ${PRACTICALS_DIR} -maxdepth 1 -mindepth 1 -type f -name '*.ipynb' | \
-                           awk -F '/' '{print $NF}')
+  # Get directory name:
+  DIR_NAME=$(basename ${SOURCE_DIR})
+  # Loop through users:
+  for COURSE_USER in ${COURSE_USERS}
   do
-    if [ ! -e "/home/${INVERSE_USER}/Practicals/${PRACTICALS_FILE}" ] ; then
-      cp ${PRACTICALS_DIR}/${PRACTICALS_FILE} \
-        /home/${INVERSE_USER}/Practicals/
-      chown ${INVERSE_USER}:${INVERSE_USER} /home/${INVERSE_USER}/Practicals/${PRACTICALS_FILE}
+    # Create directory, if it does not exist:
+    if [ ! -e "/home/${COURSE_USER}/${DIR_NAME}" ] ; then
+      mkdir -p /home/${COURSE_USER}/${DIR_NAME}
+      chown ${COURSE_USER}:${COURSE_USER} /home/${COURSE_USER}/${DIR_NAME}
     fi
+    # Copy files which do not exist:
+    rsync -a --ignore-existing \
+      ${SOURCE_DIR}/ /home/${COURSE_USER}/${DIR_NAME}/
+    chown -R ${COURSE_USER}:${COURSE_USER} /home/${COURSE_USER}/${DIR_NAME}
   done
 done
