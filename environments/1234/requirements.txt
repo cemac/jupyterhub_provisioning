@@ -43,7 +43,7 @@ entrypoints==0.3
 expat==2.4.1
 fontconfig==2.13.1
 freetype==2.10.4
-fsspec==2021.9.0
+fsspec==2021.10.0
 geos==3.9.1
 gettext==0.19.8.1
 glib==2.68.4
@@ -66,7 +66,7 @@ jbig==2.1
 jedi==0.18.0
 jinja2==3.0.1
 jpeg==9d
-jsonschema==3.2.0
+jsonschema==4.0.1
 jupyter_client==7.0.5
 jupyter_core==4.8.1
 jupyter_telemetry==0.1.0
@@ -115,6 +115,7 @@ libxcb==1.13
 libxkbcommon==1.0.3
 libxml2==2.9.12
 libzip==1.8.0
+libzlib==1.2.11
 locket==0.2.0
 lz4-c==1.9.3
 mako==1.1.5
@@ -154,7 +155,7 @@ pexpect==4.8.0
 pickleshare==0.7.5
 pillow==8.3.2
 pip==21.2.4
-proj==8.1.0
+proj==8.1.1
 prometheus_client==0.11.0
 prompt-toolkit==3.0.20
 psutil==5.8.0
@@ -165,7 +166,7 @@ pycparser==2.20
 pycurl==7.44.1
 pygments==2.10.0
 pyjwt==2.1.0
-pyopenssl==20.0.1
+pyopenssl==21.0.0
 pyparsing==2.4.7
 pyproj==3.2.1
 pyqt==5.12.3
@@ -207,7 +208,7 @@ tornado==6.1
 tqdm==4.62.3
 traitlets==5.1.0
 typing_extensions==3.10.0.2
-tzdata==2021a
+tzdata==2021b
 udunits2==2.2.27.27
 urllib3==1.26.7
 wcwidth==0.2.5
@@ -220,6 +221,6 @@ xz==5.2.5
 yaml==0.2.5
 zeromq==4.3.4
 zict==2.0.0
-zipp==3.5.0
+zipp==3.6.0
 zlib==1.2.11
 zstd==1.5.0
