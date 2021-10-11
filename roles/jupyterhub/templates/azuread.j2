@@ -94,7 +94,7 @@ class AzureAdOAuthenticator(OAuthenticator):
         access_token = resp_json['access_token']
 
         id_token = resp_json['id_token']
-        decoded = jwt.decode(id_token, verify=False, options={"verify_signature": False})
+        decoded = jwt.decode(id_token, options={"verify_signature": False})
 
         upn = decoded['preferred_username']
         [username, domain] = upn.split('@')
