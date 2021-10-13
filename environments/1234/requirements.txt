@@ -14,7 +14,7 @@ brotlipy==0.7.0
 bzip2==1.0.8
 c-ares==1.17.2
 ca-certificates==2021.10.8
-cartopy==0.20.0
+cartopy==0.20.1
 certifi==2021.10.8
 certipy==0.1.3
 cf-units==3.0.1.post0
