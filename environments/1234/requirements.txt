@@ -99,7 +99,7 @@ libllvm11==11.1.0
 libnetcdf==4.8.1
 libnghttp2==1.43.0
 libogg==1.3.4
-libopenblas==0.3.17
+libopenblas==0.3.18
 libopus==1.3.1
 libpng==1.6.37
 libpq==13.3
