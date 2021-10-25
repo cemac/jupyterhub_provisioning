@@ -32,13 +32,13 @@ cryptography==35.0.0
 curl==7.79.1
 cycler==0.10.0
 cytoolz==0.11.0
-dask==2021.9.1
-dask-core==2021.9.1
+dask==2021.10.0
+dask-core==2021.10.0
 dbus==1.13.6
 debugpy==1.4.1
 decorator==5.1.0
 defusedxml==0.7.1
-distributed==2021.9.1
+distributed==2021.10.0
 entrypoints==0.3
 expat==2.4.1
 fontconfig==2.13.1
@@ -66,7 +66,7 @@ jbig==2.1
 jedi==0.18.0
 jinja2==3.0.2
 jpeg==9d
-jsonschema==4.1.1
+jsonschema==4.1.2
 jupyter_client==7.0.6
 jupyter_core==4.8.1
 jupyter_telemetry==0.1.0
@@ -137,7 +137,7 @@ nodejs==14.17.4
 notebook==6.4.5
 nspr==4.30
 nss==3.69
-numpy==1.21.2
+numpy==1.21.3
 oauthenticator==14.1.0
 oauthlib==3.1.1
 olefile==0.46
@@ -154,10 +154,10 @@ pcre==8.45
 pexpect==4.8.0
 pickleshare==0.7.5
 pillow==8.3.2
-pip==21.3
+pip==21.3.1
 proj==8.1.1
 prometheus_client==0.11.0
-prompt-toolkit==3.0.20
+prompt-toolkit==3.0.21
 psutil==5.8.0
 pthread-stubs==0.4
 ptyprocess==0.7.0
@@ -208,7 +208,7 @@ tornado==6.1
 tqdm==4.62.3
 traitlets==5.1.0
 typing_extensions==3.10.0.2
-tzdata==2021d
+tzdata==2021e
 udunits2==2.2.27.27
 urllib3==1.26.7
 wcwidth==0.2.5
