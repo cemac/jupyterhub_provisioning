@@ -157,7 +157,7 @@ requests==2.25.1
 ruamel.yaml==0.17.16
 ruamel.yaml.clib==0.2.2
 ruamel_yaml==0.15.100
-scikit-learn==1.0
+scikit-learn==1.0.1
 scipy==1.7.1
 send2trash==1.8.0
 setuptools==52.0.0
