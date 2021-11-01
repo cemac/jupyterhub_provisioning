@@ -62,5 +62,5 @@ c.JupyterHub.services = [
 ]
 {% endif %}
 
-c.LocalAuthenticator.group_whitelist = set(['{{ jupyterhub_install.users.group | default(['jupyterhub_users_', jupyterhub_install.name] | join('')) }}'])
+c.LocalAuthenticator.allowed_groups = set(['{{ jupyterhub_install.users.group | default(['jupyterhub_users_', jupyterhub_install.name] | join('')) }}'])
 c.LocalAuthenticator.admin_users = set({{ jupyterhub_install.users.admins }})
