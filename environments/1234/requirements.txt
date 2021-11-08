@@ -70,7 +70,7 @@ jsonschema==4.1.2
 jupyter_client==7.0.6
 jupyter_core==4.9.1
 jupyter_telemetry==0.1.0
-jupyterhub==1.4.2
+jupyterhub==1.5.0
 jupyterhub-base==1.4.2
 jupyterhub-systemdspawner==0.15.0
 jupyterlab_pygments==0.1.2
