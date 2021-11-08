@@ -96,8 +96,10 @@ do
           chown ${USER}:${USER_GROUP} \
             "${USER_HOME}/${SUBMIT_DIR}/${SUBMITTED_DIR}"
         fi
+        # Move file to submitted directory and make read only:
         mv "${USER_FILE}" \
           "${USER_HOME}/${SUBMIT_DIR}/${SUBMITTED_DIR}/${IN_FILE}"
+        chmod 444 "${USER_HOME}/${SUBMIT_DIR}/${SUBMITTED_DIR}/${IN_FILE}"
       fi
     done
   fi
@@ -160,6 +162,8 @@ do
         "${USER_HOME}/${SUBMIT_DIR}/${RETURNED_DIR}/${OUT_FILE}"
       chown ${USER}:${USER_GROUP} \
         "${USER_HOME}/${SUBMIT_DIR}/${RETURNED_DIR}/${OUT_FILE}"
+      # Make returned file read only:
+      chmod 444  "${USER_HOME}/${SUBMIT_DIR}/${RETURNED_DIR}/${OUT_FILE}"
       # Check for / create returned directory in marker's directory:
       if [ ! -d "${MARKER_HOME}/${MARKER_DIR}/${DONE_DIR}" ] ; then
         mkdir "${MARKER_HOME}/${MARKER_DIR}/${DONE_DIR}"
