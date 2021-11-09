@@ -112,7 +112,7 @@ nodejs==14.17.4
 notebook==6.4.5
 nspr==4.30
 nss==3.69
-numpy==1.21.3
+numpy==1.21.4
 oauthenticator==14.1.0
 oauthlib==3.1.1
 okada-wrapper==18.12.7.3
@@ -161,7 +161,7 @@ requests==2.25.1
 ruamel.yaml==0.17.16
 ruamel.yaml.clib==0.2.2
 ruamel_yaml==0.15.100
-scipy==1.7.1
+scipy==1.7.2
 send2trash==1.8.0
 setuptools==52.0.0
 shapely==1.7.1
