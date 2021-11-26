@@ -46,7 +46,12 @@ mkdir -p "${OUT_DIR}" || error "failed to create directory ${OUT_DIR}"
 # change to working dir:
 cd "${SRC_DIR}" || error "failed to change to directory ${SRC_DIR}"
 # create tar file:
-tar czf "${OUT_FILE}" "${SRC_NAME}"
+tar \
+  czf "${OUT_FILE}" \
+  --exclude='*/week0*.tar.gz' \
+  --exclude='*/coursework/ancillaries/*.nc' \
+  --exclude='*/coursework/tead*/*/*.nc' \
+  "${SRC_NAME}"
 
 # end message:
 echo "END : $(date)"
