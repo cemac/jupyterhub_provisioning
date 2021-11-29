@@ -51,6 +51,8 @@ tar \
   --exclude='*/week0*.tar.gz' \
   --exclude='*/coursework/ancillaries/*.nc' \
   --exclude='*/coursework/tead*/*/*.nc' \
+  --exclude='*/SOEE1443-Python/Data/*.nc' \
+  --exclude='*/SOEE5920/*.nc' \
   "${SRC_NAME}"
 
 # end message:
