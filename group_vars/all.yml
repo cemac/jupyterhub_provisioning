@@ -58,6 +58,9 @@ resources_copies_default:
     dest: '/etc/apache2/conf-available/security.conf'
     group: 'www-data'
     mode: '0640'
+  # Apache mpm event configuration:
+  - src: 'files/etc/apache2/mods-available/mpm_event.conf'
+    dest: '/etc/apache2/mods-available/mpm_event.conf'
   # Default adduser settings (change directory mode):
   - src: 'files/etc/adduser.conf'
     dest: '/etc/adduser.conf'
