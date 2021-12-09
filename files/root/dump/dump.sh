@@ -53,6 +53,8 @@ tar \
   --exclude='*/coursework/tead*/*/*.nc' \
   --exclude='*/SOEE1443-Python/Data/*.nc' \
   --exclude='*/SOEE5920/*.nc' \
+  --exclude='*/earth_data/home/*/TRMM_data/*.nc4' \
+  --exclude='*/earth_data/home/*/tead*/*/*.nc' \
   "${SRC_NAME}"
 
 # end message:
