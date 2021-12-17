@@ -27,7 +27,7 @@ colorama==0.4.4
 conda==4.11.0
 conda-package-handling==1.7.3
 configurable-http-proxy==4.5.0
-cryptography==36.0.0
+cryptography==36.0.1
 curl==7.80.0
 cycler==0.11.0
 dask-core==2021.12.0
@@ -38,7 +38,7 @@ defusedxml==0.7.1
 entrypoints==0.3
 expat==2.4.1
 fontconfig==2.13.1
-fonttools==4.28.3
+fonttools==4.28.4
 freetype==2.10.4
 fsspec==2021.11.1
 geos==3.10.1
@@ -62,7 +62,7 @@ jbig==2.1
 jedi==0.18.1
 jinja2==3.0.3
 jpeg==9d
-jsonschema==4.2.1
+jsonschema==4.3.0
 jupyter_client==7.1.0
 jupyter_core==4.9.1
 jupyter_telemetry==0.1.0
@@ -190,7 +190,7 @@ ruamel.yaml.clib==0.2.6
 ruamel_yaml==0.15.80
 scipy==1.7.3
 send2trash==1.8.0
-setuptools==59.4.0
+setuptools==59.6.0
 shapely==1.8.0
 six==1.16.0
 sqlalchemy==1.4.28
