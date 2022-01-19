@@ -42,7 +42,7 @@ decorator==5.1.1
 defusedxml==0.7.1
 entrypoints==0.3
 executing==0.8.2
-expat==2.4.2
+expat==2.4.3
 flit-core==3.6.0
 fontconfig==2.13.1
 fonttools==4.28.5
@@ -151,7 +151,7 @@ openjpeg==2.4.0
 openssl==1.1.1l
 packaging==21.3
 pamela==1.0.0
-pandoc==2.17
+pandoc==2.17.0.1
 pandocfilters==1.5.0
 parso==0.8.3
 partd==1.2.0
@@ -162,7 +162,7 @@ pickleshare==0.7.5
 pillow==8.4.0
 pip==21.3.1
 platformdirs==2.3.0
-proj==8.2.0
+proj==8.2.1
 prometheus_client==0.12.0
 prompt-toolkit==3.0.24
 psutil==5.9.0
@@ -182,7 +182,7 @@ pyqt-impl==5.12.3
 pyqt5-sip==4.19.18
 pyqtchart==5.12
 pyqtwebengine==5.12.1
-pyrsistent==0.18.0
+pyrsistent==0.18.1
 pyshp==2.1.3
 pysocks==1.7.1
 python==3.9.9
