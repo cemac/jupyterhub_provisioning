@@ -55,6 +55,7 @@ tar \
   --exclude='*/SOEE5920/*.nc' \
   --exclude='*/earth_data/home/*/TRMM_data/*.nc4' \
   --exclude='*/earth_data/home/*/tead*/*/*.nc' \
+  --exclude='*/ERA5*.nc' \
   "${SRC_NAME}"
 
 # end message:
