@@ -165,7 +165,7 @@ pathspec==0.9.0
 pcre==8.45
 pexpect==4.8.0
 pickleshare==0.7.5
-pillow==8.4.0
+pillow==9.0.0
 pip==21.3.1
 platformdirs==2.3.0
 proj==8.2.1
