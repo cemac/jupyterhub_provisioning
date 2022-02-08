@@ -152,7 +152,7 @@ pandoc==2.14.2
 pandocfilters==1.5.0
 parso==0.8.2
 partd==1.2.0
-patsy==0.5.1
+patsy==0.5.2
 pcre==8.45
 pexpect==4.8.0
 pickleshare==0.7.5
@@ -204,7 +204,7 @@ six==1.16.0
 sortedcontainers==2.4.0
 sqlalchemy==1.4.25
 sqlite==3.36.0
-statsmodels==0.12.2
+statsmodels==0.13.1
 tblib==1.7.0
 terminado==0.12.1
 testpath==0.5.0
