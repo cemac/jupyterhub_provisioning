@@ -48,14 +48,9 @@ cd "${SRC_DIR}" || error "failed to change to directory ${SRC_DIR}"
 # create tar file:
 tar \
   czf "${OUT_FILE}" \
-  --exclude='*/week0*.tar.gz' \
-  --exclude='*/coursework/ancillaries/*.nc' \
-  --exclude='*/coursework/tead*/*/*.nc' \
-  --exclude='*/SOEE1443-Python/Data/*.nc' \
-  --exclude='*/SOEE5920/*.nc' \
-  --exclude='*/earth_data/home/*/TRMM_data/*.nc4' \
-  --exclude='*/earth_data/home/*/tead*/*/*.nc' \
-  --exclude='*/ERA5*.nc' \
+  --exclude='*/week*.tar.gz' \
+  --exclude='*/*.nc' \
+  --exclude='*/*.nc4' \
   "${SRC_NAME}"
 
 # end message:
