@@ -176,7 +176,7 @@ pycosat==0.6.3
 pycparser==2.21
 pycurl==7.45.1
 pygments==2.11.2
-pyjwt==2.3.0
+pyjwt==2.4.0
 pyopenssl==22.0.0
 pyparsing==3.0.7
 pyproj==3.3.0
