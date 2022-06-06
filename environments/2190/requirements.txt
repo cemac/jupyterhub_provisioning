@@ -117,7 +117,7 @@ notebook==6.4.10
 nspr==4.30
 nss==3.69
 numpy==1.22.3
-oauthenticator==14.1.0
+oauthenticator==15.0.0
 oauthlib==3.1.1
 olefile==0.46
 openjpeg==2.4.0
