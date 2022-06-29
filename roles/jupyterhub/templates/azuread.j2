@@ -113,7 +113,7 @@ class AzureAdOAuthenticator(OAuthenticator):
     def _logout_redirect_url_default(self):
         if self.post_logout_redirect_uri:
             url = 'https://login.microsoftonline.com/{0}/oauth2/v2.0/logout?post_logout_redirect_uri={1}'
-        else:  
+        else:
             url = 'https://login.microsoftonline.com/{0}/oauth2/v2.0/logout'
         return url.format(self.tenant_id, self.post_logout_redirect_uri)
 
