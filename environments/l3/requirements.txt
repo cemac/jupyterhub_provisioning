@@ -128,7 +128,7 @@ markupsafe==2.0.1
 matplotlib==3.4.3
 matplotlib-base==3.4.3
 matplotlib-inline==0.1.3
-metpy==1.3.0
+metpy==1.3.1
 mistune==0.8.4
 msgpack-python==1.0.2
 mysql-common==8.0.25
