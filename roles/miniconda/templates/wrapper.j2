@@ -1,4 +1,4 @@
 #!/bin/bash
-minicondaDir='{{ miniconda_install.path }}'
-export PATH="${minicondaDir}/bin:${PATH}"
+MINICONDA_DIR='{{ miniconda_install.path }}'
+export PATH="${MINICONDA_DIR}/bin:${PATH}"
 exec $(basename ${0}) "${@}"
