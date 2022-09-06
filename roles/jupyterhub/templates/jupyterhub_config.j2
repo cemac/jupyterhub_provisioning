@@ -1,7 +1,7 @@
 import sys
 {% if jupyterhub_install.auth.name | default(jupyterhub_auth) == 'azure' %}
 import os
-from oauthenticator.azuread import LocalAzureAdOAuthenticator
+from oauthenticator.azuread_local import LocalAzureAdOAuthenticator
 c.JupyterHub.authenticator_class = LocalAzureAdOAuthenticator
 c.AzureAdOAuthenticator.tenant_id = os.environ.get('AAD_TENANT_ID')
 c.AzureAdOAuthenticator.scope = ['openid', 'profile']

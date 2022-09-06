@@ -178,14 +178,14 @@
   register: jupyterhub_azuread_py
   tags:
     - 'jupyterhub_configure_find_azuread_py'
-- name: 'jupyterhub configure azuread.py'
+- name: 'jupyterhub configure azuread_local.py'
   template:
-    src: 'azuread.j2'
-    dest: "{{ item.path }}"
+    src: 'azuread_local.j2'
+    dest: "{{ item.path | replace('azuread.py', 'azuread_local.py') }}"
   loop: "{{ jupyterhub_azuread_py.files }}"
   when: jupyterhub_install.auth.name | default(jupyterhub_auth) == 'azure'
   tags:
-     'jupyterhub_configure_azuread_py'
+     'jupyterhub_configure_azuread_local_py'
 
 # Create jupyterhub configuration file:
 - name: 'jupyterhub configure config file'

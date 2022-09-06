@@ -17,10 +17,14 @@ WorkingDirectory={{ jupyterhub_install.user.home }}
 {% if jupyterhub_install.auth.name | default(jupyterhub_auth) == 'azure' %}
 Environment="AAD_TENANT_ID={{ jupyterhub_install.auth.tenant_id }}"
 {% endif %}
-ExecStart={{ jupyterhub_install.python_dir }}/bin/jupyterhub -f {{ jupyterhub_config_dir }}/jupyterhub_{{ jupyterhub_install.name }}_config.py
 KillMode=control-group
 StandardOutput=syslog
 Restart=always
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ExecStart={{ jupyterhub_install.python_dir }}/bin/jupyterhub -f {{ jupyterhub_config_dir }}/jupyterhub_{{ jupyterhub_install.name }}_config.py --upgrade-db
 
 [Install]
 WantedBy=multi-user.target
