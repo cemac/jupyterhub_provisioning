@@ -3,6 +3,10 @@
 # Packages defaults:
 resources_package_state: 'present'
 
+# Mount defaults:
+resources_mount_opts: 'defaults'
+resources_mount_state: 'present'
+
 # File defaults:
 resources_file_state: 'directory'
 resources_file_owner: 'root'
@@ -39,4 +43,9 @@ resources_user_link_dir: '/home'
 resources_authorized_key_state: 'present'
 
 # Cron jobs defaults:
+resources_cron_job_minute: '*'
+resources_cron_job_hour: '*'
+resources_cron_job_day: '*'
+resources_cron_job_month: '*'
+resources_cron_job_weekday: '*'
 resources_cron_job_state: 'present'

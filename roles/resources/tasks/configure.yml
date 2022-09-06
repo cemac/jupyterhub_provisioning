@@ -1,5 +1,47 @@
 ---
 
+# Configure default mounts:
+- name: 'resources configure mounts default'
+  mount:
+    path: "{{ item.path }}"
+    src: "{{ item.src }}"
+    fstype: "{{ item.fstype }}"
+    opts: "{{ item.opts | default(resources_mount_opts)}}"
+    state: "{{ item.state | default(resources_mount_state) }}"
+  loop: "{{ resources_mounts_default }}"
+  when: resources_mounts_default is defined
+  tags:
+    - 'resources_configure_mounts'
+    - 'resources_configure_mounts_default'
+
+# Configure group mounts:
+- name: 'resources configure mounts group'
+  mount:
+    path: "{{ item.path }}"
+    src: "{{ item.src }}"
+    fstype: "{{ item.fstype }}"
+    opts: "{{ item.opts | default(resources_mount_opts)}}"
+    state: "{{ item.state | default(resources_mount_state) }}"
+  loop: "{{ resources_mounts_group }}"
+  when: resources_mounts_group is defined
+  tags:
+    - 'resources_configure_mounts'
+    - 'resources_configure_mounts_group'
+
+# Configure host mounts:
+- name: 'resources configure mounts host'
+  mount:
+    path: "{{ item.path }}"
+    src: "{{ item.src }}"
+    fstype: "{{ item.fstype }}"
+    opts: "{{ item.opts | default(resources_mount_opts)}}"
+    state: "{{ item.state | default(resources_mount_state) }}"
+  loop: "{{ resources_mounts_host }}"
+  when: resources_mounts_host is defined
+  tags:
+    - 'resources_configure_mounts'
+    - 'resources_configure_mounts_host'
+
 # Configure default packages:
 - name: 'resources configure packages default'
   package:
@@ -390,54 +432,54 @@
     - 'resources_configure_authorized_keys'
     - 'resources_configure_authorized_keys_host'
 
-# Configure default cron job:
+# Configure default cron jobs:
 - name: 'resources configure cron jobs default'
   cron:
     name: "{{ item.name }}"
-    user: "{{ item.user }}"
-    state: "{{ item.state | default(resources_cron_job_state) }}"
     job: "{{ item.job }}"
-    minute: "{{ item.minute }}"
-    hour: "{{ item.hour }}"
-    day: "{{ item.day }}"
-    month: "{{ item.month }}"
-    weekday: "{{ item.weekday }}"
+    user: "{{ item.user }}"
+    minute: "{{ item.minute | default(resources_cron_job_minute) }}"
+    hour: "{{ item.hour | default(resources_cron_job_hour) }}"
+    day: "{{ item.day | default(resources_cron_job_day) }}"
+    month: "{{ item.month | default(resources_cron_job_month) }}"
+    weekday: "{{ item.weekday | default(resources_cron_job_weekday) }}"
+    state: "{{ item.state | default(resources_cron_job_state) }}"
   loop: "{{ resources_cron_jobs_default }}"
   when: resources_cron_jobs_default is defined
   tags:
     - 'resources_configure_cron_jobs'
     - 'resources_configure_cron_jobs_default'
 
-# Configure group cron job:
+# Configure group cron jobs:
 - name: 'resources configure cron jobs group'
   cron:
     name: "{{ item.name }}"
-    user: "{{ item.user }}"
-    state: "{{ item.state | default(resources_cron_job_state) }}"
     job: "{{ item.job }}"
-    minute: "{{ item.minute }}"
-    hour: "{{ item.hour }}"
-    day: "{{ item.day }}"
-    month: "{{ item.month }}"
-    weekday: "{{ item.weekday }}"
+    user: "{{ item.user }}"
+    minute: "{{ item.minute | default(resources_cron_job_minute) }}"
+    hour: "{{ item.hour | default(resources_cron_job_hour) }}"
+    day: "{{ item.day | default(resources_cron_job_day) }}"
+    month: "{{ item.month | default(resources_cron_job_month) }}"
+    weekday: "{{ item.weekday | default(resources_cron_job_weekday) }}"
+    state: "{{ item.state | default(resources_cron_job_state) }}"
   loop: "{{ resources_cron_jobs_group }}"
   when: resources_cron_jobs_group is defined
   tags:
     - 'resources_configure_cron_jobs'
     - 'resources_configure_cron_jobs_group'
 
-# Configure host cron job:
+# Configure host cron jobs:
 - name: 'resources configure cron jobs host'
   cron:
     name: "{{ item.name }}"
-    user: "{{ item.user }}"
-    state: "{{ item.state | default(resources_cron_job_state) }}"
     job: "{{ item.job }}"
-    minute: "{{ item.minute }}"
-    hour: "{{ item.hour }}"
-    day: "{{ item.day }}"
-    month: "{{ item.month }}"
-    weekday: "{{ item.weekday }}"
+    user: "{{ item.user }}"
+    minute: "{{ item.minute | default(resources_cron_job_minute) }}"
+    hour: "{{ item.hour | default(resources_cron_job_hour) }}"
+    day: "{{ item.day | default(resources_cron_job_day) }}"
+    month: "{{ item.month | default(resources_cron_job_month) }}"
+    weekday: "{{ item.weekday | default(resources_cron_job_weekday) }}"
+    state: "{{ item.state | default(resources_cron_job_state) }}"
   loop: "{{ resources_cron_jobs_host }}"
   when: resources_cron_jobs_host is defined
   tags:
