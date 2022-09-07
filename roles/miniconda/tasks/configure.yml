@@ -1,12 +1,37 @@
 ---
 
-# Add packages:
-- name: 'miniconda configure packages'
+# Add mamba:
+- name: 'miniconda configure mamba'
+  become_user: "{{ miniconda_install.user }}"
+  command: "{{ miniconda_install.path }}/bin/conda install -y mamba"
+  args:
+    creates: "{{ miniconda_install.path }}/bin/mamba"
+  when: miniconda_install.use_mamba is defined and
+        miniconda_install.use_mamba
+  tags:
+    - 'miniconda_configure_mamba'
+
+# Add conda packages:
+- name: 'miniconda configure conda packages'
   become_user: "{{ miniconda_install.user }}"
   command: "{{ miniconda_install.path }}/bin/conda install -y {{ miniconda_install.packages | join(' ') }}"
-  when: miniconda_install.packages is defined
+  when: miniconda_install.packages is defined and
+        (miniconda_install.use_mamba is not defined or
+         not miniconda_install.use_mamba)
   tags:
     - 'miniconda_configure_packages'
+    - 'miniconda_configure_conda_packages'
+
+# Add mamba packages:
+- name: 'miniconda configure mamba packages'
+  become_user: "{{ miniconda_install.user }}"
+  command: "{{ miniconda_install.path }}/bin/mamba install -y {{ miniconda_install.packages | join(' ') }}"
+  when: miniconda_install.packages is defined and
+        miniconda_install.use_mamba is defined and
+        miniconda_install.use_mamba
+  tags:
+    - 'miniconda_configure_packages'
+    - 'miniconda_configure_mamba_packages'
 
 # Add pip packages:
 - name: 'miniconda configure pip packages'
@@ -16,19 +41,35 @@
     executable: "{{ miniconda_install.path }}/bin/pip"
   when: miniconda_install.pip_packages is defined
   tags:
+    - 'miniconda_configure_packages'
     - 'miniconda_configure_pip_packages'
 
-# Update miniconda:
-- name: 'miniconda configure update'
+# Update miniconda with conda:
+- name: 'miniconda configure conda update'
   become_user: "{{ miniconda_install.user }}"
   command: "{{ miniconda_install.path }}/bin/conda update -y --all"
   when: miniconda_install.updates is defined and
-        miniconda_install.updates
+        miniconda_install.updates and
+        (miniconda_install.use_mamba is not defined or
+         not miniconda_install.use_mamba)
   tags:
     - 'miniconda_configure_update'
+    - 'miniconda_configure_conda_update'
+
+# Update miniconda with mamba:
+- name: 'miniconda configure mamba update'
+  become_user: "{{ miniconda_install.user }}"
+  command: "{{ miniconda_install.path }}/bin/mamba update -y --all"
+  when: miniconda_install.updates is defined and
+        miniconda_install.updates and
+        miniconda_install.use_mamba is defined and
+        miniconda_install.use_mamba
+  tags:
+    - 'miniconda_configure_update'
+    - 'miniconda_configure_mamba_update'
 
 # Update pip packages:
-- name: 'miniconda configure update pip'
+- name: 'miniconda configure pip update'
   become_user: "{{ miniconda_install.user }}"
   pip:
     name: "{{ miniconda_install.pip_packages }}"
@@ -37,7 +78,8 @@
   when: miniconda_install.pip_packages is defined and
         miniconda_install.updates
   tags:
-    - 'miniconda_configure_pip_packages'
+    - 'miniconda_configure_update'
+    - 'miniconda_configure_pip_update'
 
 # Wrap miniconda:
 - name: 'miniconda configure wrapper directory'
