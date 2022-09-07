@@ -51,7 +51,6 @@ tar \
   --exclude='*/week*.tar.gz' \
   --exclude='*/*.nc' \
   --exclude='*/*.nc4' \
-  --exclude='*ee19sb/Dissertation*' \
   "${SRC_NAME}"
 
 # end message:
