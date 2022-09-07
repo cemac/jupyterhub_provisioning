@@ -8,7 +8,7 @@ COURSE_GROUP='jupyterhub_users_soee2190'
 COURSE_USERS=$(getent group ${COURSE_GROUP} | \
                  awk -F ':' '{print $NF}' | \
                  tr ',' '\n' | \
-                 egrep -v '^(chmcsy|earhbu|earmgr|eartdj)$')
+                 egrep -v '^(earhbu|earmgr|eartdj)$')
 
 # Loop through source directories:
 for SOURCE_DIR in ${SOURCE_DIRS}
