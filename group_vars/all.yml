@@ -95,12 +95,12 @@ ufw_logging: 'medium'
 
 # Enabled modules:
 apache_mods_enabled:
-  - 'headers.load'
-  - 'proxy_http.load'
-  - 'proxy.load'
-  - 'proxy_wstunnel.load'
-  - 'rewrite.load'
-  - 'ssl.load'
+  - 'headers'
+  - 'proxy_http'
+  - 'proxy'
+  - 'proxy_wstunnel'
+  - 'rewrite'
+  - 'ssl'
 # Default options
 apache_allow_override: 'None'
 apache_options: '-Indexes -FollowSymLinks'
