@@ -173,7 +173,7 @@ nspr==4.32
 nss==3.78
 numpy==1.23.2
 oauthenticator==15.0.1
-oauthlib==3.2.0
+oauthlib==3.2.1
 openjpeg==2.5.0
 openssl==1.1.1q
 packaging==21.3
