@@ -206,7 +206,7 @@ portaudio==19.6.0
 proj==9.0.1
 prometheus_client==0.14.1
 prompt-toolkit==3.0.31
-protobuf==3.20.1
+protobuf==3.20.2
 psutil==5.9.2
 pthread-stubs==0.4
 ptyprocess==0.7.0
