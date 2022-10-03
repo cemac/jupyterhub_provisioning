@@ -130,7 +130,7 @@ libpq==14.5
 libsndfile==1.0.31
 libsodium==1.0.18
 libsolv==0.7.22
-libsqlite==3.39.3
+libsqlite==3.39.4
 libssh2==1.10.0
 libstdcxx-ng==12.1.0
 libtiff==4.4.0
@@ -231,13 +231,13 @@ ruamel.yaml.clib==0.2.6
 ruamel_yaml==0.15.80
 scipy==1.9.1
 send2trash==1.8.0
-setuptools==65.4.0
+setuptools==65.4.1
 shapely==1.8.4
 sip==6.6.2
 six==1.16.0
 soupsieve==2.3.2.post1
 sqlalchemy==1.4.41
-sqlite==3.39.3
+sqlite==3.39.4
 stack_data==0.5.1
 terminado==0.16.0
 tinycss2==1.1.1
