@@ -12,7 +12,7 @@ backports==1.0
 backports.functools_lru_cache==1.6.4
 beautifulsoup4==4.11.1
 bleach==5.0.1
-blinker==1.4
+blinker==1.5
 brotli==1.0.9
 brotli-bin==1.0.9
 brotlipy==0.7.0
@@ -33,7 +33,7 @@ conda-package-handling==1.9.0
 configurable-http-proxy==4.5.3
 contourpy==1.0.5
 cryptography==37.0.4
-curl==7.83.1
+curl==7.85.0
 cycler==0.11.0
 dask-core==2022.9.2
 dbus==1.13.6
@@ -101,7 +101,7 @@ libcblas==3.9.0
 libclang==14.0.6
 libclang13==14.0.6
 libcups==2.3.3
-libcurl==7.83.1
+libcurl==7.85.0
 libdb==6.2.32
 libdeflate==1.14
 libedit==3.1.20191231
@@ -161,9 +161,9 @@ munkres==1.1.4
 mysql-common==8.0.30
 mysql-libs==8.0.30
 nbclient==0.6.8
-nbconvert==7.0.0
-nbconvert-core==7.0.0
-nbconvert-pandoc==7.0.0
+nbconvert==7.1.0
+nbconvert-core==7.1.0
+nbconvert-pandoc==7.1.0
 nbformat==5.6.1
 ncurses==6.3
 nest-asyncio==1.5.6
