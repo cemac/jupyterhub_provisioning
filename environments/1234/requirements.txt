@@ -32,7 +32,7 @@ conda==22.9.0
 conda-package-handling==1.9.0
 configurable-http-proxy==4.5.3
 contourpy==1.0.5
-cryptography==37.0.4
+cryptography==38.0.1
 curl==7.85.0
 cycler==0.11.0
 dask-core==2022.9.2
