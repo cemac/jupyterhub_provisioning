@@ -232,7 +232,7 @@ ruamel_yaml==0.15.80
 scipy==1.9.1
 send2trash==1.8.0
 setuptools==65.4.1
-shapely==1.8.4
+shapely==1.8.5
 sip==6.6.2
 six==1.16.0
 soupsieve==2.3.2.post1
@@ -248,7 +248,7 @@ tornado==6.2
 tqdm==4.64.1
 traitlets==5.4.0
 typing_extensions==4.4.0
-tzdata==2022d
+tzdata==2022e
 udunits2==2.2.28
 unicodedata2==14.0.0
 urllib3==1.26.11
