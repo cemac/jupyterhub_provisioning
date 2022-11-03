@@ -4,7 +4,7 @@ antlr-python-runtime==4.7.2
 anyio==3.6.2
 argon2-cffi==21.3.0
 argon2-cffi-bindings==21.2.0
-asttokens==2.0.8
+asttokens==2.1.0
 async_generator==1.10
 attr==2.5.1
 attrs==22.1.0
@@ -34,7 +34,7 @@ conda==22.9.0
 conda-package-handling==1.9.0
 configurable-http-proxy==4.5.3
 contourpy==1.0.6
-cryptography==38.0.2
+cryptography==38.0.3
 curl==7.86.0
 cycler==0.11.0
 dask-core==2022.10.2
@@ -47,6 +47,7 @@ executing==1.2.0
 expat==2.5.0
 fftw==3.3.10
 flit-core==3.7.1
+fmt==9.1.0
 font-ttf-dejavu-sans-mono==2.37
 font-ttf-inconsolata==3.000
 font-ttf-source-code-pro==2.038
@@ -61,7 +62,7 @@ geos==3.11.0
 gettext==0.21.1
 glib==2.74.1
 glib-tools==2.74.1
-greenlet==1.1.3.post0
+greenlet==2.0.0
 gst-plugins-base==1.21.1
 gstreamer==1.21.1
 hdf4==4.2.15
@@ -79,9 +80,9 @@ jack==1.9.21
 jedi==0.18.1
 jinja2==3.1.2
 jpeg==9e
-jsonschema==4.16.0
+jsonschema==4.17.0
 jupyter_client==7.4.4
-jupyter_core==4.11.1
+jupyter_core==4.11.2
 jupyter_server==1.21.0
 jupyter_telemetry==0.1.0
 jupyterhub==3.0.0
@@ -92,7 +93,7 @@ keyutils==1.6.1
 kiwisolver==1.4.4
 krb5==1.19.3
 lame==3.100
-lcms2==2.13.1
+lcms2==2.14
 ld_impl_linux-64==2.39
 lerc==4.0.0
 libarchive==3.5.2
@@ -122,8 +123,8 @@ libiconv==1.17
 liblapack==3.9.0
 libllvm14==14.0.6
 libllvm15==15.0.3
-libmamba==0.27.0
-libmambapy==0.27.0
+libmamba==1.0.0
+libmambapy==1.0.0
 libnetcdf==4.8.1
 libnghttp2==1.47.0
 libnsl==2.0.0
@@ -140,7 +141,7 @@ libssh2==1.10.0
 libstdcxx-ng==12.2.0
 libtiff==4.4.0
 libtool==2.4.6
-libudev1==251
+libudev1==252
 libuuid==2.32.1
 libuv==1.44.2
 libvorbis==1.3.7
@@ -156,7 +157,7 @@ lxml==4.9.1
 lz4-c==1.9.3
 lzo==2.10
 mako==1.2.3
-mamba==0.27.0
+mamba==1.0.0
 markupsafe==2.1.1
 matplotlib==3.6.1
 matplotlib-base==3.6.1
@@ -166,7 +167,7 @@ mpg123==1.30.2
 munkres==1.1.4
 mysql-common==8.0.31
 mysql-libs==8.0.31
-nbclassic==0.4.5
+nbclassic==0.4.7
 nbclient==0.7.0
 nbconvert==7.2.3
 nbconvert-core==7.2.3
@@ -176,7 +177,7 @@ ncurses==6.3
 nest-asyncio==1.5.6
 netcdf4==1.6.1
 nodejs==18.11.0
-notebook==6.5.1
+notebook==6.5.2
 notebook-shim==0.2.0
 nspr==4.32
 nss==3.78
@@ -184,7 +185,7 @@ numpy==1.23.4
 oauthenticator==15.1.0
 oauthlib==3.2.2
 openjpeg==2.5.0
-openssl==1.1.1q
+openssl==1.1.1s
 packaging==21.3
 pamela==1.0.0
 pandoc==2.19.2
@@ -219,7 +220,7 @@ pyparsing==3.0.9
 pyproj==3.4.0
 pyqt==5.15.7
 pyqt5-sip==12.11.0
-pyrsistent==0.18.1
+pyrsistent==0.19.1
 pyshp==2.3.1
 pysocks==1.7.1
 python==3.9.13
@@ -248,7 +249,7 @@ sniffio==1.3.0
 soupsieve==2.3.2.post1
 sqlalchemy==1.4.42
 sqlite==3.39.4
-stack_data==0.5.1
+stack_data==0.6.0
 terminado==0.17.0
 tinycss2==1.2.1
 tk==8.6.12

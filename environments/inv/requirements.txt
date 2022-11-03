@@ -188,7 +188,7 @@ numpy==1.23.2
 oauthenticator==15.0.1
 oauthlib==3.2.1
 openjpeg==2.5.0
-openssl==1.1.1q
+openssl==1.1.1s
 opt_einsum==3.3.0
 packaging==21.3
 pamela==1.0.0
