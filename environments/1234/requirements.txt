@@ -37,7 +37,7 @@ contourpy==1.0.6
 cryptography==38.0.3
 curl==7.86.0
 cycler==0.11.0
-dask-core==2022.10.2
+dask-core==2022.11.0
 dbus==1.13.6
 debugpy==1.6.3
 decorator==5.1.1
@@ -58,7 +58,7 @@ fonts-conda-forge==1
 fonttools==4.38.0
 freetype==2.12.1
 fsspec==2022.11.0
-geos==3.11.0
+geos==3.11.1
 gettext==0.21.1
 glib==2.74.1
 glib-tools==2.74.1
@@ -81,9 +81,9 @@ jedi==0.18.1
 jinja2==3.1.2
 jpeg==9e
 jsonschema==4.17.0
-jupyter_client==7.4.5
+jupyter_client==7.4.6
 jupyter_core==5.0.0
-jupyter_server==1.23.1
+jupyter_server==1.23.2
 jupyter_telemetry==0.1.0
 jupyterhub==3.0.0
 jupyterhub-base==3.0.0
@@ -156,7 +156,7 @@ locket==1.0.0
 lxml==4.9.1
 lz4-c==1.9.3
 lzo==2.10
-mako==1.2.3
+mako==1.2.4
 mamba==1.0.0
 markupsafe==2.1.1
 matplotlib==3.6.2
@@ -169,9 +169,9 @@ mysql-common==8.0.31
 mysql-libs==8.0.31
 nbclassic==0.4.8
 nbclient==0.7.0
-nbconvert==7.2.4
-nbconvert-core==7.2.4
-nbconvert-pandoc==7.2.4
+nbconvert==7.2.5
+nbconvert-core==7.2.5
+nbconvert-pandoc==7.2.5
 nbformat==5.7.0
 ncurses==6.3
 nest-asyncio==1.5.6
