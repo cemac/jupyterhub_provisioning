@@ -262,7 +262,7 @@ stack_data==0.5.0
 tensorboard==2.9.0
 tensorboard-data-server==0.6.0
 tensorboard-plugin-wit==1.8.1
-tensorflow==2.9.1
+tensorflow==2.9.3
 tensorflow-base==2.9.1
 tensorflow-estimator==2.9.1
 termcolor==1.1.0
