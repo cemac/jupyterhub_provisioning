@@ -283,7 +283,7 @@ urllib3==1.26.8
 wcwidth==0.2.5
 webencodings==0.5.1
 werkzeug==2.2.2
-wheel==0.37.1
+wheel==0.38.1
 wrapt==1.14.1
 xcb-util==0.4.0
 xcb-util-image==0.4.0
