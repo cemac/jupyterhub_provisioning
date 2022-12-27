@@ -217,7 +217,7 @@ ruamel.yaml.clib==0.2.6
 ruamel_yaml==0.15.100
 scipy==1.9.1
 send2trash==1.8.0
-setuptools==61.2.0
+setuptools==65.5.1
 sip==6.6.2
 six==1.16.0
 soupsieve==2.3.2.post1
