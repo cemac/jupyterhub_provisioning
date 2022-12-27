@@ -250,7 +250,7 @@ ruamel_yaml==0.15.100
 scikit-learn==1.1.2
 scipy==1.9.1
 send2trash==1.8.0
-setuptools==61.2.0
+setuptools==65.5.1
 shapely==1.8.4
 sip==6.6.2
 six==1.16.0
