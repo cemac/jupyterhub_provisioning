@@ -244,7 +244,7 @@ scipy==1.9.1
 seaborn==0.12.0
 seaborn-base==0.12.0
 send2trash==1.8.0
-setuptools==61.2.0
+setuptools==65.5.1
 shapely==1.8.4
 sip==6.6.2
 six==1.16.0
