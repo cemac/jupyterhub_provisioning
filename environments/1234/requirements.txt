@@ -12,7 +12,7 @@ attrs==22.2.0
 backcall==0.2.0
 backports==1.0
 backports.functools_lru_cache==1.6.4
-beautifulsoup4==4.11.1
+beautifulsoup4==4.11.2
 bleach==6.0.0
 blinker==1.5
 brotli==1.0.9
@@ -36,7 +36,7 @@ comm==0.1.2
 conda==22.11.1
 conda-package-handling==2.0.2
 conda-package-streaming==0.7.0
-configurable-http-proxy==4.5.3
+configurable-http-proxy==4.5.4
 contourpy==1.0.7
 cryptography==39.0.0
 curl==7.87.0
@@ -79,11 +79,11 @@ idna==3.4
 importlib-metadata==6.0.0
 importlib_metadata==6.0.0
 importlib_resources==5.10.2
-ipykernel==6.21.0
+ipykernel==6.21.1
 ipython==8.7.0
 ipython_genutils==0.2.0
 iris==3.3.0
-jack==1.9.21
+jack==1.9.22
 jedi==0.18.2
 jinja2==3.1.2
 jpeg==9e
@@ -91,7 +91,7 @@ jsonschema==4.17.3
 jupyter_client==8.0.2
 jupyter_core==5.2.0
 jupyter_events==0.6.3
-jupyter_server==2.1.0
+jupyter_server==2.2.1
 jupyter_server_terminals==0.4.4
 jupyter_telemetry==0.1.0
 jupyterhub==3.1.1
@@ -181,7 +181,7 @@ mpg123==1.31.2
 munkres==1.1.4
 mysql-common==8.0.32
 mysql-libs==8.0.32
-nbclassic==0.4.8
+nbclassic==0.5.1
 nbclient==0.7.2
 nbconvert==7.2.9
 nbconvert-core==7.2.9
@@ -241,7 +241,7 @@ pyqt5-sip==12.11.0
 pyrsistent==0.19.3
 pyshp==2.3.1
 pysocks==1.7.1
-python==3.9.15
+python==3.9.16
 python-dateutil==2.8.2
 python-fastjsonschema==2.16.2
 python-json-logger==2.0.4
@@ -261,13 +261,13 @@ ruamel.yaml.clib==0.2.7
 ruamel_yaml==0.15.80
 scipy==1.10.0
 send2trash==1.8.0
-setuptools==66.1.1
+setuptools==67.1.0
 shapely==2.0.1
 sip==6.7.6
 six==1.16.0
 sniffio==1.3.0
 soupsieve==2.3.2.post1
-sqlalchemy==2.0.0
+sqlalchemy==2.0.1
 sqlite==3.40.0
 stack_data==0.6.2
 terminado==0.17.1
