@@ -41,7 +41,7 @@ contourpy==1.0.7
 cryptography==39.0.1
 curl==7.87.0
 cycler==0.11.0
-dask-core==2023.1.1
+dask-core==2023.2.0
 dbus==1.13.6
 debugpy==1.6.6
 decorator==5.1.1
@@ -136,9 +136,9 @@ libjpeg-turbo==2.1.4
 liblapack==3.9.0
 libllvm14==14.0.6
 libllvm15==15.0.7
-libmamba==1.3.0
-libmambapy==1.3.0
-libnetcdf==4.8.1
+libmamba==1.3.1
+libmambapy==1.3.1
+libnetcdf==4.9.1
 libnghttp2==1.51.0
 libnsl==2.0.0
 libogg==1.3.4
@@ -171,7 +171,7 @@ lxml==4.9.2
 lz4-c==1.9.4
 lzo==2.10
 mako==1.2.4
-mamba==1.3.0
+mamba==1.3.1
 markupsafe==2.1.2
 matplotlib==3.6.3
 matplotlib-base==3.6.3
@@ -194,7 +194,7 @@ nodejs==18.12.1
 notebook==6.5.2
 notebook-shim==0.2.2
 nspr==4.35
-nss==3.82
+nss==3.88
 numpy==1.24.2
 oauthenticator==15.1.0
 oauthlib==3.2.2
