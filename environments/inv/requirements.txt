@@ -38,7 +38,7 @@ conda==4.14.0
 conda-content-trust==0.1.1
 conda-package-handling==1.8.1
 configurable-http-proxy==4.5.1
-cryptography==36.0.0
+cryptography==39.0.1
 cycler==0.11.0
 dbus==1.13.6
 debugpy==1.6.3
@@ -198,7 +198,7 @@ nspr==4.35
 nss==3.82
 numpy==1.23.2
 oauthenticator==15.0.1
-oauthlib==3.2.1
+oauthlib==3.2.2
 openjpeg==2.5.0
 openssl==3.0.8
 opt_einsum==3.3.0
