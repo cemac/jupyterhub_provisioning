@@ -1,4 +1,4 @@
-alembic==1.9.3
+alembic==1.9.4
 alsa-lib==1.2.8
 antlr-python-runtime==4.7.2
 anyio==3.6.2
@@ -39,7 +39,7 @@ conda-package-streaming==0.7.0
 configurable-http-proxy==4.5.4
 contourpy==1.0.7
 cryptography==39.0.1
-curl==7.87.0
+curl==7.88.0
 cycler==0.11.0
 dask-core==2023.2.0
 dbus==1.13.6
@@ -89,10 +89,10 @@ jedi==0.18.2
 jinja2==3.1.2
 jpeg==9e
 jsonschema==4.17.3
-jupyter_client==8.0.2
+jupyter_client==8.0.3
 jupyter_core==5.2.0
 jupyter_events==0.6.3
-jupyter_server==2.2.1
+jupyter_server==2.3.0
 jupyter_server_terminals==0.4.4
 jupyter_telemetry==0.1.0
 jupyterhub==3.1.1
@@ -117,7 +117,7 @@ libcblas==3.9.0
 libclang==15.0.7
 libclang13==15.0.7
 libcups==2.3.3
-libcurl==7.87.0
+libcurl==7.88.0
 libdb==6.2.32
 libdeflate==1.17
 libedit==3.1.20191231
@@ -162,7 +162,7 @@ libuv==1.44.2
 libvorbis==1.3.7
 libwebp-base==1.2.4
 libxcb==1.13
-libxkbcommon==1.0.3
+libxkbcommon==1.5.0
 libxml2==2.10.3
 libxslt==1.1.37
 libzip==1.9.2
@@ -182,7 +182,7 @@ mpg123==1.31.2
 munkres==1.1.4
 mysql-common==8.0.32
 mysql-libs==8.0.32
-nbclassic==0.5.1
+nbclassic==0.5.2
 nbclient==0.7.2
 nbconvert==7.2.9
 nbconvert-core==7.2.9
@@ -212,7 +212,7 @@ pcre2==10.40
 pexpect==4.8.0
 pickleshare==0.7.5
 pillow==9.4.0
-pip==23.0
+pip==23.0.1
 pixman==0.40.0
 pkgutil-resolve-name==1.3.10
 platformdirs==3.0.0
@@ -262,13 +262,13 @@ ruamel.yaml.clib==0.2.7
 ruamel_yaml==0.15.80
 scipy==1.10.0
 send2trash==1.8.0
-setuptools==67.3.1
+setuptools==67.3.2
 shapely==2.0.1
 sip==6.7.7
 six==1.16.0
 sniffio==1.3.0
 soupsieve==2.3.2.post1
-sqlalchemy==2.0.3
+sqlalchemy==2.0.4
 sqlite==3.40.0
 stack_data==0.6.2
 terminado==0.17.1
@@ -310,7 +310,7 @@ xz==5.2.6
 yaml==0.2.5
 yaml-cpp==0.7.0
 zeromq==4.3.4
-zipp==3.13.0
+zipp==3.14.0
 zlib==1.2.13
 zstandard==0.19.0
 zstd==1.5.2
