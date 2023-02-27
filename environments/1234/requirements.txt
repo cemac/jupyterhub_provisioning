@@ -97,6 +97,7 @@ jupyter_server_terminals==0.4.4
 jupyter_telemetry==0.1.0
 jupyterhub==3.1.1
 jupyterhub-base==3.1.1
+jupyterhub-systemdspawner==0.17.0
 jupyterlab_pygments==0.2.2
 keyutils==1.6.1
 kiwisolver==1.4.4
