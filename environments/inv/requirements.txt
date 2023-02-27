@@ -83,7 +83,7 @@ idna==3.3
 importlib-metadata==4.11.4
 importlib_resources==5.9.0
 ipykernel==6.15.2
-ipython==8.5.0
+ipython==8.10.0
 ipython_genutils==0.2.0
 jack==1.9.21
 jedi==0.18.1
@@ -295,7 +295,7 @@ unicodedata2==14.0.0
 urllib3==1.26.8
 wcwidth==0.2.5
 webencodings==0.5.1
-werkzeug==2.2.2
+werkzeug==2.2.3
 wheel==0.38.1
 wrapt==1.14.1
 xcb-util==0.4.0
