@@ -286,7 +286,7 @@ urllib3==1.26.14
 wcwidth==0.2.6
 webencodings==0.5.1
 websocket-client==1.5.1
-wheel==0.37.1
+wheel==0.38.1
 xcb-util==0.4.0
 xcb-util-image==0.4.0
 xcb-util-keysyms==0.4.0
