@@ -32,6 +32,7 @@ configurable-http-proxy==4.5.1
 cryptography==39.0.1
 curl==7.86.0
 cycler==0.11.0
+dataclasses==0.8
 dbus==1.13.6
 debugpy==1.6.3
 decorator==5.1.1
@@ -178,7 +179,7 @@ oauthenticator==15.0.1
 oauthlib==3.2.2
 openjpeg==2.5.0
 openssl==3.0.8
-owslib==0.27.2
+owslib==0.28.1
 packaging==21.3
 pamela==1.0.0
 pandas==1.4.4
