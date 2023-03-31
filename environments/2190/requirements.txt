@@ -168,7 +168,7 @@ numpy==1.23.2
 oauthenticator==15.0.1
 oauthlib==3.2.2
 openjpeg==2.5.0
-openssl==3.0.8
+openssl==3.1.0
 packaging==21.3
 pamela==1.0.0
 pandoc==2.19.2

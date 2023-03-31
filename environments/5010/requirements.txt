@@ -170,7 +170,7 @@ oauthenticator==15.0.1
 oauthlib==3.2.2
 openjpeg==2.5.0
 openpyxl==3.0.10
-openssl==3.0.8
+openssl==3.1.0
 packaging==21.3
 pamela==1.0.0
 pandas==1.4.4
