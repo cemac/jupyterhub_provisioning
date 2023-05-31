@@ -202,7 +202,7 @@ numpy==1.24.3
 oauthenticator==15.1.0
 oauthlib==3.2.2
 openjpeg==2.5.0
-openssl==3.1.0
+openssl==3.1.1
 packaging==23.1
 pamela==1.0.0
 pandoc==2.19.2
@@ -257,7 +257,7 @@ qt-main==5.15.8
 readline==8.2
 reproc==14.2.4
 reproc-cpp==14.2.4
-requests==2.29.0
+requests==2.31.0
 rfc3339-validator==0.1.4
 rfc3986-validator==0.1.1
 ruamel.yaml==0.17.26
