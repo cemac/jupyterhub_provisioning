@@ -37,7 +37,7 @@ conda-package-handling==2.0.2
 conda-package-streaming==0.7.0
 configurable-http-proxy==4.5.4
 contourpy==1.0.7
-cryptography==39.0.1
+cryptography==41.0.0
 curl==7.88.1
 cycler==0.11.0
 dask-core==2023.3.0
@@ -229,7 +229,7 @@ pycparser==2.21
 pycurl==7.45.1
 pygments==2.14.0
 pyjwt==2.6.0
-pyopenssl==22.0.0
+pyopenssl==23.2.0
 pyparsing==3.0.9
 pyproj==3.4.1
 pyqt==5.15.7
