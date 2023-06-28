@@ -10,7 +10,7 @@ attr==2.5.1
 attrs==23.1.0
 backcall==0.2.0
 backports==1.0
-backports.functools_lru_cache==1.6.4
+backports.functools_lru_cache==1.6.5
 beautifulsoup4==4.12.2
 bleach==6.0.0
 blinker==1.6.2
@@ -43,7 +43,7 @@ contourpy==1.1.0
 cryptography==41.0.1
 curl==8.1.2
 cycler==0.11.0
-dask-core==2023.6.0
+dask-core==2023.6.1
 dbus==1.13.6
 debugpy==1.6.7
 decorator==5.1.1
@@ -83,7 +83,7 @@ idna==3.4
 importlib-metadata==6.7.0
 importlib_metadata==6.7.0
 importlib_resources==5.12.0
-ipykernel==6.23.1
+ipykernel==6.23.3
 ipython==8.14.0
 ipython_genutils==0.2.0
 iris==3.4.1
@@ -94,10 +94,10 @@ jpeg==9e
 jsonpatch==1.32
 jsonpointer==2.0
 jsonschema==4.17.3
-jupyter_client==8.2.0
+jupyter_client==8.3.0
 jupyter_core==5.3.1
 jupyter_events==0.6.3
-jupyter_server==2.6.0
+jupyter_server==2.7.0
 jupyter_server_terminals==0.4.4
 jupyter_telemetry==0.1.0
 jupyterhub==4.0.1
@@ -130,7 +130,7 @@ libev==4.33
 libevent==2.1.10
 libexpat==2.5.0
 libffi==3.4.2
-libflac==1.4.2
+libflac==1.4.3
 libgcc-ng==13.1.0
 libgcrypt==1.10.1
 libgfortran-ng==13.1.0
@@ -142,8 +142,8 @@ libiconv==1.17
 libjpeg-turbo==2.1.4
 liblapack==3.9.0
 libllvm15==15.0.7
-libmamba==1.4.4
-libmambapy==1.4.4
+libmamba==1.4.5
+libmambapy==1.4.5
 libnetcdf==4.9.1
 libnghttp2==1.52.0
 libnsl==2.0.0
@@ -176,7 +176,7 @@ locket==1.0.0
 lz4-c==1.9.4
 lzo==2.10
 mako==1.2.4
-mamba==1.4.4
+mamba==1.4.5
 markupsafe==2.1.3
 matplotlib==3.7.1
 matplotlib-base==3.7.1
@@ -219,8 +219,8 @@ pillow==9.4.0
 pip==23.1.2
 pixman==0.40.0
 pkgutil-resolve-name==1.3.10
-platformdirs==3.6.0
-pluggy==1.0.0
+platformdirs==3.8.0
+pluggy==1.2.0
 ply==3.11
 pooch==1.7.0
 proj==9.2.1
@@ -248,7 +248,7 @@ pyqt5-sip==12.11.0
 pyrsistent==0.19.3
 pyshp==2.3.1
 pysocks==1.7.1
-python==3.10.11
+python==3.10.12
 python-dateutil==2.8.2
 python-fastjsonschema==2.17.1
 python-json-logger==2.0.7
@@ -265,15 +265,15 @@ rfc3339-validator==0.1.4
 rfc3986-validator==0.1.1
 ruamel.yaml==0.17.32
 ruamel.yaml.clib==0.2.7
-scipy==1.10.1
+scipy==1.11.0
 send2trash==1.8.2
-setuptools==67.7.2
+setuptools==68.0.0
 shapely==2.0.1
 sip==6.7.9
 six==1.16.0
 sniffio==1.3.0
 soupsieve==2.3.2.post1
-sqlalchemy==2.0.16
+sqlalchemy==2.0.17
 sqlite==3.42.0
 stack_data==0.6.2
 terminado==0.17.1
@@ -294,7 +294,7 @@ unicodedata2==15.0.0
 urllib3==2.0.3
 wcwidth==0.2.6
 webencodings==0.5.1
-websocket-client==1.6.0
+websocket-client==1.6.1
 wheel==0.40.0
 xcb-util==0.4.0
 xcb-util-image==0.4.0
