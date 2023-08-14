@@ -37,7 +37,7 @@ conda-package-handling==2.0.2
 conda-package-streaming==0.7.0
 configurable-http-proxy==4.5.4
 contourpy==1.0.7
-cryptography==41.0.2
+cryptography==41.0.3
 curl==7.88.1
 cycler==0.11.0
 dask-core==2023.3.0
@@ -194,7 +194,7 @@ numpy==1.24.2
 oauthenticator==15.1.0
 oauthlib==3.2.2
 openjpeg==2.5.0
-openssl==3.1.1
+openssl==3.1.2
 packaging==23.0
 pamela==1.0.0
 pandas==1.5.3
@@ -311,4 +311,4 @@ zeromq==4.3.4
 zipp==3.15.0
 zlib==1.2.13
 zstandard==0.18.0
-zstd==1.5.2
+zstd==1.5.5
