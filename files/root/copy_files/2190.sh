@@ -4,11 +4,11 @@
 SOURCE_DIRS='/storage/earth_data/soee2190/TimeSeriesPracticals'
 
 # Get course users:
-COURSE_GROUP='jupyterhub_users_soee2190'
+COURSE_GROUP='jh_users_soee2190'
 COURSE_USERS=$(getent group ${COURSE_GROUP} | \
                  awk -F ':' '{print $NF}' | \
                  tr ',' '\n' | \
-                 egrep -v '^(earhbu|earmgr|eartdj)$')
+                 egrep -v '^(earhbu|earmgr|earcwi)$')
 
 # Loop through source directories:
 for SOURCE_DIR in ${SOURCE_DIRS}

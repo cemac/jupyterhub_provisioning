@@ -6,11 +6,11 @@ SOURCE_DIRS='/storage/earth_data/inverse/Example_scripts
              /storage/earth_data/inverse/Model_answers'
 
 # Get course users:
-COURSE_GROUP='jupyterhub_users_inverse'
+COURSE_GROUP='jh_users_inverse'
 COURSE_USERS=$(getent group ${COURSE_GROUP} | \
                  awk -F ':' '{print $NF}' | \
                  tr ',' '\n' | \
-                 egrep -v '^(earhbu|earmgr|eartdj)$')
+                 egrep -v '^(earhbu|earmgr|earcwi)$')
 
 # Loop through source directories:
 for SOURCE_DIR in ${SOURCE_DIRS}
