@@ -1,2 +1,2 @@
 Cmnd_Alias JUPYTER_{{ jupyterhub_install.name | upper }}_CMD = {{ jupyterhub_install.python_dir }}/bin/sudospawner
-{{ jupyterhub_install.user.name }} ALL=(%{{ jupyterhub_install.users.group | default(['jupyterhub_users_', jupyterhub_install.name] | join('')) }}) NOPASSWD:JUPYTER_{{ jupyterhub_install.name | upper }}_CMD
+{{ jupyterhub_install.user.name }} ALL=(%{{ jupyterhub_install.users.group | default(['jh_users_', jupyterhub_install.name] | join('')) }}) NOPASSWD:JUPYTER_{{ jupyterhub_install.name | upper }}_CMD
