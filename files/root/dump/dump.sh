@@ -51,6 +51,7 @@ tar \
   --exclude='*/week*.tar.gz' \
   --exclude='*/*.nc' \
   --exclude='*/*.nc4' \
+  --exclude='*/*.zip' \
   "${SRC_NAME}"
 
 # end message:
