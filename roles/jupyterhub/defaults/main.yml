@@ -28,3 +28,5 @@ jupyterhub_log_level: 'DEBUG'
 # Cull idle by default:
 jupyterhub_cull_idle: true
 jupyterhub_cull_timeout: '3600'
+# Use notebook interface (rather than JupyterLab):
+jupyterhub_use_notebook: true

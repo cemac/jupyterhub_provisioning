@@ -12,7 +12,6 @@ c.AzureAdOAuthenticator.client_secret = '{{ jupyterhub_install.auth.client_secre
 c.AzureAdOAuthenticator.post_logout_redirect_uri = '{{ jupyterhub_install.auth.post_logout_redirect_uri }}'
 {% endif %}
 c.LocalAuthenticator.auto_login = True
-
 {% else %}
 c.PAMAuthenticator.service = 'login'
 c.PAMAuthenticator.open_sessions = False
@@ -51,13 +50,32 @@ c.SystemdSpawner.readwrite_paths = {{ jupyterhub_install.spawner.readwrite_paths
 c.JupyterHub.spawner_class = 'sudospawner.SudoSpawner'
 c.SudoSpawner.sudospawner_path = '{{ jupyterhub_install.python_dir }}/bin/sudospawner'
 {% endif %}
+{% if jupyterhub_install.use_notebook | default(jupyterhub_use_notebook) == true %}
+c.Spawner.default_url = '/tree'
+{% endif %}
 
 {% if jupyterhub_install.cull_idle | default(jupyterhub_cull_idle) == true %}
+c.JupyterHub.load_roles = [
+    {
+        "name": "jupyterhub-idle-culler-role",
+        "scopes": [
+            "list:users",
+            "read:users:activity",
+            "read:servers",
+            "delete:servers",
+        ],
+        "services": ["jupyterhub-idle-culler-service"],
+    }
+]
+
 c.JupyterHub.services = [
     {
-        'name': 'cull-idle',
-        'admin': True,
-        'command': [sys.executable, '{{ jupyterhub_config_dir }}/cull_idle_servers.py', '--timeout={{ jupyterhub_install.cull_timeout | default(jupyterhub_cull_timeout)}}'],
+        "name": "jupyterhub-idle-culler-service",
+        "command": [
+            sys.executable,
+            "-m", "jupyterhub_idle_culler",
+            "--timeout={{ jupyterhub_install.cull_timeout | default(jupyterhub_cull_timeout)}}",
+        ],
     }
 ]
 {% endif %}
