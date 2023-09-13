@@ -29,13 +29,13 @@ cffi==1.15.1
 charset-normalizer==2.0.4
 comm==0.1.4
 conda==23.7.3
-conda-content-trust==0.1.3
+conda-content-trust==0.2.0
 conda-libmamba-solver==23.5.0
 conda-package-handling==2.1.0
 conda-package-streaming==0.8.0
 configurable-http-proxy==4.5.4
 contourpy==1.1.0
-cryptography==39.0.1
+cryptography==41.0.3
 cycler==0.11.0
 dbus==1.13.18
 debugpy==1.7.0
@@ -194,7 +194,7 @@ pycparser==2.21
 pycurl==7.45.1
 pygments==2.16.1
 pyjwt==2.8.0
-pyopenssl==23.0.0
+pyopenssl==23.2.0
 pyparsing==3.0.9
 pyqt==5.15.7
 pyqt5-sip==12.11.0
@@ -214,7 +214,7 @@ readline==8.2
 referencing==0.30.2
 reproc==14.2.4
 reproc-cpp==14.2.4
-requests==2.29.0
+requests==2.31.0
 rfc3339-validator==0.1.4
 rfc3986-validator==0.1.1
 rpds-py==0.10.2
