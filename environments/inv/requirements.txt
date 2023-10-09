@@ -24,6 +24,7 @@ blinker==1.6.2
 boltons==23.0.0
 brotli==1.1.0
 brotli-bin==1.1.0
+brotli-python==1.1.0
 brotlipy==0.7.0
 bzip2==1.0.8
 c-ares==1.19.0
@@ -82,8 +83,8 @@ google-pasta==0.2.0
 graphite2==1.3.13
 greenlet==2.0.2
 grpcio==1.54.2
-gst-plugins-base==1.22.0
-gstreamer==1.22.0
+gst-plugins-base==1.22.3
+gstreamer==1.22.3
 h5py==3.9.0
 harfbuzz==7.3.0
 hdf5==1.14.2
@@ -137,8 +138,8 @@ libbrotlidec==1.1.0
 libbrotlienc==1.1.0
 libcap==2.69
 libcblas==3.9.0
-libclang==16.0.3
-libclang13==16.0.3
+libclang==16.0.6
+libclang13==16.0.6
 libcups==2.3.3
 libcurl==8.2.1
 libdeflate==1.18
@@ -158,7 +159,7 @@ libgrpc==1.54.2
 libiconv==1.17
 libjpeg-turbo==2.1.5.1
 liblapack==3.9.0
-libllvm16==16.0.3
+libllvm16==16.0.6
 libmamba==1.5.1
 libmambapy==1.5.1
 libnghttp2==1.52.0
@@ -176,17 +177,18 @@ libsqlite==3.43.0
 libssh2==1.10.0
 libstdcxx-ng==13.2.0
 libsystemd0==254
-libtiff==4.5.1
+libtiff==4.6.0
 libuuid==2.38.1
 libuv==1.44.2
 libvorbis==1.3.7
-libwebp-base==1.3.1
-libxcb==1.13
-libxkbcommon==1.5.0
-libxml2==2.10.4
+libwebp-base==1.3.2
+libxcb==1.15
+libxkbcommon==1.6.0
+libxml2==2.11.5
 libzlib==1.2.13
 llvm-openmp==14.0.6
 lz4-c==1.9.4
+lzo==2.10
 mako==1.2.4
 mamba==1.5.1
 markdown==3.4.4
@@ -228,7 +230,7 @@ parso==0.8.3
 pcre2==10.40
 pexpect==4.8.0
 pickleshare==0.7.5
-pillow==9.5.0
+pillow==10.0.1
 pip==23.1.2
 pixman==0.40.0
 pkgutil-resolve-name==1.3.10
@@ -236,7 +238,7 @@ platformdirs==3.5.1
 pluggy==1.0.0
 ply==3.11
 pooch==1.7.0
-proj==9.2.1
+proj==8.2.1
 prometheus_client==0.17.1
 prompt-toolkit==3.0.39
 prompt_toolkit==3.0.39
@@ -256,7 +258,7 @@ pygments==2.16.1
 pyjwt==2.8.0
 pyopenssl==23.2.0
 pyparsing==3.0.9
-pyproj==3.6.0
+pyproj==3.4.1
 pyqt==5.15.9
 pyqt5-sip==12.12.2
 pyshp==2.3.1
@@ -318,7 +320,7 @@ typing_extensions==4.5.0
 typing_utils==0.1.0
 tzdata==2023c
 uri-template==1.3.0
-urllib3==1.26.16
+urllib3==1.26.17
 wcwidth==0.2.6
 webcolors==1.13
 webencodings==0.5.1
@@ -335,7 +337,7 @@ xkeyboard-config==2.38
 xorg-kbproto==1.0.7
 xorg-libice==1.1.1
 xorg-libsm==1.2.4
-xorg-libx11==1.8.4
+xorg-libx11==1.8.6
 xorg-libxau==1.0.11
 xorg-libxdmcp==1.1.3
 xorg-libxext==1.3.4
