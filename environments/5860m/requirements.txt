@@ -51,7 +51,7 @@ entrypoints==0.4
 exceptiongroup==1.1.3
 executing==1.2.0
 expat==2.5.0
-fair==2.1.1
+fair==1.6.4
 fmt==10.1.1
 font-ttf-dejavu-sans-mono==2.37
 font-ttf-inconsolata==3.000
