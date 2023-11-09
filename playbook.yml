@@ -7,4 +7,4 @@
     - 'ufw'
     - 'miniconda'
     - 'jupyterhub'
-###    - 'apache'
+    - 'apache'
