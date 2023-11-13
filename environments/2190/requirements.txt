@@ -177,7 +177,7 @@ pcre2==10.37
 pexpect==4.8.0
 pickleshare==0.7.5
 pillow==10.0.1
-pip==23.1.2
+pip==23.3
 pkgutil-resolve-name==1.3.10
 platformdirs==3.10.0
 pluggy==1.0.0
