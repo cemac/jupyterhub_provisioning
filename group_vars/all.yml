@@ -34,6 +34,12 @@ resources_files_default:
   - path: '/var/www/html/index.html'
     state: 'absent'
 
+# Symlinks:
+resources_symlinks_default:
+  # Apache mod_ssl configuration:
+  - src: '/etc/apache2/mods-available/ssl.conf'
+    path: '/etc/apache2/mods-enabled/ssl.conf'
+
 # Files to be copied:
 resources_copies_default:
   # Default .bashrc:
@@ -100,6 +106,7 @@ apache_mods_enabled:
   - 'proxy'
   - 'proxy_wstunnel'
   - 'rewrite'
+  - 'socache_shmcb'
   - 'ssl'
 # Default options
 apache_allow_override: 'None'
