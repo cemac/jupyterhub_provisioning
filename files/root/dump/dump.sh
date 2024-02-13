@@ -1,13 +1,6 @@
 #!/bin/bash
 
-# simple script to dump a path to a compressed tar file
-# e.g.:
-#   dump.sh /path/to/dir /path/to/dir.tar.gz
-
-# usage function:
-usage() {
-  echo "$(basename ${0}) source_path out_file"
-}
+# dump most recent backup to a compressed tar file
 
 # error function:
 error() {
@@ -19,32 +12,25 @@ error() {
 # start message:
 echo "START : $(date)"
 
-# check number of arguments:
-if [ "${#}" != "2" ] ; then
-  usage
-  error "incorrect number of argments"
-fi
+# parent backup directory:
+BACKUP_DIR='/storage/backup/alpha.0'
+# directory within parent backup directory to tar:
+SRC_DIR='localhost'
+# outpu directory:
+OUT_DIR='/storage/backup/dump'
 
-# get arguments:
-SRC_PATH="${1}"
-OUT_FILE="${2}"
-
-# check source exists:
-if [ ! -e "${SRC_PATH}" ] ; then
-  error "${SRC_PATH} does not appear to exist"
-fi
-
-# directory containing source directory:
-SRC_DIR="$(dirname "${SRC_PATH}")"
-# source file / directory:
-SRC_NAME="$(basename "${SRC_PATH}")"
-# directory which will contain output file:
-OUT_DIR="$(dirname ${OUT_FILE})"
+# get time stamp of most recent backup:
+BACKUP_TIME=$(date -d @$(stat -c '%Y' ${BACKUP_DIR}) +'%Y%m%d-%H%M')
+# output file name and path:
+OUT_FILE="${OUT_DIR}/${SRC_DIR}_${BACKUP_TIME}.tar.gz"
 
 # make output directory:
 mkdir -p "${OUT_DIR}" || error "failed to create directory ${OUT_DIR}"
-# change to working dir:
-cd "${SRC_DIR}" || error "failed to change to directory ${SRC_DIR}"
+# clear out any existing files:
+\rm -f ${OUT_DIR}/${SRC_DIR}_*.tar.gz
+
+# change to backup dir:
+cd "${BACKUP_DIR}" || error "failed to change to directory ${BACKUP_DIR}"
 # create tar file:
 tar \
   czf "${OUT_FILE}" \
@@ -52,6 +38,10 @@ tar \
   --exclude='*/*.nc' \
   --exclude='*/*.nc4' \
   --exclude='*/*.zip' \
+  --exclude='*/datadrivedirectory.tar.gz' \
+  --exclude='*/homedirectory.tar.gz' \
+  --exclude='*/.local/lib/python3.11/*' \
+  --exclude='*/.cache/pip/*' \
   "${SRC_NAME}"
 
 # end message:
