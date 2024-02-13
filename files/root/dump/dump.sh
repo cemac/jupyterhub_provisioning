@@ -32,6 +32,7 @@ mkdir -p "${OUT_DIR}" || error "failed to create directory ${OUT_DIR}"
 # change to backup dir:
 cd "${BACKUP_DIR}" || error "failed to change to directory ${BACKUP_DIR}"
 # create tar file:
+nice -n +20 \
 tar \
   czf "${OUT_FILE}" \
   --exclude='*/week*.tar.gz' \
@@ -42,7 +43,7 @@ tar \
   --exclude='*/homedirectory.tar.gz' \
   --exclude='*/.local/lib/python3.11/*' \
   --exclude='*/.cache/pip/*' \
-  "${SRC_NAME}"
+  "${SRC_DIR}"
 
 # end message:
 echo "END : $(date)"
