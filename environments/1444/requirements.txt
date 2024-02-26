@@ -41,7 +41,7 @@ conda-package-handling==2.2.0
 conda-package-streaming==0.9.0
 configurable-http-proxy==4.6.0
 contourpy==1.2.0
-cryptography==42.0.3
+cryptography==42.0.5
 cycler==0.12.1
 dataclasses==0.8
 dbus==1.13.6
