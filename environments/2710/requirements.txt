@@ -306,6 +306,7 @@ webcolors==1.13
 webencodings==0.5.1
 websocket-client==1.6.3
 wheel==0.38.4
+xarray==2024.2.0
 xcb-util==0.4.0
 xcb-util-image==0.4.0
 xcb-util-keysyms==0.4.0
