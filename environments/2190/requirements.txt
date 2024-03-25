@@ -163,7 +163,7 @@ notebook-shim==0.2.3
 nspr==4.35
 nss==3.92
 numpy==1.25.2
-oauthenticator==16.0.7
+oauthenticator==16.3.0
 oauthlib==3.2.2
 openjpeg==2.5.0
 openssl==3.2.1
