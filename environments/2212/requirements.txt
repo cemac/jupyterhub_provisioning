@@ -59,7 +59,7 @@ greenlet==2.0.2
 gst-plugins-base==1.14.1
 gstreamer==1.14.1
 icu==58.2
-idna==3.4
+idna==3.7
 importlib-metadata==6.8.0
 importlib_metadata==6.8.0
 importlib_resources==6.0.1

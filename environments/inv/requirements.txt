@@ -89,7 +89,7 @@ h5py==3.9.0
 harfbuzz==8.2.1
 hdf5==1.14.2
 icu==73.2
-idna==3.4
+idna==3.7
 importlib-metadata==6.8.0
 importlib_metadata==6.8.0
 importlib_resources==6.0.1
