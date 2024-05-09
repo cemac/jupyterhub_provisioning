@@ -38,6 +38,7 @@ cftime==1.6.2
 charset-normalizer==2.0.4
 click==8.1.7
 cloudpickle==2.2.1
+colorama==0.4.6
 comm==0.1.4
 conda==23.7.3
 conda-content-trust==0.2.0
@@ -288,7 +289,7 @@ toml==0.10.2
 tomli==2.0.1
 toolz==0.12.0
 tornado==6.3.3
-tqdm==4.65.0
+tqdm==4.66.4
 traitlets==5.9.0
 typing-extensions==4.7.1
 typing_extensions==4.7.1
