@@ -43,6 +43,8 @@ tar \
   --exclude='*/homedirectory.tar.gz' \
   --exclude='*/.local/lib/python3.11/*' \
   --exclude='*/.cache/pip/*' \
+  --exclude='*/exiobase/*.zip' \
+  --exclude='*/exiobase/extracted*' \
   "${SRC_DIR}"
 
 # end message:
