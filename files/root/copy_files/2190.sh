@@ -8,7 +8,7 @@ COURSE_GROUP='jh_users_soee2190'
 COURSE_USERS=$(getent group ${COURSE_GROUP} | \
                  awk -F ':' '{print $NF}' | \
                  tr ',' '\n' | \
-                 egrep -v '^(earhbu|earmgr|earcwi)$')
+                 egrep -v '^(earhbu|earjacr|earmgr|lmkk419|snnn998)$')
 
 # Loop through source directories:
 for SOURCE_DIR in ${SOURCE_DIRS}
