@@ -198,7 +198,7 @@ nodejs==22.6.0
 notebook==7.2.2
 notebook-shim==0.2.4
 numpy==1.26.4
-oauthenticator==16.3.0
+oauthenticator==17.0.0
 oauthlib==3.2.2
 openjpeg==2.5.2
 openssl==3.3.2
