@@ -7,7 +7,7 @@ error() {
 }
 
 # Check number of arguments:
-if [ "${#}" != "4" ] ; then
+if [ "${#}" != "5" ] ; then
   error "incorrect number of arguments"
 fi
 
@@ -15,7 +15,8 @@ fi
 USER_GROUP="${1}"
 SUBMIT_DIR="${2}"
 MARKER_USERS="${3}"
-MARKER_DIR="${4}"
+MARKER_GROUP="${4}"
+MARKER_DIR="${5}"
 
 # Start message:
 echo "START: $(date)"
@@ -71,8 +72,6 @@ do
         # For each marker:
         for MARKER_USER in ${MARKER_USERS}
         do
-          # Marker's primary group:
-          MARKER_GROUP=$(id -gn ${MARKER_USER})
           # Marker's HOME:
           MARKER_HOME=$(getent passwd ${MARKER_USER} | awk -F ':' '{print $6}')
           # Check for / created submitted directory in marker's HOME:
@@ -89,6 +88,7 @@ do
           cp -p "${USER_FILE}" "${MARKER_HOME}/${MARKER_DIR}/${OUT_FILE}"
           chown ${MARKER_USER}:${MARKER_GROUP} \
             "${MARKER_HOME}/${MARKER_DIR}/${OUT_FILE}"
+          chmod g+w "${MARKER_HOME}/${MARKER_DIR}/${OUT_FILE}"
         done
         # Check for / created submitted directory in user's directory:
         if [ ! -d "${USER_HOME}/${SUBMIT_DIR}/${SUBMITTED_DIR}" ] ; then
