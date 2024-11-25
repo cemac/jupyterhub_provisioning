@@ -201,7 +201,7 @@ numpy==1.26.4
 oauthenticator==16.3.0
 oauthlib==3.2.2
 openjpeg==2.5.2
-openssl==3.3.2
+openssl==3.4.0
 overrides==7.7.0
 packaging==23.2
 pamela==1.2.0

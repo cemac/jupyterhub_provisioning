@@ -201,7 +201,7 @@ oauthenticator==16.3.0
 oauthlib==3.2.2
 openjpeg==2.5.2
 openldap==2.6.8
-openssl==3.3.2
+openssl==3.4.0
 overrides==7.7.0
 packaging==24.1
 pamela==1.2.0

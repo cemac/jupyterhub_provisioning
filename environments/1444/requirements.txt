@@ -194,7 +194,7 @@ numpy==2.1.0
 oauthenticator==16.3.0
 oauthlib==3.2.2
 openjpeg==2.5.2
-openssl==3.3.2
+openssl==3.4.0
 overrides==7.7.0
 owslib==0.31.0
 packaging==23.2
