@@ -27,7 +27,7 @@ cached-property==1.5.2
 cached_property==1.5.2
 cairo==1.18.0
 cartopy==0.24.0
-certifi==2024.12.14
+certifi==2025.1.31
 certipy==0.2.1
 cffi==1.16.0
 cftime==1.6.4
@@ -201,7 +201,7 @@ oauthenticator==16.3.0
 oauthlib==3.2.2
 openjpeg==2.5.2
 openldap==2.6.8
-openssl==3.4.0
+openssl==3.4.1
 overrides==7.7.0
 packaging==24.1
 pamela==1.2.0
