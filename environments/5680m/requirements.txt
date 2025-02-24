@@ -40,7 +40,7 @@ conda-package-handling==2.3.0
 conda-package-streaming==0.10.0
 configurable-http-proxy==4.6.2
 contourpy==1.3.0
-cryptography==43.0.1
+cryptography==44.0.1
 cycler==0.12.1
 cyrus-sasl==2.1.27
 dbus==1.13.6
