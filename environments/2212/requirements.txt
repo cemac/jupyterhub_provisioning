@@ -193,7 +193,7 @@ openssl==3.4.1
 overrides==7.7.0
 packaging==23.2
 pamela==1.2.0
-pandoc==3.3
+pandoc==3.2
 pandocfilters==1.5.0
 parso==0.8.4
 pcre2==10.44
