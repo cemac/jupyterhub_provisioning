@@ -263,7 +263,7 @@ rpds-py==0.20.0
 ruamel.yaml==0.17.21
 scipy==1.14.0
 send2trash==1.8.3
-setuptools==72.2.0
+setuptools==80.8.0
 shapely==2.0.6
 six==1.16.0
 snappy==1.2.1
@@ -277,7 +277,7 @@ tinycss2==1.3.0
 tk==8.6.13
 tomli==2.0.1
 toolz==0.12.1
-tornado==6.4.2
+tornado==6.5.1
 tqdm==4.66.4
 traitlets==5.14.3
 truststore==0.8.0
