@@ -18,7 +18,7 @@ WorkingDirectory={{ jupyterhub_install.user.home }}
 Environment="AAD_TENANT_ID={{ jupyterhub_install.auth.tenant_id }}"
 {% endif %}
 KillMode=control-group
-StandardOutput=syslog
+StandardOutput=journal
 Restart=always
 PrivateTmp=yes
 PrivateDevices=yes

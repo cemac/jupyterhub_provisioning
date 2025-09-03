@@ -80,5 +80,8 @@ c.JupyterHub.services = [
 ]
 {% endif %}
 
+{% if jupyterhub_install.auth.name | default(jupyterhub_auth) == 'azure' %}
+c.LocalAuthenticator.manage_groups = True
+{% endif %}
 c.LocalAuthenticator.allowed_groups = set(['{{ jupyterhub_install.users.group | default(['jh_users_', jupyterhub_install.name] | join('')) }}'])
 c.LocalAuthenticator.admin_users = set({{ jupyterhub_install.users.admins }})

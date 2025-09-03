@@ -1,14 +1,15 @@
 """
-Custom Authenticator to use Azure AD with JupyterHub
+A JupyterHub authenticator class for use with Azure AD as an identity provider.
 """
+
+import grp
 import os
-import urllib
+import pwd
 
 import jwt
 from jupyterhub.handlers import LogoutHandler
 from jupyterhub.auth import LocalAuthenticator
 from jupyterhub.utils import url_path_join
-from tornado.httpclient import HTTPRequest
 from traitlets import Unicode, default
 
 from .oauth2 import OAuthenticator
@@ -27,91 +28,100 @@ class AzureAdLogoutHandler(LogoutHandler):
             await super().get()
 
 class AzureAdOAuthenticator(OAuthenticator):
-    login_service = Unicode(
-        os.environ.get('LOGIN_SERVICE', 'Azure AD'),
-        config=True,
-        help="""Azure AD domain name string, e.g. My College"""
-    )
-
-    tenant_id = Unicode(config=True, help="The Azure Active Directory Tenant ID")
-    username_claim = Unicode(config=True)
+    user_auth_state_key = "user"
     logout_handler = AzureAdLogoutHandler
     logout_redirect_url = Unicode(help="""URL for logging out.""").tag(config=True)
     post_logout_redirect_uri = Unicode(config=True)
+
+    @default("login_service")
+    def _login_service_default(self):
+        return os.environ.get("LOGIN_SERVICE", "Azure AD")
+
+    @default("username_claim")
+    def _username_claim_default(self):
+        return "name"
+
+    user_groups_claim = Unicode(
+        "",
+        config=True,
+        help="""
+        .. deprecated:: 17.0
+
+            Use :attr:`auth_state_groups_key` instead.
+        """,
+    )
+
+    @default('auth_state_groups_key')
+    def _auth_state_groups_key_default(self):
+        key = "user.groups"
+        if self.user_groups_claim:
+            key = f"{self.user_auth_state_key}.{self.user_groups_claim}"
+            cls = self.__class__.__name__
+            self.log.warning(
+                f"{cls}.user_groups_claim is deprecated in OAuthenticator 17. Use {cls}.auth_state_groups_key = {key!r}"
+            )
+        return key
+
+    tenant_id = Unicode(
+        config=True,
+        help="""
+        An Azure tenant ID for which an OAuth application is registered via
+        `client_id` and `client_secret`.
+
+        This is used to set the default values of `authorize_url` and
+        `token_url`.
+        """,
+    )
 
     @default('tenant_id')
     def _tenant_id_default(self):
         return os.environ.get('AAD_TENANT_ID', '')
 
-    @default('username_claim')
-    def _username_claim_default(self):
-        return 'name'
-
     @default("authorize_url")
     def _authorize_url_default(self):
-        return 'https://login.microsoftonline.com/{0}/oauth2/v2.0/authorize'.format(
-            self.tenant_id
-        )
+        return f"https://login.microsoftonline.com/{self.tenant_id}/oauth2/authorize"
 
     @default("token_url")
     def _token_url_default(self):
-        return 'https://login.microsoftonline.com/{0}/oauth2/v2.0/token'.format(
-            self.tenant_id
-        )
+        return f"https://login.microsoftonline.com/{self.tenant_id}/oauth2/token"
 
-    async def authenticate(self, handler, data=None):
-        code = handler.get_argument("code")
-
-        params = dict(
-            client_id=self.client_id,
-            client_secret=self.client_secret,
-            grant_type='authorization_code',
-            code=code,
-            redirect_uri=self.get_callback_url(handler),
-        )
-
-        data = urllib.parse.urlencode(params, doseq=True, encoding='utf-8', safe='=')
-
-        url = self.token_url
-
-        headers = {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
-        req = HTTPRequest(
-            url,
-            method="POST",
-            headers=headers,
-            body=data,  # Body is required for a POST...
-        )
-
-        resp_json = await self.fetch(req)
-
-        access_token = resp_json['access_token']
-        id_token = resp_json['id_token']
-
+    async def token_to_user(self, token_info):
+        id_token = token_info['id_token']
         decoded = jwt.decode(
             id_token,
             options={"verify_signature": False},
             audience=self.client_id,
         )
 
-        upn = decoded['preferred_username']
+        # get username from upn:
+        upn = decoded['upn']
         [username, domain] = upn.split('@')
         if domain == '{{ jupyterhub_users_domain }}':
-            userdict = {"name": username}
+            decoded["name"] = username
         else:
-            userdict = {"name": upn}
-        userdict["auth_state"] = auth_state = {}
-        auth_state['access_token'] = access_token
-        # results in a decoded JWT for the user data
-        auth_state['user'] = decoded
+            decoded["name"] = upn
 
-        return userdict
+        # add groups to userdict:
+        try:
+            user_pwd = pwd.getpwnam(username)
+            user_groups = os.getgrouplist(
+                user_pwd.pw_name, user_pwd.pw_gid
+            )
+            groups = [
+                grp.getgrgid(i).gr_name for i in user_groups
+            ]
+        except KeyError:
+            groups = []
+        decoded["groups"] = groups
+
+        return decoded
 
     @default("logout_redirect_url")
     def _logout_redirect_url_default(self):
         if self.post_logout_redirect_uri:
-            url = 'https://login.microsoftonline.com/{0}/oauth2/v2.0/logout?post_logout_redirect_uri={1}'
+            url = 'https://login.microsoftonline.com/{0}/oauth2/logout?post_logout_redirect_uri={1}'
         else:
-            url = 'https://login.microsoftonline.com/{0}/oauth2/v2.0/logout'
+            url = 'https://login.microsoftonline.com/{0}/oauth2/logout'
         return url.format(self.tenant_id, self.post_logout_redirect_uri)
 
     @default('post_logout_redirect_uri')
@@ -126,5 +136,3 @@ class AzureAdOAuthenticator(OAuthenticator):
 
 class LocalAzureAdOAuthenticator(LocalAuthenticator, AzureAdOAuthenticator):
     """A version that mixes in local system user creation"""
-
-    pass
