@@ -1,0 +1,105 @@
+---
+
+# Add conda packages:
+- name: 'miniforge configure conda packages'
+  become_user: "{{ miniforge_install.user }}"
+  command: "{{ miniforge_install.path }}/bin/conda install -y {{ miniforge_install.packages | join(' ') }}"
+  when: miniforge_install.packages is defined and
+        (miniforge_install.use_mamba is not defined or
+         not miniforge_install.use_mamba)
+  tags:
+    - 'miniforge_configure_packages'
+    - 'miniforge_configure_conda_packages'
+
+# Add mamba packages:
+- name: 'miniforge configure mamba packages'
+  become_user: "{{ miniforge_install.user }}"
+  command: "{{ miniforge_install.path }}/bin/mamba install -y {{ miniforge_install.packages | join(' ') }}"
+  when: miniforge_install.packages is defined and
+        miniforge_install.use_mamba is defined and
+        miniforge_install.use_mamba
+  tags:
+    - 'miniforge_configure_packages'
+    - 'miniforge_configure_mamba_packages'
+
+# Add pip packages:
+- name: 'miniforge configure pip packages'
+  become_user: "{{ miniforge_install.user }}"
+  pip:
+    name: "{{ miniforge_install.pip_packages }}"
+    executable: "{{ miniforge_install.path }}/bin/pip"
+  when: miniforge_install.pip_packages is defined
+  tags:
+    - 'miniforge_configure_packages'
+    - 'miniforge_configure_pip_packages'
+
+# Update miniforge with conda:
+- name: 'miniforge configure conda update'
+  become_user: "{{ miniforge_install.user }}"
+  command: "{{ miniforge_install.path }}/bin/conda update -y --all"
+  when: miniforge_install.updates is defined and
+        miniforge_install.updates and
+        (miniforge_install.use_mamba is not defined or
+         not miniforge_install.use_mamba)
+  tags:
+    - 'miniforge_configure_update'
+    - 'miniforge_configure_conda_update'
+
+# Update miniforge with mamba:
+- name: 'miniforge configure mamba update'
+  become_user: "{{ miniforge_install.user }}"
+  command: "{{ miniforge_install.path }}/bin/mamba update -y --all"
+  when: miniforge_install.updates is defined and
+        miniforge_install.updates and
+        miniforge_install.use_mamba is defined and
+        miniforge_install.use_mamba
+  tags:
+    - 'miniforge_configure_update'
+    - 'miniforge_configure_mamba_update'
+
+# Update pip packages:
+- name: 'miniforge configure pip update'
+  become_user: "{{ miniforge_install.user }}"
+  pip:
+    name: "{{ miniforge_install.pip_packages }}"
+    executable: "{{ miniforge_install.path }}/bin/pip"
+    extra_args: '-U' 
+  when: miniforge_install.pip_packages is defined and
+        miniforge_install.updates
+  tags:
+    - 'miniforge_configure_update'
+    - 'miniforge_configure_pip_update'
+
+# Wrap miniforge:
+- name: 'miniforge configure wrapper directory'
+  file:
+    path: "{{ miniforge_install.wrapper_dir }}"
+    state: 'directory'
+    owner: "{{ miniforge_install.user }}"
+  when: miniforge_install.wrap is defined and
+        miniforge_install.wrap
+  tags:
+    - 'miniforge_wrap'
+    - 'miniforge_configure_wrapper_directory'
+- name: 'miniforge configure wrapper'
+  template:
+    src: 'wrapper.j2'
+    dest: "{{ miniforge_install.wrapper_dir }}/__wrapper"
+    owner: "{{ miniforge_install.user }}"
+    mode: '0755'
+  when: miniforge_install.wrap is defined and
+        miniforge_install.wrap
+  tags:
+    - 'miniforge_wrap'
+    - 'miniforge_configure_wrapper'
+- name: 'miniforge configure wrap executables'
+  file:
+    path: "{{ miniforge_install.wrapper_dir }}/{{ item }}"
+    src: "{{ miniforge_install.wrapper_dir }}/__wrapper"
+    state: 'link'
+  loop: "{{ miniforge_install.wrap_executables | default(miniforge_wrap_executables) }}"
+  when: miniforge_install.wrap is defined and
+        miniforge_install.wrap
+  tags:
+    - 'miniforge_wrap'
+    - 'miniforge_configure_wrap_executables'

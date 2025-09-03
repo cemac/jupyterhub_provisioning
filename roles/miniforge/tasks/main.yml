@@ -1,0 +1,48 @@
+---
+
+# install:
+- name: 'miniforge install'
+  include_tasks:
+    file: 'install.yml'
+    apply:
+      tags:
+        - 'install'
+        - 'miniforge'
+        - 'miniforge_install'
+  loop: "{{ miniforge_installs }}"
+  loop_control:
+    loop_var: 'miniforge_install'
+  when: miniforge_installs is defined
+  tags:
+    - 'always'
+    - 'install'
+    - 'miniforge'
+    - 'miniforge_install'
+
+# configure:
+- name: 'miniforge configure'
+  include_tasks:
+    file: 'configure.yml'
+    apply:
+      tags:
+        - 'configure'
+        - 'miniforge'
+        - 'miniforge_configure'
+  loop: "{{ miniforge_installs }}"
+  loop_control:
+    loop_var: 'miniforge_install'
+  when: miniforge_installs is defined
+  tags:
+    - 'always'
+    - 'install'
+    - 'miniforge'
+    - 'miniforge_configure'
+
+# tidy:
+- name: 'miniforge tidy remove installer'
+  file:
+    path: "{{ miniforge_temp_dir }}/{{ miniforge_installer }}"
+    state: 'absent'
+  tags:
+    - 'miniforge'
+    - 'miniforge_tidy_remove_installer'

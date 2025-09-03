@@ -1,0 +1,4 @@
+channels:
+{% for miniforge_channel in miniforge_install.channels: %}
+  - {{ miniforge_channel }}
+{% endfor %}

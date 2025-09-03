@@ -1,0 +1,19 @@
+---
+
+# Installer:
+miniforge_mirror: 'https://github.com/conda-forge/miniforge/releases/latest/download'
+miniforge_python_ver: '3'
+miniforge_installer: "Miniforge{{ miniforge_python_ver }}-Linux-x86_64.sh"
+
+# Temp directory to download installer:
+miniforge_temp_dir: '/tmp'
+
+# Miniforge installs:
+miniforge_installs: []
+
+# Executables to wrap, if wrapping requested:
+miniforge_wrap_executables:
+  - 'python'
+
+# Make all lib files and directories world readable by default:
+miniforge_lib_make_readable: false

@@ -1,0 +1,4 @@
+#!/bin/bash
+MINIFORGE_DIR='{{ miniforge_install.path }}'
+export PATH="${MINIFORGE_DIR}/bin:${PATH}"
+exec $(basename ${0}) "${@}"

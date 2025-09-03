@@ -1,0 +1,40 @@
+---
+
+# Check if conda install exists:
+- name: 'miniforge install stat'
+  stat:
+    path: "{{ miniforge_install.path }}/bin/conda"
+  register: miniforge_install_stat
+  tags:
+    - 'miniforge_install_stat'
+
+# Download installer:
+- name: 'miniforge install get installer'
+  get_url:
+    url: "{{ miniforge_mirror }}/{{ miniforge_installer }}"
+    dest: "{{ miniforge_temp_dir }}/{{ miniforge_installer }}"
+    mode: '0755'
+  when: not miniforge_install_stat.stat.exists
+  tags:
+    - 'miniforge_install_get_installer'
+
+# Install miniforge:
+- name: 'miniforge install run installer'
+  become_user: "{{ miniforge_install.user }}"
+  command: "bash {{ miniforge_temp_dir }}/{{ miniforge_installer }} -b -p {{ miniforge_install.path }}"
+  args:
+    creates: "{{ miniforge_install.path }}"
+  when: not miniforge_install_stat.stat.exists
+  tags:
+    - 'miniforge_install_run_installer'
+
+# Set up conda channels:
+- name: 'miniforge install condarc'
+  template:
+    src: 'condarc.j2'
+    dest: "{{ miniforge_install.path  }}/.condarc"
+    owner: "{{ miniforge_install.user }}"
+  when: miniforge_install.channels is defined and
+        miniforge_install.path is defined
+  tags:
+    - 'miniforge_install_condarc'
