@@ -5,6 +5,6 @@
     - 'certbot'
     - 'resources'
     - 'ufw'
-    - 'miniconda'
+    - 'miniforge'
     - 'jupyterhub'
     - 'apache'
