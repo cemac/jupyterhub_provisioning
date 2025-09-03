@@ -53,8 +53,8 @@ resources_authorized_keys_default:
     comment: 'user00@example'
     key: 'ssh-rsa AAAtoijfoijdoijdoijdoijgowpokqwpqhak ...'
 
-# Miniconda installations:
-miniconda_installs:
+# Miniforge installations:
+miniforge_installs:
   # jupyterhub1234:
   - path: '/opt/jupyterhub1234/conda'
     user: 'root'
