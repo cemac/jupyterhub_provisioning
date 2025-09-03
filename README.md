@@ -141,16 +141,16 @@ ufw_rules:
     comment: 'Allow HTTPS'
 ```
 
-#### Miniconda
+#### Miniforge
 
-The `miniconda` role is used to install Anaconda Python.
+The `miniforge` role is used to install Python via the Miniforge installer.
 
-By default, this role will download `Miniconda3-latest-Linux-x86_64.sh` (if a new install is to be performed), and install within the specified directory.
+By default, this role will download `Miniforge3-Linux-x86_64.sh"` (if a new install is to be performed), and install within the specified directory.
 
 Additional channels, packages to be installed (either via `conda` or `pip`), and whether the installation should be updated can be specified in the configuration:
 
 ```
-miniconda_installs:
+miniforge_installs:
   # jupyterhub1234:
   - path: '/opt/jupyterhub1234/conda'
     user: 'root'
@@ -171,7 +171,7 @@ miniconda_installs:
 
 The user as which the installer should be run can be specified with the `user` parameter.
 
-If requested, specific executables can be accessed via a wrapper scipt in a spearate location. In this example, the Miniconda installation would be located within `/opt/jupyterhub1234/conda`, with wrappers for `python` and `jupyterhub` at `/opt/jupyterhub1234/bin/python` and `/opt/jupyterhub1234/bin/jupyterhub`.
+If requested, specific executables can be accessed via a wrapper scipt in a spearate location. In this example, the Miniforge installation would be located within `/opt/jupyterhub1234/conda`, with wrappers for `python` and `jupyterhub` at `/opt/jupyterhub1234/bin/python` and `/opt/jupyterhub1234/bin/jupyterhub`.
 
 #### Jupyterhub
 
