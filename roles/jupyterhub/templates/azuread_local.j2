@@ -99,7 +99,7 @@ class AzureAdOAuthenticator(OAuthenticator):
         if domain == '{{ jupyterhub_users_domain }}':
             decoded["name"] = username
         else:
-            decoded["name"] = upn
+            decoded["name"] = 'nobody'
 
         # add groups to userdict:
         try:
@@ -111,6 +111,7 @@ class AzureAdOAuthenticator(OAuthenticator):
                 grp.getgrgid(i).gr_name for i in user_groups
             ]
         except KeyError:
+            decoded["name"] = 'nobody'
             groups = []
         decoded["groups"] = groups
 
