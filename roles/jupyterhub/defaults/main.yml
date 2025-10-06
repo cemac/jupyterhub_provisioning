@@ -17,6 +17,8 @@ jupyterhub_readonly_paths:
   - '/'
 jupyterhub_readwrite_paths:
   - '/home/{USERNAME}'
+jupyterhub_extra_paths:
+  - '/usr/bin'
 # Add default write access to data directories for admins:
 jupyterhub_data_admin_rw: false
 # Default auth to use ('local' or 'azure'):

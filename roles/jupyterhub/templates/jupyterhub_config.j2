@@ -46,6 +46,7 @@ c.SystemdSpawner.isolate_devices = {{ jupyterhub_install.spawner.isolate_devices
 c.SystemdSpawner.disable_user_sudo = {{ jupyterhub_install.spawner.disable_user_sudo | default(jupyterhub_disable_sudo) }}
 c.SystemdSpawner.readonly_paths = {{ jupyterhub_install.spawner.readonly_paths | default(jupyterhub_readonly_paths) }}
 c.SystemdSpawner.readwrite_paths = {{ jupyterhub_install.spawner.readwrite_paths | default(jupyterhub_readwrite_paths) }}
+c.SystemdSpawner.extra_paths = {{ jupyterhub_install.spawner.extra_paths | default(jupyterhub_extra_paths) }}
 {% else %}
 c.JupyterHub.spawner_class = 'sudospawner.SudoSpawner'
 c.SudoSpawner.sudospawner_path = '{{ jupyterhub_install.python_dir }}/bin/sudospawner'
