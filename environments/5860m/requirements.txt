@@ -18,6 +18,7 @@ blinker==1.9.0
 blosc==1.21.6
 bokeh==3.8.0
 boltons==25.0.0
+bottleneck==1.6.0
 brotli==1.1.0
 brotli-bin==1.1.0
 brotli-python==1.1.0
