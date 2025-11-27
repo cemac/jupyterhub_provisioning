@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Directories to make:
-MAKE_DIRS='paleoclimate_coursework_submission'
+MAKE_DIRS='in_class_assessment'
 
 # Get course users:
 COURSE_GROUP='jh_users_soee2931'
