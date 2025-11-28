@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Directories to make:
-MAKE_DIRS='semester_1_coursework_submission'
+MAKE_DIRS='assessed_worksheet_submission'
 
 # Get course users:
 COURSE_GROUP='jh_users_soee2810'
