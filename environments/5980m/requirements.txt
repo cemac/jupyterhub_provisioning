@@ -316,7 +316,7 @@ wcwidth==0.2.14
 webcolors==25.10.0
 webencodings==0.5.1
 websocket-client==1.9.0
-wheel==0.45.1
+wheel==0.46.3
 xarray==2025.8.0
 xcb-util==0.4.1
 xcb-util-cursor==0.1.6
