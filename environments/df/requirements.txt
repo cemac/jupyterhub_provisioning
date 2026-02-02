@@ -17,7 +17,7 @@ bleach==6.2.0
 bleach-with-css==6.2.0
 blinker==1.9.0
 blosc==1.21.6
-bokeh==3.8.0
+bokeh==3.8.2
 boltons==25.0.0
 bottleneck==1.6.0
 brotli==1.2.0
