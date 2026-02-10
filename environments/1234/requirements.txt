@@ -196,9 +196,9 @@ menuinst==2.3.1
 mistune==3.1.4
 munkres==1.1.4
 nbclient==0.10.2
-nbconvert==7.16.6
-nbconvert-core==7.16.6
-nbconvert-pandoc==7.16.6
+nbconvert==7.17.0
+nbconvert-core==7.17.0
+nbconvert-pandoc==7.17.0
 nbformat==5.10.4
 ncurses==6.5
 nest-asyncio==1.6.0
