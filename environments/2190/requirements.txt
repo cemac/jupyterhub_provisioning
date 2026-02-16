@@ -40,7 +40,7 @@ configurable-http-proxy==5.0.1
 contourpy==1.3.3
 cpp-expected==1.1.0
 cpython==3.12.11
-cryptography==45.0.7
+cryptography==46.0.5
 cycler==0.12.1
 cyrus-sasl==2.1.28
 dbus==1.16.2
@@ -61,7 +61,7 @@ fonts-conda-ecosystem==1
 fonts-conda-forge==1
 fonttools==4.61.0
 fqdn==1.5.1
-freetype==2.13.3
+freetype==2.14.1
 frozendict==2.4.6
 graphite2==1.3.14
 greenlet==3.2.4
@@ -104,7 +104,7 @@ keyutils==1.6.1
 kiwisolver==1.4.9
 krb5==1.21.3
 lark==1.2.2
-lcms2==2.17
+lcms2==2.18
 ld_impl_linux-64==2.44
 lerc==4.0.0
 libarchive==3.7.7
@@ -124,8 +124,8 @@ libegl==1.7.0
 libev==4.33
 libexpat==2.7.1
 libffi==3.4.6
-libfreetype==2.13.3
-libfreetype6==2.13.3
+libfreetype==2.14.1
+libfreetype6==2.14.1
 libgcc==15.1.0
 libgcc-ng==15.1.0
 libgfortran==15.1.0
@@ -136,7 +136,7 @@ libglvnd==1.7.0
 libglx==1.7.0
 libgomp==15.1.0
 libiconv==1.18
-libjpeg-turbo==3.1.0
+libjpeg-turbo==3.1.2
 liblapack==3.9.0
 libllvm20==20.1.8
 libllvm21==21.1.0
@@ -157,7 +157,7 @@ libsqlite==3.50.3
 libssh2==1.11.1
 libstdcxx==15.1.0
 libstdcxx-ng==15.1.0
-libtiff==4.7.0
+libtiff==4.7.1
 libuuid==2.38.1
 libuv==1.51.0
 libwebp-base==1.6.0
@@ -179,9 +179,9 @@ menuinst==2.3.1
 mistune==3.1.4
 munkres==1.1.4
 nbclient==0.10.2
-nbconvert==7.16.6
-nbconvert-core==7.16.6
-nbconvert-pandoc==7.16.6
+nbconvert==7.17.0
+nbconvert-core==7.17.0
+nbconvert-pandoc==7.17.0
 nbformat==5.10.4
 ncurses==6.5
 nest-asyncio==1.6.0
@@ -192,9 +192,9 @@ notebook-shim==0.2.4
 numpy==2.3.2
 oauthenticator==17.3.0
 oauthlib==3.3.1
-openjpeg==2.5.3
+openjpeg==2.5.4
 openldap==2.6.10
-openssl==3.5.2
+openssl==3.6.1
 overrides==7.7.0
 packaging==25.0
 pamela==1.2.0
@@ -204,7 +204,7 @@ parso==0.8.5
 pcre2==10.45
 pexpect==4.9.0
 pickleshare==0.7.5
-pillow==11.3.0
+pillow==12.1.1
 pip==26.0.1
 pixman==0.46.4
 platformdirs==4.3.8
@@ -306,5 +306,6 @@ yaml==0.2.5
 yaml-cpp==0.8.0
 zeromq==4.3.5
 zipp==3.23.0
+zlib-ng==2.3.3
 zstandard==0.23.0
 zstd==1.5.7

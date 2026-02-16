@@ -47,7 +47,7 @@ configurable-http-proxy==5.1.0
 contourpy==1.3.3
 cpp-expected==1.3.1
 cpython==3.12.12
-cryptography==46.0.3
+cryptography==46.0.5
 cycler==0.12.1
 cyrus-sasl==2.1.28
 dask-core==2025.11.0
@@ -118,7 +118,7 @@ keyutils==1.6.3
 kiwisolver==1.4.9
 krb5==1.21.3
 lark==1.3.1
-lcms2==2.17
+lcms2==2.18
 ld_impl_linux-64==2.44
 lerc==4.0.0
 libaec==1.1.4
@@ -199,9 +199,9 @@ menuinst==2.4.1
 mistune==3.1.4
 munkres==1.1.4
 nbclient==0.10.2
-nbconvert==7.16.6
-nbconvert-core==7.16.6
-nbconvert-pandoc==7.16.6
+nbconvert==7.17.0
+nbconvert-core==7.17.0
+nbconvert-pandoc==7.17.0
 nbformat==5.10.4
 ncurses==6.5
 nest-asyncio==1.6.0
@@ -215,7 +215,7 @@ oauthenticator==17.3.0
 oauthlib==3.3.1
 openjpeg==2.5.4
 openldap==2.6.10
-openssl==3.5.4
+openssl==3.6.1
 overrides==7.7.0
 packaging==25.0
 pamela==1.2.0
@@ -227,7 +227,7 @@ partd==1.4.2
 patsy==1.0.2
 pcre2==10.46
 pexpect==4.9.0
-pillow==12.0.0
+pillow==12.1.1
 pip==26.0.1
 pixman==0.46.4
 platformdirs==4.5.0
@@ -346,6 +346,6 @@ yaml-cpp==0.8.0
 zeromq==4.3.5
 zipp==3.23.0
 zlib==1.3.1
-zlib-ng==2.2.5
+zlib-ng==2.3.3
 zstandard==0.25.0
 zstd==1.5.7
