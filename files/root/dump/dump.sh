@@ -45,6 +45,7 @@ tar \
   --exclude='*/.cache/pip/*' \
   --exclude='*/exiobase/*.zip' \
   --exclude='*/exiobase/extracted*' \
+  --exclude='*/storage/earth_data/home/ll22iw/*' \
   "${SRC_DIR}"
 
 # end message:
