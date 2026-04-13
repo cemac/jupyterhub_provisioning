@@ -41,11 +41,13 @@ tar \
   --exclude='*/*.zip' \
   --exclude='*/datadrivedirectory.tar.gz' \
   --exclude='*/homedirectory.tar.gz' \
-  --exclude='*/.local/lib/python3.11/*' \
+  --exclude='*/.local/lib/python*' \
   --exclude='*/.cache/pip/*' \
   --exclude='*/exiobase/*.zip' \
   --exclude='*/exiobase/extracted*' \
   --exclude='*/storage/earth_data/home/ll22iw/*' \
+  --exclude='*/storage/earth_data/home/ee22eh/outputs_GFED/*' \
+  --exclude='*/storage/earth_data/home/ee22eh/2023gfedfirepm25*' \
   "${SRC_DIR}"
 
 # end message:
