@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Directories to make:
-MAKE_DIRS='mlstats_submission'
+MAKE_DIRS='mlstats_submission icassess_5980m'
 
 # Get course users:
 COURSE_GROUP='jh_users_soee5980m'
