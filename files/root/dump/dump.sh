@@ -36,9 +36,13 @@ nice -n +20 \
 tar \
   czf "${OUT_FILE}" \
   --exclude='*/week*.tar.gz' \
+  --exclude='*/*.h5' \
   --exclude='*/*.nc' \
   --exclude='*/*.nc4' \
+  --exclude='*/*.nc.tar.gz' \
+  --exclude='*/*.tif' \
   --exclude='*/*.zip' \
+  --exclude='*/wrfout*' \
   --exclude='*/datadrivedirectory.tar.gz' \
   --exclude='*/homedirectory.tar.gz' \
   --exclude='*/.local/lib/python*' \
