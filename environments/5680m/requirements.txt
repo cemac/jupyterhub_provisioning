@@ -13,8 +13,8 @@ attrs==25.3.0
 babel==2.17.0
 backports.zstd==1.2.0
 beautifulsoup4==4.13.5
-bleach==6.2.0
-bleach-with-css==6.2.0
+bleach==6.4.0
+bleach-with-css==6.4.0
 blinker==1.9.0
 blosc==1.21.6
 boltons==25.0.0
@@ -30,7 +30,7 @@ cairo==1.18.4
 cartopy==0.25.0
 certifi==2025.7.14
 certipy==0.2.2
-cffi==1.17.1
+cffi==2.0.0
 cftime==1.6.4
 charset-normalizer==3.4.2
 colorama==0.4.6
@@ -43,7 +43,7 @@ configurable-http-proxy==5.0.1
 contourpy==1.3.3
 cpp-expected==1.1.0
 cpython==3.12.11
-cryptography==46.0.7
+cryptography==49.0.0
 cycler==0.12.1
 cyrus-sasl==2.1.28
 dbus==1.16.2
@@ -96,17 +96,18 @@ jsonpointer==3.0.0
 jsonschema==4.25.1
 jsonschema-specifications==2025.4.1
 jsonschema-with-format-nongpl==4.25.1
+jupyter-builder==1.0.2
 jupyter-lsp==2.3.0
 jupyter_client==8.6.3
 jupyter_core==5.8.1
 jupyter_events==0.12.0
-jupyter_server==2.18.2
+jupyter_server==2.20.0
 jupyter_server_terminals==0.5.3
 jupyterhub==5.4.6
 jupyterhub-base==5.4.6
 jupyterhub-idle-culler==1.4.0
 jupyterhub-systemdspawner==1.0.2
-jupyterlab==4.5.7
+jupyterlab==4.6.0
 jupyterlab_pygments==0.3.0
 jupyterlab_server==2.28.0
 keyutils==1.6.1
@@ -201,7 +202,7 @@ nest-asyncio==1.6.0
 netcdf4==1.7.2
 nlohmann_json==3.11.3
 nodejs==24.4.1
-notebook==7.5.6
+notebook==7.6.0
 notebook-shim==0.2.4
 numpy==1.26.4
 oauthenticator==17.4.0
@@ -240,7 +241,7 @@ pycurl==7.45.6
 pydantic==2.11.7
 pydantic-core==2.33.2
 pygments==2.20.0
-pyjwt==2.12.1
+pyjwt==2.13.0
 pyparsing==3.2.3
 pyproj==3.7.2
 pyshp==3.0.1
@@ -284,7 +285,7 @@ terminado==0.18.1
 tinycss2==1.4.0
 tk==8.6.13
 tomli==2.2.1
-tornado==6.5.5
+tornado==6.5.7
 tqdm==4.67.1
 traitlets==5.14.3
 truststore==0.10.1
