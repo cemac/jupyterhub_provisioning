@@ -221,7 +221,7 @@ mdit-py-plugins==0.5.0
 mdurl==0.1.2
 menuinst==2.3.1
 metpy==1.7.1
-mistune==3.2.1
+mistune==3.3.3
 munkres==1.1.4
 narwhals==2.9.0
 nbclient==0.10.2
@@ -262,7 +262,7 @@ pexpect==4.9.0
 pickleshare==0.7.5
 pillow==12.2.0
 pint==0.25
-pip==26.1.1
+pip==26.1.2
 pixman==0.46.4
 platformdirs==4.3.8
 pluggy==1.6.0
@@ -322,7 +322,7 @@ simdjson==3.12.3
 six==1.17.0
 snappy==1.2.2
 sniffio==1.3.1
-soupsieve==2.8
+soupsieve==2.8.4
 sparse==0.18.0
 sqlalchemy==2.0.43
 sqlite==3.53.0
