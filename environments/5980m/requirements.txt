@@ -47,7 +47,7 @@ configurable-http-proxy==5.1.0
 contourpy==1.3.3
 cpp-expected==1.3.1
 cpython==3.12.12
-cryptography==49.0.0
+cryptography==50.0.0
 cycler==0.12.1
 cyrus-sasl==2.1.28
 dask-core==2025.11.0

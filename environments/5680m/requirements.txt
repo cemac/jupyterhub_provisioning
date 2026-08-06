@@ -43,7 +43,7 @@ configurable-http-proxy==5.0.1
 contourpy==1.3.3
 cpp-expected==1.1.0
 cpython==3.12.11
-cryptography==49.0.0
+cryptography==50.0.0
 cycler==0.12.1
 cyrus-sasl==2.1.28
 dbus==1.16.2
