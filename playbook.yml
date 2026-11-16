@@ -2,9 +2,9 @@
 
 - hosts: 'all'
   roles:
-#    - 'certbot'
-#    - 'resources'
-#    - 'ufw'
+    - 'certbot'
+    - 'resources'
+    - 'ufw'
     - 'miniforge'
-#    - 'jupyterhub'
-#    - 'apache'
+    - 'jupyterhub'
+    - 'apache'
